@@ -1,0 +1,24 @@
+.gradient_hero_text {
+  /** TEXT GRADIENT */
+  color: #5270dc;
+  background-image: -webkit-linear-gradient(225deg, #5270dc 41%, #fc0fba 72%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.gradient_hero_sub_text {
+  /** TEXT GRADIENT */
+  color: #828282;
+  background-image: -webkit-linear-gradient(225deg, #828282 0%, #242424 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.gradient_skills_bg {
+
+          /** TEXT GRADIENT */ color: #38b6ff; background-image: -webkit-linear-gradient(135deg, #38b6ff 60%, #34076b 50%); background-clip: text; -webkit-background-clip: text; text-fill-color: transparent; -webkit-text-fill-color: transparent;
+          
+        
+}

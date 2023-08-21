@@ -3,9 +3,6 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import AuthSimpleLayout from './AuthSimpleLayout';
 import is from 'is_js';
 import MainLayout from './MainLayout';
-import SettingsToggle from 'components/settings-panel/SettingsToggle';
-import SettingsPanel from 'components/settings-panel/SettingsPanel';
-
 import ErrorLayout from './ErrorLayout';
 import WizardAuth from 'components/authentication/wizard/WizardAuth';
 import Landing from 'components/pages/landing/Landing';
@@ -548,8 +545,6 @@ const Layout = () => {
         {/* <Navigate to="/errors/404" /> */}
         <Route path="*" element={<Navigate to="/errors/404" replace />} />
       </Routes>
-      <SettingsToggle />
-      <SettingsPanel />
       <ToastContainer
         closeButton={CloseButton}
         icon={false}

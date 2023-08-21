@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 
@@ -16,6 +15,9 @@ const IconItem = ({
   ...rest
 }) => (
   <Tag
+    // style={{
+    //   background: 'linear-gradient(180deg, rgba(204,235,254,1) 0%, rgba(255,255,255,1) 100%)',
+    // }}
     className={classNames(className, 'icon-item', {
       [`icon-item-${size}`]: size,
       [`bg-${bg}`]: bg,
@@ -24,21 +26,9 @@ const IconItem = ({
     {...rest}
     onClick={onClick}
   >
-    <FontAwesomeIcon icon={icon} transform={transform} className={iconClass} />
+    <FontAwesomeIcon icon={icon} transform={transform} className='fs-1' />
   </Tag>
 );
 
-IconItem.propTypes = {
-  tag: PropTypes.string,
-  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
-  href: PropTypes.string,
-  bg: PropTypes.string,
-  size: PropTypes.oneOf(['sm', 'lg']),
-  color: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  className: PropTypes.string,
-  iconClass: PropTypes.string,
-  transform: PropTypes.string,
-  onClick: PropTypes.func
-};
 
 export default IconItem;

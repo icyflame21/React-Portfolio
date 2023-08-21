@@ -1,82 +1,71 @@
 import React, { useContext } from 'react';
 import Typed from 'react-typed';
 import { Link } from 'react-router-dom';
-import { Row, Col, Button } from 'react-bootstrap';
+import { Row, Col, Button, Figure } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import bg1 from 'assets/img/generic/bg-1.jpg';
-import dashboard from 'assets/img/generic/dashboard-alt.png';
-import dashboardDark from 'assets/img/generic/dashboard-alt-dark.png';
 import Section from 'components/common/Section';
+import user1 from 'assets/img/team/biswa.png';
+import Avatar from 'components/common/Avatar';
+import IconGroup from 'components/common/icon/IconGroup';
+import { bgWhiteIcons } from 'data/socialIcons';
 import AppContext from 'context/Context';
-
+import { settings } from 'config';
+import Flex from 'components/common/Flex';
+import '../../../CSS/GradientText.css'
 const Hero = () => {
   const {
-    config: { isDark }
+    config: { isDark },
   } = useContext(AppContext);
-
   return (
     <Section
-      className="py-0 overflow-hidden light"
-      image={bg1}
-      position="center bottom"
-      overlay
+      style={{
+        background: 'linear-gradient(180deg, rgba(204,235,254,1) 0%, rgba(255,255,255,1) 100%)'
+      }}
     >
-      <Row className="justify-content-center align-items-center pt-8 pt-lg-10 pb-lg-9 pb-xl-0">
+      <Row className="justify-content-center align-items-center pt-3">
         <Col
-          md={11}
-          lg={8}
-          xl={4}
-          className="pb-7 pb-xl-9 text-center text-xl-start"
+          lg={7}
+          xl={7}
+          className='d-flex justify-content-center'
         >
-          <Button
-            as={Link}
-            variant="outline-danger"
-            className="mb-4 fs--1 border-2 rounded-pill"
-            to="#!"
-          >
-            <span className="me-2" role="img" aria-label="Gift">
-              🎁
-            </span>
-            Become a pro
-          </Button>
-          <h1 className="text-white fw-light">
-            Bring
-            <Typed
-              strings={['design', 'beauty', 'elegance', 'perfection']}
-              typeSpeed={40}
-              backSpeed={50}
-              className="fw-bold ps-2"
-              loop
-            />
-            <br />
-            to your webapp
-          </h1>
-          <p className="lead text-white opacity-75">
-            With the power of Falcon, you can now focus only on functionaries
-            for your digital products, while leaving the UI design on us!
-          </p>
-          <Button
-            as={Link}
-            variant="outline-light"
-            size="lg"
-            className="border-2 rounded-pill mt-4 fs-0 py-2"
-            to="#!"
-          >
-            Start building with the falcon
-            <FontAwesomeIcon icon="play" transform="shrink-6 down-1 right-5" />
-          </Button>
+          <Avatar
+            alt="user1"
+            src={user1}
+            size='6xl'
+            className='w-75 my-lg-0 mt-6 mb-4'
+          />
         </Col>
         <Col
-          xl={{ span: 7, offset: 1 }}
-          className="align-self-end mt-4 mt-xl-0"
-        >
-          <Link to="/" className="img-landing-banner">
-            <img
-              className="img-fluid"
-              src={isDark ? dashboardDark : dashboard}
-              alt=""
-            />
-          </Link>
+          lg={5}
+          xl={5} className="text-center text-xl-start">
+          <p className='fs-1 text-youtube fw-semi-bold'>
+            Software Developer
+          </p>
+          <h1 className="fw-bold gradient_hero_sub_text">
+            Hey I'm <br />
+            <span className='gradient_hero_text'>
+              Biswaranjan Subudhi
+            </span>
+          </h1>
+          <i>
+            <p className="opacity-75 fs-1 mt-2 gradient_hero_sub_text">
+              Am a Indian based Software Developer passionate and experienced in  building Web applications.
+            </p>
+          </i>
+          <Flex alignItems='center' className='justify-content-lg-start justify-content-center'>
+            <Button
+              as='a'
+              variant="outline-success"
+              className="mb-4 fs-1 border-2 rounded-pill mt-3"
+              href={settings.gmail}
+              target='_blank'
+              rel='noreferrer'
+            >
+              Hire Me
+              <FontAwesomeIcon icon="play" transform="shrink-6 down-1 right-5" />
+            </Button>
+          </Flex>
+          <IconGroup className="mt-3 d-flex justify-content-lg-start justify-content-center" icons={bgWhiteIcons} />
         </Col>
       </Row>
     </Section>

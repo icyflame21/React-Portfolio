@@ -81,18 +81,6 @@ export const AvatarGroup = ({ children, dense, className }) => {
   );
 };
 
-Avatar.propTypes = {
-  size: PropTypes.oneOf(['s', 'm', 'l', 'xl', '2xl', '3xl', '4xl', '5xl']),
-  rounded: PropTypes.string,
-  src: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
-  name: PropTypes.string,
-  emoji: PropTypes.string,
-  className: PropTypes.string,
-  mediaClass: PropTypes.string,
-  isExact: PropTypes.bool,
-  icon: PropTypes.string
-};
-
 Avatar.defaultProps = {
   size: 'xl',
   rounded: 'circle',

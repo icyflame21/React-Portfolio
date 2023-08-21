@@ -11,7 +11,7 @@ const Partner = props => (
 
 const Partners = () => {
   return (
-    <Section bg="light" className="py-3 shadow-sm">
+    <Section fluid bg="soft-white" className="py-2 shadow bg-gradient">
       <Row className="flex-center">
         {partnerList.map((partner, index) => (
           <Partner key={index} {...partner} />

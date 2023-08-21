@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { blogPostList, menuList1, menuList2 } from 'data/footer';
 import { bgWhiteIcons } from 'data/socialIcons';
-import { version } from 'config';
 
 const FooterTitle = ({ children }) => (
   <h5 className="text-uppercase text-white opacity-85 mb-3">{children}</h5>
@@ -104,28 +103,21 @@ const FooterStandard = () => {
           </Col>
         </Row>
       </Section>
-
-      <section className=" bg-dark py-0 text-center fs--1 light">
+      <section className=" bg-dark py-0 text-center fs-0 light">
         <hr className="my-0 border-600 opacity-25" />
         <div className="container py-3">
-          <Row className="justify-content-between">
+          <Row className="justify-content-center">
             <Col xs={12} sm="auto">
               <p className="mb-0 text-600">
-                Thank you for creating with Falcon{' '}
-                <span className="d-none d-sm-inline-block">| </span>
-                <br className="d-sm-none" /> {new Date().getFullYear()} &copy;{' '}
+                &copy;{' '}{new Date().getFullYear()}{' '} All rights reserved | Made with{' '}❤️ by {' '}
                 <a
                   className="text-white opacity-85"
-                  href="https://themewagon.com"
-                  target="_blank"
+                  href="#"
                   rel="noopener noreferrer"
                 >
-                  ThemeWagon
+                  Biswaranjan Subudhi
                 </a>
               </p>
-            </Col>
-            <Col xs={12} sm="auto">
-              <p className="mb-0 text-600">v{version}</p>
             </Col>
           </Row>
         </div>
