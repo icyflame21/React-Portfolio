@@ -1,15 +1,13 @@
 import React, { useRef } from 'react';
 import Hero from './Hero';
 import NavbarStandard from './NavbarStandard';
-import Partners from './Partners';
-import Processes from './Processes';
 import Services from './Services';
 import Testimonial from './Testimonial';
-import Cta from './Cta';
+import Contact from './Contact';
 import FooterStandard from './FooterStandard';
 import About from './About';
 import Skills from './Skills';
-import useScrollSpy from 'react-use-scrollspy';
+import Background from './Background';
 
 const Landing = () => {
   const sectionRefs = [
@@ -21,19 +19,16 @@ const Landing = () => {
     useRef(null),
   ];
 
-  const activeSection = useScrollSpy({
-    sectionElementRefs: sectionRefs,
-  });
   return (
     <>
-      <NavbarStandard activeSection={activeSection} />
+      <NavbarStandard />
       <Hero />
       <About ref={sectionRefs[0]} />
       <Skills ref={sectionRefs[1]} />
-      <Processes ref={sectionRefs[2]} />
+      <Background ref={sectionRefs[2]} />
       <Services ref={sectionRefs[3]} />
-      <Testimonial ref={sectionRefs[4]} />
-      <Cta />
+      {/* <Testimonial ref={sectionRefs[4]} /> */}
+      <Contact ref={sectionRefs[5]}/>
       <FooterStandard />
     </>
   );

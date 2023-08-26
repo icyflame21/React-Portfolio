@@ -92,9 +92,8 @@ GoogleMap.propTypes = {
   ...Map.propTypes
 };
 
-GoogleMap.defaultProps = { zoom: 17, mapStyle: 'Default' };
+GoogleMap.defaultProps = { zoom: 13, mapStyle: 'Default' };
 
-// TODO: Do you provide the apiKey in production, instruct user to use his own apiKey
 export default GoogleApiWrapper({
   apiKey: process.env.REACT_APP_GOOGLE_API_KEY
 })(GoogleMap);

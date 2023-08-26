@@ -10,6 +10,7 @@ const App = () => {
   const customStyles = {
     backgroundColor: "#38B6FF",
     borderRadius: "50%",
+    boxShadow:'none',
     width: "40px",
     height: "40px",
     zIndex: 10000000,

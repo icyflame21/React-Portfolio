@@ -4,55 +4,48 @@ import img2006 from '../../assets/img/gallery/2006.jpg';
 import img2007 from '../../assets/img/gallery/2007.jpg';
 import img2008 from '../../assets/img/gallery/2008.jpg';
 import img2010 from '../../assets/img/gallery/2010.jpg';
-
+import { MdOutlineCastForEducation, MdOutlineModelTraining } from 'react-icons/md'
+import {GiSuitcase} from 'react-icons/gi'
 export const VerticalTimelineData = [
   {
-    title: 'iPhone 13 released',
+    title: 'Software Engineer @TechVibrant',
     description:
-      'Most advanced dual‑camera system ever. Durability that’s front and center. And edge to edge. A lightning-fast chip that leaves the competition behind.',
-    year: '2021',
-    date: '24 September',
-    icon: 'mobile'
+      'Contributed to 2 global SaaS products, ezSCM and iFarm, playing a key role as a lead React Native developer for ezSCM. Achieved rapid UI enhancements for web and mobile platforms, delivering the mobile app in just 2 months, resulting in a 40% boost in mobile efficiency and improved web security against unauthorized access.',
+    year: '2022-Present',
+    date: '18 Jul',
+    icon: <GiSuitcase className='fs-2 text-success bg-white' />
   },
   {
-    title: 'iPad  launched',
+    title: 'Full Stack Developer Trainee @FYND',
     description:
-      'Following on from the success of their iPhone launches and the popularity of lighter, more portable laptops, the iPad was born in 2010, combining the best features of both products. ',
-    year: '2010-2014',
-    date: '03 April',
-    icon: 'fire'
+      'Completed 4-month Full Stack Developer Trainee program at Fynd Academy (Shopsense Retail Technologies Ltd.), successfully creating independent, industry-level projects using the MERN tech stack.',
+    year: '2023',
+    date: 'Feb 17-May 25',
+    icon: <GiSuitcase className='fs-2 text-success bg-white' />
+  },
+  // {
+  //   title: 'Summer Trainee @SAIL',
+  //   description:
+  //     '3-month SAIL apprenticeship provided hands-on training in electrical machines, motor winding, and AC/DC motor maintenance, enhancing practical skills significantly.',
+  //   year: '2022',
+  //   date: 'May 5-Jul 15',
+  //   icon: <GiSuitcase className='fs-2 text-success bg-white' />
+  // },
+  {
+    title: 'Masai',
+    description:
+      'Certified in Full Stack Web Development from Masai, specializing in the MERN stack with a strong command of JavaScript. Proficient in solving data structures and algorithms through extensive hands-on coding practice.',
+    year: '2021-2022',
+    date: '20 Sep-13 Jun',
+    icon: <MdOutlineModelTraining className='fs-2 text-warning bg-white' />
   },
   {
-    title: 'MacBook Air released',
+    title: 'Central University of Haryana',
     description:
-      'Along with releasing the next generation of the iPhone, the iPhone 3G, Apple also released the MacBook Air which would set the precedent across the industry for thinner, lighter laptops. ',
-    year: '2008',
-    date: '15 January',
-    icon: 'book-open'
-  },
-  {
-    title: 'First generation iphone',
-    description:
-      'The first-generation iPhone was released with a mere 4GB storage and would launch the company into a new portable internet age of smartphones.',
-    year: '2007',
-    date: '01 January',
-    icon: 'rocket'
-  },
-  {
-    title: 'Apple IIc & The Mac',
-    description:
-      '1984 saw the rise of the Apple IIc, the first portable computer which was intended to be carried around but had no battery, this meant that a power socket would need to be nearby for you to use it.',
-    year: '1984',
-    date: '24 April',
-    icon: 'tint'
-  },
-  {
-    title: 'Apple I was launched',
-    description:
-      'July 1st, 1976 was when the Apple I was launched, designed and built by Steve Wozniak, the co-founder of Apple. However, it was Steve Jobs who had the idea to sell the computer and it was there that the Apple empire was born.',
-    year: '1976',
-    date: '01 July',
-    icon: 'flag'
+      'I hold a B.Tech in Electrical Engineering and concurrently served 2 years as Cultural Secretary and Class Representative, showcasing diverse leadership skills and technical prowess.',
+    year: '2018-2022',
+    date: '18 Aug-25 Aug',
+    icon: <MdOutlineCastForEducation className='fs-2 text-danger bg-white' />
   }
 ];
 export const ZigzagTimelineData = [

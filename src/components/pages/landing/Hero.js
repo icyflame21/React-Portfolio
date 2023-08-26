@@ -48,8 +48,8 @@ const Hero = () => {
             </span>
           </h1>
           <i>
-            <p className="opacity-75 fs-1 mt-2 gradient_hero_sub_text">
-              Am a Indian based Software Developer passionate and experienced in  building Web applications.
+            <p className="fs-1 mt-2 gradient_hero_sub_text">
+              Am a dedicated Indian software developer with a passion for crafting and extensive experience in constructing web applications.
             </p>
           </i>
           <Flex alignItems='center' className='justify-content-lg-start justify-content-center'>

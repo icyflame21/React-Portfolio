@@ -18,13 +18,13 @@ const LayerComponent = ({ data }) => {
   const { isDark } = config;
   const filter = isDark
     ? [
-        'invert:98%',
-        'grayscale:69%',
-        'bright:89%',
-        'contrast:111%',
-        'hue:205deg',
-        'saturate:1000%'
-      ]
+      'invert:98%',
+      'grayscale:69%',
+      'bright:89%',
+      'contrast:111%',
+      'hue:205deg',
+      'saturate:1000%'
+    ]
     : ['bright:101%', 'contrast:101%', 'hue:23deg', 'saturate:225%'];
 
   useEffect(() => {
@@ -60,9 +60,9 @@ const LayerComponent = ({ data }) => {
             icon={mapMarker}
           >
             <Popup>
-              <h6 className="mb-1">{marker.name}</h6>
-              <p className="m-0 text-500">
-                {marker.street} {marker.location}
+              <h1 className="fs-0 text-youtube">{marker.name}</h1>
+              <p className="m-0 text-900">
+                {marker.street}<span className='text-twitter'>{marker.location}</span>
               </p>
             </Popup>
           </Marker>
@@ -72,16 +72,12 @@ const LayerComponent = ({ data }) => {
   );
 };
 
-const LeafletMap = ({ data, ...rest }) => {
-  const position = [10.737, 0];
-  const {
-    config: { isRTL }
-  } = useContext(AppContext);
+const LeafletMap = ({ data, position, ...rest }) => {
 
   return (
     <MapContainer
-      zoom={isRTL ? 1.8 : 1.5}
-      minZoom={isRTL ? 1.8 : 1.3}
+      zoom={13}
+      minZoom={11}
       zoomSnap={0.5}
       center={position}
       {...rest}

@@ -17,8 +17,11 @@
   -webkit-text-fill-color: transparent;
 }
 .gradient_skills_bg {
-
-          /** TEXT GRADIENT */ color: #38b6ff; background-image: -webkit-linear-gradient(135deg, #38b6ff 60%, #34076b 50%); background-clip: text; -webkit-background-clip: text; text-fill-color: transparent; -webkit-text-fill-color: transparent;
-          
-        
+  /** TEXT GRADIENT */
+  color: #cdcdcd;
+  background-image: -webkit-linear-gradient(225deg, #cdcdcd 0%, #f5f5f5 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
 }

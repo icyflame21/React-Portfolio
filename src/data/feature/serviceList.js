@@ -1,20 +1,21 @@
+import { FaNodeJs, FaReact } from 'react-icons/fa'
 export default [
   {
-    media: { icon: ['fab', 'sass'], color: 'info', className: 'fs-4' },
-    title: 'Bootstrap 5.x',
+    media: { icon: <FaReact className='text-info fs-4' /> },
+    title: 'Front-End Web Development',
     description:
-      "Build your webapp with the world's most popular front-end component library along with Falcon's 32 sets of carefully designed elements."
+      "Proficient in React.js, rapid API integration, plugins, and packages usage. Ensures top-quality, efficient, and industry-standard code. Quick client feedback incorporation."
   },
   {
-    media: { icon: ['fab', 'node-js'], color: 'success', className: 'fs-5' },
-    title: 'SCSS & Javascript files',
+    media: { icon: <FaReact className='text-primary fs-4' /> },
+    title: 'Mobile App Development',
     description:
-      'With your purchased copy of Falcon, you will get all the uncompressed & documented SCSS and Javascript source code files.'
+      'Front-End Web Dev expert in React Native.js, swift API integration, modules, QA, time-efficient coding. Industry-standard, responsive to client feedback.'
   },
   {
-    media: { icon: ['fab', 'gulp'], color: 'danger', className: 'fs-6' },
-    title: 'Gulp based workflow',
+    media: { icon: <FaNodeJs className='text-success fs-4' /> },
+    title: 'Backend Development',
     description:
-      'All the painful or time-consuming tasks in your development workflow such as compiling the SCSS or transpiring the JS are automated.'
+      'Emerging backend dev, Node, Express & MongoDB enthusiast. Committed to learning, creating industry-standard, efficient code for web applications.'
   }
 ];
