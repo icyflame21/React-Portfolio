@@ -7,26 +7,15 @@ import { AiFillGithub } from 'react-icons/ai'
 
 export const bgWhiteIcons = [
   {
-    icon: ['fab', 'google-plus-g'],
-    color: 'white',
-    bg: 'google-plus',
-    href: settings.gmail,
-    target: "_blank",
+    id: 2,
+    icon: <FaLinkedin className='text-linkedin' />,
+    href: settings.linkedInLink
   },
-  { icon: ['fab', 'linkedin-in'], target: "_blank", bg: 'linkedin', color: 'white', href: settings.linkedInLink },
-  { icon: faGithub, target: "_blank", bg: 'github', color: 'white', href: settings.githubLink }
-];
-
-export default [
-  { icon: ['fab', 'facebook-f'], color: 'facebook', href: '#!' },
-  { icon: ['fab', 'twitter'], color: 'twitter', href: '#!' },
   {
-    icon: ['fab', 'google-plus-g'],
-    color: 'google-plus',
-    href: '#!'
-  },
-  { icon: ['fab', 'linkedin-in'], color: 'linkedin', href: '#!' },
-  { icon: ['fab', 'medium-m'], color: '700', href: '#!' }
+    id: 3,
+    icon: <AiFillGithub className='text-github' />,
+    href: settings.githubLink
+  }
 ];
 
 export const socialShares = [

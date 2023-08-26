@@ -5,12 +5,15 @@ import 'react-toastify/dist/ReactToastify.min.css';
 import Layout from './layouts/Layout';
 import ScrollToTop from 'react-scroll-to-top';
 import { FaArrowUp } from "react-icons/fa";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const App = () => {
+
   const customStyles = {
     backgroundColor: "#38B6FF",
     borderRadius: "50%",
-    boxShadow:'none',
+    boxShadow: 'none',
     width: "40px",
     height: "40px",
     zIndex: 10000000,
@@ -22,6 +25,7 @@ const App = () => {
       backgroundColor: "#fff",
     },
   };
+
 
   return (
     <Router basename={process.env.PUBLIC_URL}>

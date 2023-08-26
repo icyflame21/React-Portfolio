@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import logo from 'assets/img/illustrations/falcon.png';
 
 const Logo = ({ at, width, className, textClass, ...rest }) => {
+  
   return (
     <Link
       to="/"
