@@ -9,7 +9,7 @@ const ProjectService = ({ subTitle, title, liveUrl, githubUrl, thumbnail, techSt
 
     <Card className='h-100 my-4 shadow-none'>
         <Hoverbox className="text-center">
-            <Card.Img src={thumbnail} variant='top' />
+            <Card.Img src={thumbnail} variant='top' alt={title} />
             <Hoverbox.Content className="light bg-dark p-5 px-6 flex-center rounded-top">
                 <Card.Body className='p-0 m-0 d-flex gap-3 justify-content-center align-items-center'>
                     <Button

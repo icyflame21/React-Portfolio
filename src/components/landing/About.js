@@ -22,7 +22,7 @@ const About = () => {
         }
     };
     return (
-        <Section id="about" >
+        <Section id="about">
             <Row className={`justify-content-center align-items-center ${isMatch ? 'px-3' : 'px-0'}`}>
                 <Col
                     lg={5}

@@ -7,7 +7,7 @@ import skillsList from 'data/skills';
 import Marquee from "react-fast-marquee";
 import { useMediaQuery, useTheme } from '@mui/material';
 
-const Skills = (props, ref) => {
+const Skills = () => {
     const theme = useTheme()
     const isMatch = useMediaQuery(theme.breakpoints.down('lg'))
     const sliderSettings = {

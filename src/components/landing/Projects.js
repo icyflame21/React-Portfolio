@@ -8,7 +8,7 @@ import { useMediaQuery, useTheme } from '@mui/material';
 import { projectData } from 'data/projects';
 import ProjectService from './ProjectService';
 
-const Projects =(props, ref) => {
+const Projects =() => {
     const theme = useTheme()
     const isMatch = useMediaQuery(theme.breakpoints.down('lg'))
 

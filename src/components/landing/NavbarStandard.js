@@ -41,7 +41,7 @@ const NavbarStandard = () => {
       fixed='top'
       expand={topNavbarBreakpoint}
       style={{
-        background: 'linear-gradient(180deg, rgba(204,235,254,1) 0%, rgba(255,255,255,1) 100%)'
+        background: showDropShadow ? 'linear-gradient(180deg, rgba(204,235,254,1) 0%, rgba(255,255,255,1) 100%)' : 'transparent'
       }}
       className={classNames('navbar-glass', {
         'navbar-glass-shadow': showDropShadow
@@ -58,13 +58,13 @@ const NavbarStandard = () => {
           style={{
             background: 'transparent',
             border: 'none',
-            width:'max-content'
+            width: 'max-content'
           }}
         >
-          {navbarToggle && isMatch ? <Modal.Header 
-          style={{
-            background: 'linear-gradient(180deg, rgba(204,235,254,1) 0%, rgba(255,255,255,1) 100%)'
-          }} className="border-0 py-3">
+          {navbarToggle && isMatch ? <Modal.Header
+            style={{
+              background: 'linear-gradient(180deg, rgba(204,235,254,1) 0%, rgba(255,255,255,1) 100%)'
+            }} className="border-0 py-3">
             <Navbar.Brand className="fw-semi-bold fs-4 px-3 gradient_hero_text" href="#" style={{
               fontFamily: 'Great Vibes'
             }}>
@@ -78,30 +78,33 @@ const NavbarStandard = () => {
           {navbarToggle && isMatch ? <Modal.Body className='py-4'
             style={{ background: 'linear-gradient(180deg, rgba(204,235,254,1) 0%, rgba(255,255,255,1) 100%)' }}>
             <Flex direction='column'>
-              <a href="#about" className='fs-1 fw-medium mx-3 my-2'>About</a>{' '}
-              <a href="#skills" className='fs-1 fw-medium mx-3 my-2'>Skills</a>{' '}
-              <a href="#background" className='fs-1 fw-medium mx-3 my-2'>Background</a>{' '}
-              <a href="#services" className='fs-1 fw-medium mx-3 my-2'>Services</a>{' '}
-              <a href="#projects" className='fs-1 fw-medium mx-3 my-2'>Projects</a>{' '}
+              <a href="#about" className='fs-1 fw-medium mx-3 my-2'>About</a>
+              <a href="#skills" className='fs-1 fw-medium mx-3 my-2'>Skills</a>
+              <a href="#background" className='fs-1 fw-medium mx-3 my-2'>Background</a>
+              <a href="#services" className='fs-1 fw-medium mx-3 my-2'>Services</a>
+              <a href="#projects" className='fs-1 fw-medium mx-3 my-2'>Projects</a>
               <a href="#contact" className='fs-1 fw-medium mx-3 my-2'>Contact</a>
             </Flex>
           </Modal.Body> : isMatch ? null :
             <Nav className="ms-auto">
               <Flex direction='row' alignItems='center' >
+              <Nav.Item>
+
+              </Nav.Item>
                 <Button as='a' href="#about"
-                  variant="outline-primary" className='fs-0 fw-medium border-0 rounded-pill'>About</Button>{' '}
+                  variant="outline-primary" className='fs-0 fw-medium border-0 rounded-pill'>About</Button>
                 <Button as='a' href="#skills"
-                  variant="outline-primary" className='ms-1 fs-0 fw-medium border-0 rounded-pill'>Skills</Button>{' '}
+                  variant="outline-primary" className='fs-0 fw-medium border-0 rounded-pill'>Skills</Button>
                 <Button as='a' href="#background"
-                  variant="outline-primary" className='ms-1 fs-0 fw-medium border-0 rounded-pill'>Background</Button>{' '}
+                  variant="outline-primary" className='fs-0 fw-medium border-0 rounded-pill'>Background</Button>
                 <Button as='a' href="#services"
-                  variant="outline-primary" className='ms-1 fs-0 fw-medium border-0 rounded-pill'>Services</Button>{' '}
+                  variant="outline-primary" className='fs-0 fw-medium border-0 rounded-pill'>Services</Button>
                 <Button as='a' href="#projects"
-                  variant="outline-primary" className='ms-1 fs-0 fw-medium border-0 rounded-pill'>Projects</Button>{' '}
+                  variant="outline-primary" className='fs-0 fw-medium border-0 rounded-pill'>Projects</Button>
                 <Button as='a' href="#contact"
-                  variant="outline-primary" className='ms-1 fs-0 fw-medium border-0 rounded-pill'>Contact</Button>
+                  variant="outline-primary" className='fs-0 fw-medium border-0 rounded-pill'>Contact</Button>
                 <Nav.Link
-                  className="ms-1 theme-control-toggle"
+                  className="theme-control-toggle"
                   onClick={() => setConfig('isDark', !isDark)}
                 >
                   <div className="theme-control-toggle-label">

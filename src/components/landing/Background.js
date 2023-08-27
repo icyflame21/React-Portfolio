@@ -6,7 +6,7 @@ import SectionHeader from './SectionHeader';
 import { VerticalTimelineData } from 'data/timeline';
 import classNames from 'classnames';
 
-const Background = (props, ref) => {
+const Background = () => {
     const handleItalic = (text) => {
         const parts = text.split("@");
         const modifiedText = parts.length === 2 ? (

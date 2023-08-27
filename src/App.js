@@ -6,11 +6,12 @@ import ScrollToTop from 'react-scroll-to-top';
 import { FaArrowUp } from "react-icons/fa";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import './App.css'
 
 const App = () => {
 
   const customStyles = {
-    backgroundColor: "#38B6FF",
+    backgroundColor: "#5270dc",
     borderRadius: "50%",
     boxShadow: 'none',
     width: "40px",

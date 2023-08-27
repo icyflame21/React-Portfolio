@@ -10,7 +10,7 @@ import ServicesJSON from '../../assets/img/animated-icons/services.json'
 import Slider from 'react-slick';
 import { useMediaQuery, useTheme } from '@mui/material';
 
-const Services =(props, ref) => {
+const Services =() => {
   const theme = useTheme()
   const isMatch = useMediaQuery(theme.breakpoints.down('lg'))
 

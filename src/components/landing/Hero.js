@@ -21,6 +21,9 @@ const Hero = () => {
           lg={7}
           xl={7}
           className='d-flex justify-content-center'
+          style={{
+            
+          }}
         >
           <Avatar
             alt="user1"
