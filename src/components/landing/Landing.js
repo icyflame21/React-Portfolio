@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import Hero from './Hero';
 import NavbarStandard from './NavbarStandard';
 import Services from './Services';
@@ -10,25 +10,17 @@ import Background from './Background';
 import Projects from './Projects';
 
 const Landing = () => {
-  const sectionRefs = [
-    useRef(null),
-    useRef(null),
-    useRef(null),
-    useRef(null),
-    useRef(null),
-    useRef(null),
-  ];
 
   return (
     <>
       <NavbarStandard />
       <Hero />
-      <About ref={sectionRefs[0]} />
-      <Skills ref={sectionRefs[1]} />
-      <Background ref={sectionRefs[2]} />
-      <Services ref={sectionRefs[3]} />
-      <Projects ref={sectionRefs[4]}/>
-      <Contact ref={sectionRefs[5]}/>
+      <About />
+      <Skills />
+      <Background />
+      <Services />
+      <Projects />
+      <Contact />
       <FooterStandard />
     </>
   );

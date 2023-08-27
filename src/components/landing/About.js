@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Section from 'components/common/Section';
@@ -10,7 +10,7 @@ import AboutUs from '../../assets/img/animated-icons/about-us.json'
 import Lottie from 'react-lottie';
 import { useMediaQuery, useTheme } from '@mui/material';
 
-const About = forwardRef((props, ref) => {
+const About = () => {
     const theme = useTheme()
     const isMatch = useMediaQuery(theme.breakpoints.down('lg'))
     const aboutUsOptions = {
@@ -22,7 +22,7 @@ const About = forwardRef((props, ref) => {
         }
     };
     return (
-        <Section id="about" ref={ref}>
+        <Section id="about" >
             <Row className={`justify-content-center align-items-center ${isMatch ? 'px-3' : 'px-0'}`}>
                 <Col
                     lg={5}
@@ -57,6 +57,6 @@ const About = forwardRef((props, ref) => {
             </Row>
         </Section>
     );
-});
+};
 
 export default About;

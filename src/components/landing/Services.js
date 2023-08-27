@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import className from 'classnames';
 import serviceList from 'data/serviceList';
@@ -10,7 +10,7 @@ import ServicesJSON from '../../assets/img/animated-icons/services.json'
 import Slider from 'react-slick';
 import { useMediaQuery, useTheme } from '@mui/material';
 
-const Services = forwardRef((props, ref) => {
+const Services =(props, ref) => {
   const theme = useTheme()
   const isMatch = useMediaQuery(theme.breakpoints.down('lg'))
 
@@ -35,7 +35,7 @@ const Services = forwardRef((props, ref) => {
   };
 
   return (
-    <Section id="services" ref={ref}>
+    <Section id="services" >
       <Row className={`justify-content-center align-items-center ${isMatch ? 'px-3' : 'px-0'}`}>
         {isMatch ? <Col>
           <SectionHeader
@@ -84,6 +84,6 @@ const Services = forwardRef((props, ref) => {
       </Row>
     </Section>
   )
-});
+};
 
 export default Services;

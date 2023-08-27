@@ -1,15 +1,19 @@
-import React, { forwardRef } from 'react';
-import { Row, Col, Form, Button } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Row, Col, Form, Button, Spinner } from 'react-bootstrap';
 import Section from 'components/common/Section';
 import { useMediaQuery, useTheme } from '@mui/material';
 import SectionHeader from './SectionHeader';
 import { socialShares } from 'data/socialIcons';
 import LeafletMap from 'components/common/LeafletMap';
 import Flex from 'components/common/Flex';
+import { toast } from 'react-toastify';
+import axios from 'axios';
+import { settings } from 'config';
 
-const Contact = forwardRef((props, ref) => {
+const Contact = () => {
   const theme = useTheme()
   const isMatch = useMediaQuery(theme.breakpoints.down('lg'))
+  const [loading, setLoading] = useState(false)
 
   const position = [12.903960, 77.578651]
   const data = [
@@ -22,8 +26,39 @@ const Contact = forwardRef((props, ref) => {
       location: 'Bangalore'
     },
   ]
+  const [inputs, setInputs] = useState({});
+
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setInputs(values => ({ ...values, [name]: value }))
+  }
+  const sendEmail = (e) => {
+    setLoading(true)
+    e.preventDefault();
+    const responseData = {
+      name: inputs.clientName,
+      email: inputs.clientEmail,
+      message: inputs.clientMessage,
+    };
+    axios.post(settings.formSubmit, responseData).then((res) => {
+      setLoading(false)
+      e.target.reset()
+      toast.success('Email has been sent successfully', {
+        theme: 'colored'
+      });
+    })
+      .catch(() => {
+        setLoading(false)
+        e.target.reset()
+        toast.warn('Network Error\nPlease try again later', {
+          theme: 'colored'
+        });
+      })
+  };
+
   return (
-    <Section id="contact" ref={ref}>
+    <Section id="contact">
       <SectionHeader
         title="I want to hear from you"
         subtitle="Contact Me"
@@ -57,39 +92,56 @@ const Contact = forwardRef((props, ref) => {
         <Col
           lg={6}
           xl={6}>
-          <Form className={isMatch ? 'mt-4' : ''}>
+          <Form onSubmit={sendEmail}
+            className={isMatch ? 'mt-4' : ''}>
             <Row className="g-3">
-              <Form.Group as={Col} lg={6} xl={6} controlId="clientName">
-                <Form.Control required placeholder="Your Name*" />
+              <Form.Group as={Col} lg={6} xl={6}>
+                <Form.Control
+                  disabled={loading}
+                  required
+                  value={inputs.clientName || ""}
+                  onChange={handleChange}
+                  placeholder="Your Name*" name='clientName' />
               </Form.Group>
 
-              <Form.Group className="mb-3" as={Col} lg={6} xl={6} controlId="clientEmail">
-                <Form.Control type="email" required placeholder="Your Email*" />
+              <Form.Group className="mb-3" as={Col} lg={6} xl={6}>
+                <Form.Control
+                  disabled={loading}
+                  value={inputs.clientEmail || ""}
+                  onChange={handleChange}
+                  type="email" required placeholder="Your Email*" name='clientEmail' />
               </Form.Group>
             </Row>
 
-            <Form.Group className="mb-3" controlId="clientSubject">
-              <Form.Control placeholder="Subject" />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="clientMessage">
-              <Form.Control required as="textarea" rows={7} placeholder="Your Message*"
+            <Form.Group className="mb-3">
+              <Form.Control
+                disabled={loading}
+                value={inputs.clientMessage || ""}
+                onChange={handleChange}
+                required as="textarea" rows={7} placeholder="Your Message*"
+                name='clientMessage'
                 style={{
                   resize: 'none'
                 }} />
             </Form.Group>
 
-            <Button
+            {loading ? <Row className="g-0">
+              <Col xs={12} className="w-100 h-100">
+                <Flex className="align-items-center justify-content-center">
+                  <Spinner animation="border" variant="primary" size='sm' />
+                </Flex>
+              </Col>
+            </Row> : <Button
               variant="outline-primary"
               type="submit"
             >
               Send Message
-            </Button>
+            </Button>}
           </Form>
         </Col>
       </Row>
     </Section>
   )
-})
+}
 
 export default Contact;

@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import { Row, Col, Card, Image } from 'react-bootstrap';
 import Section from 'components/common/Section';
 import '../../CSS/GradientText.css'
@@ -7,7 +7,7 @@ import skillsList from 'data/skills';
 import Marquee from "react-fast-marquee";
 import { useMediaQuery, useTheme } from '@mui/material';
 
-const Skills = forwardRef((props, ref) => {
+const Skills = (props, ref) => {
     const theme = useTheme()
     const isMatch = useMediaQuery(theme.breakpoints.down('lg'))
     const sliderSettings = {
@@ -18,7 +18,7 @@ const Skills = forwardRef((props, ref) => {
     };
 
     return (
-        <Section id="skills" ref={ref}>
+        <Section id="skills" >
             <Row className="justify-content-center align-items-center">
                 <Col>
                     <SectionHeader
@@ -46,6 +46,6 @@ const Skills = forwardRef((props, ref) => {
             </Row>
         </Section>
     );
-});
+};
 
 export default Skills;

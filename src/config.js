@@ -14,7 +14,8 @@ export const settings = {
   githubLink: 'https://github.com/icyflame21',
   linkedInLink: 'https://www.linkedin.com/in/biswaranjan-s/',
   gmail: 'mailto:biswaranjan.cuh@gmail.com',
-  number: 'tel:9090538565'
+  number: 'tel:9090538565',
+  formSubmit:'https://formsubmit.co/biswaranjan.cuh@gmail.com'
 };
 
 export default { version, navbarBreakPoint, topNavbarBreakpoint, settings };

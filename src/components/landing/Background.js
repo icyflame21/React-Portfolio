@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import { Row, Col, Card } from 'react-bootstrap';
 import Section from 'components/common/Section';
 import '../../CSS/GradientText.css'
@@ -6,8 +6,7 @@ import SectionHeader from './SectionHeader';
 import { VerticalTimelineData } from 'data/timeline';
 import classNames from 'classnames';
 
-const Background = forwardRef((props, ref) => {
-
+const Background = (props, ref) => {
     const handleItalic = (text) => {
         const parts = text.split("@");
         const modifiedText = parts.length === 2 ? (
@@ -34,7 +33,7 @@ const Background = forwardRef((props, ref) => {
         return <p className='fs--1 mb-0 fw-semi-bold'>{formattedDateRange}</p>;
     }
     return (
-        <Section id="background" ref={ref}>
+        <Section id="background" >
             <Row className="justify-content-center">
                 <Col>
                     <SectionHeader
@@ -90,6 +89,6 @@ const Background = forwardRef((props, ref) => {
             </Row>
         </Section>
     );
-});
+};
 
 export default Background;

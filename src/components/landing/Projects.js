@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import className from 'classnames';
 import Section from 'components/common/Section';
@@ -8,7 +8,7 @@ import { useMediaQuery, useTheme } from '@mui/material';
 import { projectData } from 'data/projects';
 import ProjectService from './ProjectService';
 
-const Projects = forwardRef((props, ref) => {
+const Projects =(props, ref) => {
     const theme = useTheme()
     const isMatch = useMediaQuery(theme.breakpoints.down('lg'))
 
@@ -23,7 +23,7 @@ const Projects = forwardRef((props, ref) => {
     };
 
     return (
-        <Section id="projects" ref={ref}>
+        <Section id="projects">
             <Row className={`justify-content-center align-items-center ${isMatch ? 'px-3' : 'px-0'}`}>
                 <Col>
                     <SectionHeader
@@ -48,6 +48,6 @@ const Projects = forwardRef((props, ref) => {
             </Row>
         </Section>
     )
-});
+};
 
 export default Projects;

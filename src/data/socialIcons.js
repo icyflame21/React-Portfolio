@@ -1,4 +1,3 @@
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { settings } from 'config';
 import { FiPhoneCall } from 'react-icons/fi'
 import { SiGmail } from 'react-icons/si'
