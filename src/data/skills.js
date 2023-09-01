@@ -18,6 +18,15 @@ import webpack from 'assets/img/skills/webpack.svg';
 import office from 'assets/img/skills/microsoftoffice.svg';
 import nodejs from 'assets/img/skills/nodejs-icon.svg';
 import mongoDb from 'assets/img/skills/mongoDB.svg';
+import intellij from 'assets/img/skills/intellij.svg'
+import vscode from 'assets/img/skills/vsCode.svg'
+import teams from 'assets/img/skills/microsoft-teams.svg'
+import teamwork from 'assets/img/skills/teamwork.svg'
+import timeManagement from 'assets/img/skills/time-management.svg'
+import problemSolving from 'assets/img/skills/problem-solving.svg'
+import remoteCollab from 'assets/img/skills/collaboration.svg'
+import adaptibility from 'assets/img/skills/resilience.svg'
+import leadership from 'assets/img/skills/leadership.svg'
 
 export const technical = [
   {
@@ -125,17 +134,17 @@ export const toolsSet = [
   },
   {
     id: 30,
-    logo: null,
+    logo: intellij,
     name: 'Intellij'
   },
   {
     id: 31,
-    logo: null,
+    logo: vscode,
     name: 'VS Code'
   },
   {
     id: 32,
-    logo: null,
+    logo: teams,
     name: 'Microsoft Teams'
   },
 ];
@@ -143,32 +152,32 @@ export const toolsSet = [
 export const softSkills = [
   {
     id: 35,
-    logo: null,
+    logo: teamwork,
     name: 'Teamwork'
   },
   {
     id: 36,
-    logo: null,
+    logo: timeManagement,
     name: 'Time Management'
   },
   {
     id: 37,
-    logo: null,
+    logo: problemSolving,
     name: 'Problem Solving'
   },
   {
     id: 38,
-    logo: null,
+    logo: remoteCollab,
     name: 'Remote Collaboration'
   },
   {
     id: 39,
-    logo: null,
+    logo: adaptibility,
     name: 'Adaptability'
   },
   {
     id: 40,
-    logo: null,
+    logo: leadership,
     name: 'Leadership'
   },
 ];

@@ -1,4 +1,3 @@
-import Hoverbox from 'components/common/Hoverbox';
 import SoftBadge from 'components/common/SoftBadge';
 import React from 'react';
 import { Button, Card, Col, Row } from 'react-bootstrap';
@@ -16,7 +15,7 @@ const ProjectService = ({ subTitle, title, liveUrl, githubUrl, thumbnail, techSt
             {isMatch ?
                 <Card className='h-100 my-4'>
                     <Row>
-                        <Col sm={5} md={4}>
+                        <Col xs={12}>
                             <div className='position-relative overflow-hidden h-sm-100'>
                                 <LazyLoadImage
                                     src={thumbnail}
@@ -26,7 +25,7 @@ const ProjectService = ({ subTitle, title, liveUrl, githubUrl, thumbnail, techSt
                                 />
                             </div>
                         </Col>
-                        <Col sm={7} md={8} lg={8}>
+                        <Col xs={12}>
                             <Card.Body>
                                 <div className='mb-3 '>
                                     {techStack.map((ele) => (
@@ -64,7 +63,7 @@ const ProjectService = ({ subTitle, title, liveUrl, githubUrl, thumbnail, techSt
                             </Card.Body>
                         </Col>
                     </Row>
-                </Card> : <Card className='h-100 my-4'>
+                </Card> : <Card className='h-100 my-4 shadow-sm'>
                     <div className='position-relative overflow-hidden h-sm-100'>
                         <LazyLoadImage
                             src={thumbnail}

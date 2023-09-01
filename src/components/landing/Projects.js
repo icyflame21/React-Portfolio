@@ -1,6 +1,5 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-import className from 'classnames';
 import Section from 'components/common/Section';
 import SectionHeader from './SectionHeader';
 import Slider from 'react-slick';

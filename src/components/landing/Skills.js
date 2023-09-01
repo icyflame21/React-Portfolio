@@ -6,6 +6,7 @@ import SectionHeader from './SectionHeader';
 import skillsList, { softSkills, technical, toolsSet } from 'data/skills';
 import Marquee from "react-fast-marquee";
 import { useMediaQuery, useTheme } from '@mui/material';
+import Flex from 'components/common/Flex';
 
 const Skills = () => {
     const theme = useTheme()
@@ -67,21 +68,63 @@ const Skills = () => {
                                     <Tab.Pane eventKey="technical">
                                         <ListGroup>
                                             {technical.map((ele, id) => (
-                                                <ListGroup.Item className='py-3' variant={id % 2 == 0 ? '' : 'primary'} key={ele.id}>{ele.name}</ListGroup.Item>
+                                                <ListGroup.Item className='py-3' variant={id % 2 == 0 ? '' : 'primary'} key={ele.id}>
+                                                    <Flex className='gap-2' justifyContent="between" alignItems="center">
+                                                        {ele.name}
+                                                        {ele.logo && <Image
+                                                            src={ele.logo}
+                                                            rounded
+                                                            fluid
+                                                            style={{
+                                                                width: '30px',
+                                                                height: '30px',
+                                                                objectFit: 'contain'
+                                                            }}
+                                                        />}
+                                                    </Flex>
+                                                </ListGroup.Item>
                                             ))}
                                         </ListGroup>
                                     </Tab.Pane>
                                     <Tab.Pane eventKey="tools">
                                         <ListGroup>
                                             {toolsSet.map((ele, id) => (
-                                                <ListGroup.Item className='py-3' variant={id % 2 == 0 ? '' : 'primary'} key={ele.id}>{ele.name}</ListGroup.Item>
+                                                <ListGroup.Item className='py-3' variant={id % 2 == 0 ? '' : 'primary'} key={ele.id}>
+                                                    <Flex className='gap-2' justifyContent="between" alignItems="center">
+                                                        {ele.name}
+                                                        {ele.logo && <Image
+                                                            src={ele.logo}
+                                                            rounded
+                                                            fluid
+                                                            style={{
+                                                                width: '30px',
+                                                                height: '30px',
+                                                                objectFit: 'contain'
+                                                            }}
+                                                        />}
+                                                    </Flex>
+                                                </ListGroup.Item>
                                             ))}
                                         </ListGroup>
                                     </Tab.Pane>
                                     <Tab.Pane eventKey="soft">
                                         <ListGroup>
                                             {softSkills.map((ele, id) => (
-                                                <ListGroup.Item className='py-3' variant={id % 2 == 0 ? '' : 'primary'} key={ele.id}>{ele.name}</ListGroup.Item>
+                                                <ListGroup.Item className='py-3' variant={id % 2 == 0 ? '' : 'primary'} key={ele.id}>
+                                                    <Flex className='gap-2' justifyContent="between" alignItems="center">
+                                                        {ele.name}
+                                                        {ele.logo && <Image
+                                                            src={ele.logo}
+                                                            rounded
+                                                            fluid
+                                                            style={{
+                                                                width: '30px',
+                                                                height: '30px',
+                                                                objectFit: 'contain'
+                                                            }}
+                                                        />}
+                                                    </Flex>
+                                                </ListGroup.Item>
                                             ))}
                                         </ListGroup>
                                     </Tab.Pane>
