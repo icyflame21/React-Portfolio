@@ -33,7 +33,7 @@ const Background = () => {
         return <p className='fs--1 mb-0 fw-semi-bold'>{formattedDateRange}</p>;
     }
     return (
-        <Section id="background" >
+        <Section id="background" bg='white'>
             <Row className="justify-content-center">
                 <Col>
                     <SectionHeader

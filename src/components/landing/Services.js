@@ -1,6 +1,5 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-import className from 'classnames';
 import serviceList from 'data/serviceList';
 import Section from 'components/common/Section';
 import CardService from './CardService';
@@ -10,7 +9,7 @@ import ServicesJSON from '../../assets/img/animated-icons/services.json'
 import Slider from 'react-slick';
 import { useMediaQuery, useTheme } from '@mui/material';
 
-const Services =() => {
+const Services = () => {
   const theme = useTheme()
   const isMatch = useMediaQuery(theme.breakpoints.down('lg'))
 
@@ -35,25 +34,20 @@ const Services =() => {
   };
 
   return (
-    <Section id="services" >
+    <Section id="services" bg='white'>
       <Row className={`justify-content-center align-items-center ${isMatch ? 'px-3' : 'px-0'}`}>
         {isMatch ? <Col>
           <SectionHeader
             title="What Services I offer You"
             subtitle="Services"
+            dropCap
+            className='justify-content-center text-center'
           />
-          <Row className="mt-3">
-            <Slider {...settings}>
-              {serviceList.map((service, index) => (
-                <Col
-                  key={index}
-                  className={className({ 'mt-6 mt-lg-0': index > 0 })}
-                >
-                  <CardService {...service} />
-                </Col>
-              ))}
-            </Slider>
-          </Row>
+          <div className="mt-5">
+            {serviceList.map((service, index) => (
+              <CardService {...service} key={index} />
+            ))}
+          </div>
         </Col> : <>
           <Col
             lg={7}

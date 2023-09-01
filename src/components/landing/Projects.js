@@ -8,7 +8,7 @@ import { useMediaQuery, useTheme } from '@mui/material';
 import { projectData } from 'data/projects';
 import ProjectService from './ProjectService';
 
-const Projects =() => {
+const Projects = () => {
     const theme = useTheme()
     const isMatch = useMediaQuery(theme.breakpoints.down('lg'))
 
@@ -23,7 +23,7 @@ const Projects =() => {
     };
 
     return (
-        <Section id="projects">
+        <Section id="projects" bg='white'>
             <Row className={`justify-content-center align-items-center ${isMatch ? 'px-3' : 'px-0'}`}>
                 <Col>
                     <SectionHeader
@@ -32,18 +32,19 @@ const Projects =() => {
                         dropCap
                         className='justify-content-center text-center'
                     />
-                    <Row className="mt-3">
-                        <Slider {...settings}>
-                            {projectData.map((service, index) => (
-                                <Col
-                                    key={index}
-                                    className={className({ 'mt-6 mt-lg-0': index > 0 })}
-                                >
-                                    <ProjectService {...service} />
-                                </Col>
-                            ))}
-                        </Slider>
-                    </Row>
+                    {isMatch ?
+                        projectData.map((service, index) => (
+                            <ProjectService {...service} key={index} />
+                        )) :
+                        <Row className="mt-3">
+                            <Slider {...settings}>
+                                {projectData.map((service, index) => (
+                                    <Col key={index}>
+                                        <ProjectService {...service} />
+                                    </Col>
+                                ))}
+                            </Slider>
+                        </Row>}
                 </Col>
             </Row>
         </Section>

@@ -58,14 +58,35 @@ const Contact = () => {
   };
 
   return (
-    <Section id="contact">
+    <Section id="contact" bg='white'>
       <SectionHeader
         title="I want to hear from you"
         subtitle="Contact Me"
         dropCap
         className='justify-content-center text-center'
       />
-      <Row className={`justify-content-center mt-5 ${isMatch ? 'px-3' : 'px-0'}`}>
+      {isMatch ? <Row className={`justify-content-center mt-5 px-3`}>
+        <Col>
+          <LeafletMap position={position} data={data} className='min-vh-50 w-100' />
+          <h5 className="fs-0 mt-5 mb-2">Connect with me </h5>
+          <Flex className="gap-2">
+            {socialShares.map(({ id, icon, href }) => (
+              <Button
+                key={id}
+                as='a'
+                target="_blank"
+                href={href}
+                variant="falcon-default"
+                type="button"
+                size="sm"
+                className="icon-item icon-item-lg fs-2"
+              >
+                {icon}
+              </Button>
+            ))}
+          </Flex>
+        </Col>
+      </Row> : <Row className={`justify-content-center mt-5 px-0`}>
         <Col
           lg={6}
           xl={6}
@@ -139,7 +160,7 @@ const Contact = () => {
             </Button>}
           </Form>
         </Col>
-      </Row>
+      </Row>}
     </Section>
   )
 }

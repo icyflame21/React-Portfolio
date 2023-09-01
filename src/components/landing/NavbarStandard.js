@@ -64,8 +64,8 @@ const NavbarStandard = () => {
           {navbarToggle && isMatch ? <Modal.Header
             style={{
               background: 'linear-gradient(180deg, rgba(204,235,254,1) 0%, rgba(255,255,255,1) 100%)'
-            }} className="border-0 py-3">
-            <Navbar.Brand className="fw-semi-bold fs-4 px-3 gradient_hero_text" href="#" style={{
+            }} className="border-0">
+            <Navbar.Brand className="fw-semi-bold fs-3 p-3 gradient_hero_text" href="#" style={{
               fontFamily: 'Great Vibes'
             }}>
               biswaranjan.dev
@@ -78,12 +78,12 @@ const NavbarStandard = () => {
           {navbarToggle && isMatch ? <Modal.Body className='py-4'
             style={{ background: 'linear-gradient(180deg, rgba(204,235,254,1) 0%, rgba(255,255,255,1) 100%)' }}>
             <Flex direction='column'>
-              <a href="#about" className='fs-1 fw-medium mx-3 my-2'>About</a>
-              <a href="#skills" className='fs-1 fw-medium mx-3 my-2'>Skills</a>
-              <a href="#background" className='fs-1 fw-medium mx-3 my-2'>Background</a>
-              <a href="#services" className='fs-1 fw-medium mx-3 my-2'>Services</a>
-              <a href="#projects" className='fs-1 fw-medium mx-3 my-2'>Projects</a>
-              <a href="#contact" className='fs-1 fw-medium mx-3 my-2'>Contact</a>
+              <a href="#about" className='fs-0 fw-medium mx-3 my-2'>About</a>
+              <a href="#skills" className='fs-0 fw-medium mx-3 my-2'>Skills</a>
+              <a href="#background" className='fs-0 fw-medium mx-3 my-2'>Background</a>
+              <a href="#services" className='fs-0 fw-medium mx-3 my-2'>Services</a>
+              <a href="#projects" className='fs-0 fw-medium mx-3 my-2'>Projects</a>
+              <a href="#contact" className='fs-0 fw-medium mx-3 my-2'>Contact</a>
             </Flex>
           </Modal.Body> : isMatch ? null :
             <Nav className="ms-auto">

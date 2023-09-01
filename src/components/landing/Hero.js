@@ -8,8 +8,12 @@ import { bgWhiteIcons } from 'data/socialIcons';
 import { settings } from 'config';
 import Flex from 'components/common/Flex';
 import '../../CSS/GradientText.css'
+import classNames from 'classnames';
+import { useMediaQuery, useTheme } from '@mui/material';
 
 const Hero = () => {
+  const theme = useTheme()
+  const isMatch = useMediaQuery(theme.breakpoints.down('md'))
   return (
     <Section
       style={{
@@ -21,9 +25,6 @@ const Hero = () => {
           lg={7}
           xl={7}
           className='d-flex justify-content-center'
-          style={{
-            
-          }}
         >
           <Avatar
             alt="user1"
@@ -62,7 +63,7 @@ const Hero = () => {
               <FontAwesomeIcon icon="play" transform="shrink-6 down-1 right-5" />
             </Button>
           </Flex>
-          <Flex className="gap-2 mt-2">
+          <Flex alignItems='center' className='justify-content-lg-start gap-2 mt-2 justify-content-center'>
             {bgWhiteIcons.map(({ id, icon, href }) => (
               <Button
                 key={id}
@@ -72,7 +73,7 @@ const Hero = () => {
                 variant="falcon-default"
                 type="button"
                 size="sm"
-                className="icon-item icon-item-lg fs-3"
+                className="icon-item icon-item-lg fs-5"
                 style={{
                   background: 'linear-gradient(180deg, rgba(204,235,254,1) 0%, rgba(255,255,255,1) 100%)'
                 }}

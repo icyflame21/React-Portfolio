@@ -19,6 +19,159 @@ import office from 'assets/img/skills/microsoftoffice.svg';
 import nodejs from 'assets/img/skills/nodejs-icon.svg';
 import mongoDb from 'assets/img/skills/mongoDB.svg';
 
+export const technical = [
+  {
+    id: 2,
+    logo: html,
+    name: 'HTML'
+  },
+  {
+    id: 3,
+    logo: css,
+    name: 'CSS'
+  },
+  {
+    id: 4,
+    logo: js,
+    name: 'JavaScript'
+  },
+  {
+    id: 1,
+    logo: react,
+    name: 'React'
+  },
+  {
+    id: 13,
+    logo: react_native,
+    name: 'React Native'
+  },
+  {
+    id: 5,
+    logo: firebase,
+    name: 'Firebase'
+  },
+  {
+    id: 12,
+    logo: redux,
+    name: 'Redux'
+  },
+  {
+    id: 22,
+    logo: nodejs,
+    name: 'Node.js'
+  },
+  {
+    id: 23,
+    logo: mongoDb,
+    name: 'MongoDB'
+  },
+  {
+    id: 8,
+    logo: bootstrap,
+    name: 'Bootstrap 5'
+  },
+  {
+    id: 7,
+    logo: materialUI,
+    name: 'Material UI'
+  },
+  {
+    id: 11,
+    logo: tailwind,
+    name: 'Tailwind CSS'
+  },
+  {
+    id: 15,
+    logo: sass,
+    name: 'SASS'
+  },
+  {
+    id: 18,
+    logo: webpack,
+    name: 'Webpack'
+  },
+  {
+    id: 16,
+    logo: jest,
+    name: 'Jest'
+  },
+  {
+    id: 17,
+    logo: stripe,
+    name: 'Stripe'
+  },
+]
+
+export const toolsSet = [
+  {
+    id: 14,
+    logo: postman,
+    name: 'Postman'
+  },
+  {
+    id: 10,
+    logo: git,
+    name: 'Git'
+  },
+  {
+    id: 6,
+    logo: azure,
+    name: 'Microsoft Azure TFS'
+  },
+  {
+    id: 20,
+    logo: office,
+    name: 'Microsoft Office'
+  },
+  {
+    id: 30,
+    logo: null,
+    name: 'Intellij'
+  },
+  {
+    id: 31,
+    logo: null,
+    name: 'VS Code'
+  },
+  {
+    id: 32,
+    logo: null,
+    name: 'Microsoft Teams'
+  },
+];
+
+export const softSkills = [
+  {
+    id: 35,
+    logo: null,
+    name: 'Teamwork'
+  },
+  {
+    id: 36,
+    logo: null,
+    name: 'Time Management'
+  },
+  {
+    id: 37,
+    logo: null,
+    name: 'Problem Solving'
+  },
+  {
+    id: 38,
+    logo: null,
+    name: 'Remote Collaboration'
+  },
+  {
+    id: 39,
+    logo: null,
+    name: 'Adaptability'
+  },
+  {
+    id: 40,
+    logo: null,
+    name: 'Leadership'
+  },
+];
 
 export default [
   {
