@@ -13,17 +13,9 @@ const FooterStandard = () => {
         <Row className="justify-content-center">
           <Col xs={12} sm="auto">
             <p className="mb-0 text-600">
-              &copy;{' '}{new Date().getFullYear()}-{new Date().getFullYear() + 3}{' '} All rights reserved {isMatch ? '' : '|'} {isMatch ? <p className="mb-0 text-600 mt-1">
-                Made with{' '}❤️ by {' '}
-                <a
-                  className="text-white opacity-85"
-                  href="#"
-                  rel="noopener noreferrer"
-                >
-                  Biswaranjan Subudhi
-                </a>
-              </p> :
-                <>
+              {isMatch ? '' :
+                <> &copy;{' '}{new Date().getFullYear()}-{new Date().getFullYear() + 3}{' '} All rights reserved
+                </>}{isMatch ? '' : '|'} {isMatch ? <p className="mb-0 text-600">
                   Made with{' '}❤️ by {' '}
                   <a
                     className="text-white opacity-85"
@@ -32,7 +24,17 @@ const FooterStandard = () => {
                   >
                     Biswaranjan Subudhi
                   </a>
-                </>}
+                </p> :
+                  <>
+                    Made with{' '}❤️ by {' '}
+                    <a
+                      className="text-white opacity-85"
+                      href="#"
+                      rel="noopener noreferrer"
+                    >
+                      Biswaranjan Subudhi
+                    </a>
+                  </>}
             </p>
           </Col>
         </Row>

@@ -32,82 +32,164 @@ export const technical = [
   {
     id: 2,
     logo: html,
-    name: 'HTML'
+    name: 'HTML',
+    priority: {
+      title: 'Intermediate',
+      color: '#38B6FF',
+      data: 65
+    },
   },
   {
     id: 3,
     logo: css,
-    name: 'CSS'
+    name: 'CSS',
+    priority: {
+      title: 'Intermediate',
+      color: '#38B6FF',
+      data: 75
+    },
   },
   {
     id: 4,
     logo: js,
-    name: 'JavaScript'
+    name: 'JavaScript',
+    priority: {
+      title: 'Intermediate',
+      color: '#38B6FF',
+      data: 75
+    },
   },
   {
     id: 1,
     logo: react,
-    name: 'React'
+    name: 'React',
+    priority: {
+      title: 'Intermediate',
+      color: '#38B6FF',
+      data: 80
+    },
   },
   {
     id: 13,
     logo: react_native,
-    name: 'React Native'
+    name: 'React Native',
+    priority: {
+      title: 'Intermediate',
+      color: '#38B6FF',
+      data: 75
+    },
   },
   {
     id: 5,
     logo: firebase,
-    name: 'Firebase'
+    name: 'Firebase',
+    priority: {
+      title: 'Intermediate',
+      color: '#38B6FF',
+      data: 70
+    },
   },
   {
     id: 12,
     logo: redux,
-    name: 'Redux'
+    name: 'Redux',
+    priority: {
+      title: 'Intermediate',
+      color: '#38B6FF',
+      data: 80
+    },
   },
   {
     id: 22,
     logo: nodejs,
-    name: 'Node.js'
+    name: 'Node.js',
+    priority: {
+      title: 'Beginner',
+      color: '#228B22',
+      data: 40
+    },
+
   },
   {
     id: 23,
     logo: mongoDb,
-    name: 'MongoDB'
+    name: 'MongoDB',
+    priority: {
+      title: 'Beginner',
+      color: '#228B22',
+      data: 40
+    },
+
   },
   {
     id: 8,
     logo: bootstrap,
-    name: 'Bootstrap 5'
+    name: 'Bootstrap 5',
+    priority: {
+      title: 'Intermediate',
+      color: '#38B6FF',
+      data: 80
+    },
   },
   {
     id: 7,
     logo: materialUI,
-    name: 'Material UI'
+    name: 'Material UI',
+    priority: {
+      title: 'Intermediate',
+      color: '#38B6FF',
+      data: 65
+    },
   },
   {
     id: 11,
     logo: tailwind,
-    name: 'Tailwind CSS'
+    name: 'Tailwind CSS',
+    priority: {
+      title: 'Beginner',
+      color: '#228B22',
+      data: 38
+    },
   },
   {
     id: 15,
     logo: sass,
-    name: 'SASS'
+    name: 'SASS',
+    priority: {
+      title: 'Beginner',
+      color: '#228B22',
+      data: 45
+    },
   },
   {
     id: 18,
     logo: webpack,
-    name: 'Webpack'
-  },
-  {
-    id: 16,
-    logo: jest,
-    name: 'Jest'
+    name: 'Webpack',
+    priority: {
+      title: 'Beginner',
+      color: '#228B22',
+      data: 35
+    },
   },
   {
     id: 17,
     logo: stripe,
-    name: 'Stripe'
+    name: 'Stripe',
+    priority: {
+      title: 'Beginner',
+      color: '#228B22',
+      data: 45
+    },
+  },
+  {
+    id: 41,
+    logo: jest,
+    name: 'Jest',
+    priority: {
+      title: 'Beginner',
+      color: '#228B22',
+      data: 25
+    },
   },
 ]
 
@@ -115,37 +197,73 @@ export const toolsSet = [
   {
     id: 14,
     logo: postman,
-    name: 'Postman'
+    name: 'Postman',
+    priority: {
+      title: 'Intermediate',
+      color: '#38B6FF',
+      data: 60
+    },
   },
   {
     id: 10,
     logo: git,
-    name: 'Git'
+    name: 'Git',
+    priority: {
+      title: 'Intermediate',
+      color: '#38B6FF',
+      data: 55
+    },
   },
   {
     id: 6,
     logo: azure,
-    name: 'Microsoft Azure TFS'
+    name: 'Microsoft Azure TFS',
+    priority: {
+      title: 'Intermediate',
+      color: '#38B6FF',
+      data: 65
+    },
   },
   {
     id: 20,
     logo: office,
-    name: 'Microsoft Office'
+    name: 'Microsoft Office',
+    priority: {
+      title: 'Intermediate',
+      color: '#38B6FF',
+      data: 65
+    },
   },
   {
     id: 30,
     logo: intellij,
-    name: 'Intellij'
+    name: 'Intellij',
+    priority: {
+      title: 'Beginner',
+      color: '#228B22',
+      data: 35
+    },
+
   },
   {
     id: 31,
     logo: vscode,
-    name: 'VS Code'
+    name: 'VS Code',
+    priority: {
+      title: 'Intermediate',
+      color: '#38B6FF',
+      data: 78
+    },
   },
   {
     id: 32,
     logo: teams,
-    name: 'Microsoft Teams'
+    name: 'Microsoft Teams',
+    priority: {
+      title: 'Intermediate',
+      color: '#38B6FF',
+      data: 68
+    },
   },
 ];
 
@@ -153,134 +271,61 @@ export const softSkills = [
   {
     id: 35,
     logo: teamwork,
-    name: 'Teamwork'
+    name: 'Teamwork',
+    priority: {
+      title: 'Intermediate',
+      color: '#38B6FF',
+      data: 69
+    },
   },
   {
     id: 36,
     logo: timeManagement,
-    name: 'Time Management'
+    name: 'Time Management',
+    priority: {
+      title: 'Intermediate',
+      color: '#38B6FF',
+      data: 58
+    },
   },
   {
     id: 37,
     logo: problemSolving,
-    name: 'Problem Solving'
+    name: 'Problem Solving',
+    priority: {
+      title: 'Intermediate',
+      color: '#38B6FF',
+      data: 67
+    },
   },
   {
     id: 38,
     logo: remoteCollab,
-    name: 'Remote Collaboration'
+    name: 'Remote Collaboration',
+    priority: {
+      title: 'Intermediate',
+      color: '#38B6FF',
+      data: 79
+    },
   },
   {
     id: 39,
     logo: adaptibility,
-    name: 'Adaptability'
+    name: 'Adaptability',
+    priority: {
+      title: 'Intermediate',
+      color: '#38B6FF',
+      data: 65
+    },
   },
   {
     id: 40,
     logo: leadership,
-    name: 'Leadership'
-  },
-];
-
-export default [
-  {
-    id: 2,
-    logo: html,
-    name: 'HTML'
-  },
-  {
-    id: 3,
-    logo: css,
-    name: 'CSS'
-  },
-  {
-    id: 4,
-    logo: js,
-    name: 'JavaScript'
-  },
-  {
-    id: 1,
-    logo: react,
-    name: 'React'
-  },
-  {
-    id: 13,
-    logo: react_native,
-    name: 'React Native'
-  },
-  {
-    id: 5,
-    logo: firebase,
-    name: 'Firebase'
-  },
-  {
-    id: 12,
-    logo: redux,
-    name: 'Redux'
-  },
-  {
-    id: 22,
-    logo: nodejs,
-    name: 'Node.js'
-  },
-  {
-    id: 23,
-    logo: mongoDb,
-    name: 'MongoDB'
-  },
-  {
-    id: 8,
-    logo: bootstrap,
-    name: 'Bootstrap 5'
-  },
-  {
-    id: 7,
-    logo: materialUI,
-    name: 'Material UI'
-  },
-  {
-    id: 11,
-    logo: tailwind,
-    name: 'Tailwind CSS'
-  },
-  {
-    id: 15,
-    logo: sass,
-    name: 'SASS'
-  },
-  {
-    id: 18,
-    logo: webpack,
-    name: 'Webpack'
-  },
-  {
-    id: 16,
-    logo: jest,
-    name: 'Jest'
-  },
-  {
-    id: 14,
-    logo: postman,
-    name: 'Postman'
-  },
-  {
-    id: 17,
-    logo: stripe,
-    name: 'Stripe'
-  },
-  {
-    id: 10,
-    logo: git,
-    name: 'Git'
-  },
-  {
-    id: 6,
-    logo: azure,
-    name: 'Microsoft Azure'
-  },
-  {
-    id: 20,
-    logo: office,
-    name: 'Microsoft Office'
+    name: 'Leadership',
+    priority: {
+      title: 'Intermediate',
+      color: '#38B6FF',
+      data: 75
+    },
   },
 ];

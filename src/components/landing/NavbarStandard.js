@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Flex from 'components/common/Flex';
 import classNames from 'classnames';
 import { useMediaQuery, useTheme } from '@mui/material';
+import { HiOutlineMenuAlt2 } from 'react-icons/hi'
 
 const NavbarStandard = () => {
   const {
@@ -52,7 +53,22 @@ const NavbarStandard = () => {
         }}>
           biswaranjan.dev
         </Navbar.Brand>
-        <Navbar.Toggle />
+        {isMatch && <Nav className="ms-auto">
+          <Nav.Link
+            className="theme-control-toggle me-3"
+            onClick={() => setConfig('isDark', !isDark)}
+          >
+            <div className="theme-control-toggle-label">
+              <FontAwesomeIcon
+                icon={isDark ? 'sun' : 'moon'}
+                className="fs-0"
+              />
+            </div>
+          </Nav.Link>
+        </Nav>}
+        <Navbar.Toggle >
+          <HiOutlineMenuAlt2 className='fs-4 gradient_hero_text' />
+        </Navbar.Toggle>
         <Navbar.Offcanvas
           scroll={true}
           style={{
@@ -88,9 +104,9 @@ const NavbarStandard = () => {
           </Modal.Body> : isMatch ? null :
             <Nav className="ms-auto">
               <Flex direction='row' alignItems='center' >
-              <Nav.Item>
+                <Nav.Item>
 
-              </Nav.Item>
+                </Nav.Item>
                 <Button as='a' href="#about"
                   variant="outline-primary" className='fs-0 fw-medium border-0 rounded-pill'>About</Button>
                 <Button as='a' href="#skills"

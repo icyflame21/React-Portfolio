@@ -37,13 +37,13 @@ const Background = () => {
             <Row className="justify-content-center">
                 <Col>
                     <SectionHeader
-                        title="My Education and Experience"
-                        subtitle="Why hire me for your next project?"
+                        title="My education and experience form a solid foundation."
+                        subtitle="Education and Experience"
                         dropCap
                         className='justify-content-center text-center'
                     />
                     <Card className="shadow-none border-0 bg-transparent">
-                        <Card.Body className="px-sm-4 px-md-8 px-lg-6 px-xxl-8">
+                        <Card.Body>
                             <div className="timeline-vertical">
                                 {VerticalTimelineData.map((item, index) => {
                                     const { year, date, title, description, icon } = item;

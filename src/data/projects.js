@@ -1,14 +1,14 @@
-import ezSCM from 'assets/img/projects/ezSCM.png'
-import omnifood from 'assets/img/projects/Omnifood.png'
-import Swiggy from 'assets/img/projects/Swiggy.jpg'
+import ezSCM from 'assets/img/projects/ezSCM Web.svg'
+import ezSCMmobile from 'assets/img/projects/ezSCM Mobile.svg'
+import omnifood from 'assets/img/projects/Omnifood.svg'
+import Swiggy from 'assets/img/projects/Swiggy.svg'
 
 export const projectData = [
   {
     id: 0,
-    title: 'ezSCM',
-    subTitle: 'Empowering SMEs with Effortless Supply Chain Management. Source, manage inventory, optimize production easily. Maximize sales, minimize costs. Simplify shipping, orders & collaboration. Your solution for seamless supply chain control.',
+    title: 'ezSCM (Web App)',
+    subTitle: "Leveraged the Falcon theme's capabilities to ensure a seamless and uniform user interface across all screens.                                                                                               Key responsibilities encompassed order management, vendor collaboration, SKU management, seamless Stripe subscription integration, and the development of essential admin modules.",
     liveUrl: 'https://ezscm.ai/',
-    githubUrl: undefined,
     thumbnail: ezSCM,
     techStack: [
       { id: 1, title: 'React' },
@@ -17,14 +17,27 @@ export const projectData = [
       { id: 4, title: 'Localization' },
       { id: 5, title: 'Stripe' },
       { id: 6, title: 'SASS' },
-      { id: 7, title: 'Redux' },
-      { id: 8, title: 'React Native' },
       { id: 9, title: 'Webpack' },
       { id: 10, title: 'Azure TFS' },
     ]
   },
   {
     id: 1,
+    title: 'ezSCM (Mobile App)',
+    subTitle: 'As the Core Lead Developer for the mobile app, I oversaw Redux state management for a smoother user experience. Faster app dev for both iOS and Android. Core responsibilities includes inventory and order management, raw material sourcing (direct and group purchases), and agile development based on client feedback.',
+    playstoreURL: 'https://play.google.com/store/apps/details?id=com.saveplex.rn.oneapp&pli=1',
+    appstoreURL: 'https://apps.apple.com/in/app/saveplex/id6445966604',
+    thumbnail: ezSCMmobile,
+    techStack: [
+      { id: 8, title: 'React Native' },
+      { id: 2, title: 'React Native Paper' },
+      { id: 7, title: 'Redux' },
+      { id: 4, title: 'Localization' },
+      { id: 10, title: 'Azure TFS' },
+    ]
+  },
+  {
+    id: 2,
     title: 'Omnifood',
     subTitle: 'A global recipe search site offering seamless browsing. No annoying ads, just culinary exploration. Mobile-first design, advanced code splitting, secure sign-in, sleek UI, recipe creation/editing, dark mode, autosuggest. Revolutionizing recipe discovery.',
     liveUrl: 'https://omnifood.in/',
@@ -39,7 +52,7 @@ export const projectData = [
     ]
   },
   {
-    id: 2,
+    id: 3,
     title: 'Swiggy (Clone)',
     subTitle: 'Leading Indian food ordering & delivery platform. A solo project completed in 7 days. Features include real-time location retrieval, Firebase OTP authentication, advanced filtering, and custom React-Map-GL for precise current location. Seamlessly handles payments through Razorpay gateway.',
     liveUrl: 'https://swiggy-foodlovers.netlify.app/',

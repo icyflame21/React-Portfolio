@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Row, Col, Form, Button, Spinner } from 'react-bootstrap';
 import Section from 'components/common/Section';
 import { useMediaQuery, useTheme } from '@mui/material';
@@ -7,8 +7,8 @@ import { socialShares } from 'data/socialIcons';
 import LeafletMap from 'components/common/LeafletMap';
 import Flex from 'components/common/Flex';
 import { toast } from 'react-toastify';
-import axios from 'axios';
 import { settings } from 'config';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const theme = useTheme()
@@ -26,36 +26,25 @@ const Contact = () => {
       location: 'Bangalore'
     },
   ]
-  const [inputs, setInputs] = useState({});
+  const form = useRef();
 
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInputs(values => ({ ...values, [name]: value }))
-  }
   const sendEmail = (e) => {
-    setLoading(true)
     e.preventDefault();
-    const responseData = {
-      name: inputs.clientName,
-      email: inputs.clientEmail,
-      message: inputs.clientMessage,
-    };
-    axios.post(settings.formSubmit, responseData).then((res) => {
-      setLoading(false)
-      e.target.reset()
-      toast.success('Email has been sent successfully', {
-        theme: 'colored'
-      });
-    })
-      .catch(() => {
+    setLoading(true)
+
+    emailjs.sendForm(settings.serviceId, settings.templateId, form.current, settings.publicKey)
+      .then(() => {
         setLoading(false)
         e.target.reset()
-        toast.warn('Network Error\nPlease try again later', {
+        toast.success('Email has been sent successfully', {
           theme: 'colored'
         });
-      })
+      }, (error) => {
+        setLoading(false)
+        e.target.reset()
+      });
   };
+
 
   return (
     <Section id="contact" bg='white'>
@@ -113,23 +102,19 @@ const Contact = () => {
         <Col
           lg={6}
           xl={6}>
-          <Form onSubmit={sendEmail}
+          <Form ref={form} onSubmit={sendEmail}
             className={isMatch ? 'mt-4' : ''}>
             <Row className="g-3">
               <Form.Group as={Col} lg={6} xl={6}>
                 <Form.Control
                   disabled={loading}
                   required
-                  value={inputs.clientName || ""}
-                  onChange={handleChange}
                   placeholder="Your Name*" name='clientName' />
               </Form.Group>
 
               <Form.Group className="mb-3" as={Col} lg={6} xl={6}>
                 <Form.Control
                   disabled={loading}
-                  value={inputs.clientEmail || ""}
-                  onChange={handleChange}
                   type="email" required placeholder="Your Email*" name='clientEmail' />
               </Form.Group>
             </Row>
@@ -137,8 +122,6 @@ const Contact = () => {
             <Form.Group className="mb-3">
               <Form.Control
                 disabled={loading}
-                value={inputs.clientMessage || ""}
-                onChange={handleChange}
                 required as="textarea" rows={7} placeholder="Your Message*"
                 name='clientMessage'
                 style={{
