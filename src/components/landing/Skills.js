@@ -11,9 +11,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SimpleBarReact from 'simplebar-react';
 import FalconCardHeader from 'components/common/FalconCardHeader';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { SiCodersrank } from 'react-icons/si'
-import { FaTools } from 'react-icons/fa'
-import { MdOutlineManageHistory } from 'react-icons/md'
+import {SiCodersrank} from 'react-icons/si'
+import {FaTools} from 'react-icons/fa'
+import {MdOutlineManageHistory} from 'react-icons/md'
 
 const Skills = () => {
     const theme = useTheme()
@@ -47,7 +47,7 @@ const Skills = () => {
                                                     eventKey="technical"
                                                     className="mb-0 d-flex align-items-center gap-2 py-3 justify-content-center"
                                                 >
-                                                    <SiCodersrank className="text-600 fs-1" />
+                                                    <SiCodersrank className="text-600" />
                                                     <h6 className="mb-0 text-600 fs-0">
                                                         Technical
                                                     </h6>
@@ -58,7 +58,7 @@ const Skills = () => {
                                                     eventKey="soft"
                                                     className="mb-0 d-flex align-items-center gap-2 py-3 justify-content-center"
                                                 >
-                                                    <MdOutlineManageHistory className="text-600 fs-1" />
+                                                    <MdOutlineManageHistory className="text-600" />
                                                     <h6 className="mb-0 text-600 fs-0">Soft</h6>
                                                 </Nav.Link>
                                             </Nav.Item>
@@ -68,7 +68,7 @@ const Skills = () => {
                                                     className="mb-0 d-flex align-items-center gap-2 py-3 justify-content-center text-center"
                                                 >
                                                     <FaTools
-                                                        className="text-600 fs-0"
+                                                        className="text-600"
                                                     />
                                                     <h6 className="mb-0 text-600 fs-0">Tools</h6>
                                                 </Nav.Link>

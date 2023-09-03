@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Section from 'components/common/Section';
@@ -8,7 +8,6 @@ import { bgWhiteIcons } from 'data/socialIcons';
 import { settings } from 'config';
 import Flex from 'components/common/Flex';
 import '../../CSS/GradientText.css'
-import classNames from 'classnames';
 import { useMediaQuery, useTheme } from '@mui/material';
 
 const Hero = () => {
