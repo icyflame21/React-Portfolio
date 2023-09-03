@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import PageNotFoundJSON from '../../assets/img/animated-icons/Page_Not_Found.json'
 import Lottie from 'react-lottie';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

@@ -43,17 +43,16 @@ const NavbarStandard = () => {
       expanded={navbarToggle}
       fixed='top'
       expand={topNavbarBreakpoint}
-      style={{
-        background: showDropShadow ? 'linear-gradient(180deg, rgba(204,235,254,1) 0%, rgba(255,255,255,1) 100%)' : 'transparent'
-      }}
+
       className={classNames('navbar-glass', {
-        'navbar-glass-shadow': showDropShadow
+        'navbar-glass-shadow bg-light': showDropShadow,
+        'bg-transparent': !showDropShadow
       })}>
       <Container fluid className={`d-flex justify-content-between align-items-center ${isMatch ? 'py-2' : ''}`}>
         {isMatch ? <Avatar
           size="3xl"
           src={Logo}
-        /> : <Navbar.Brand className="fw-semi-bold fs-6 gradient_hero_text" href="#" style={{
+        /> : <Navbar.Brand className="fw-semi-bold fs-6 px-1 gradient_hero_text" href="#" style={{
           fontFamily: 'Great Vibes'
         }}>
           Biswaranjan S.
