@@ -54,7 +54,7 @@ const About = () => {
                         </Card>
                     </Col>
                 </Row> :
-                <Row className={`justify-content-center align-items-center px-3`}>
+                <Row className={`justify-content-center align-items-center px-0`}>
                     <Col
                         lg={5}
                         xl={5}

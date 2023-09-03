@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "biswara-7bc3e"
-  }
+    "default": "biswaranjan-s",
+    "development": "biswaranjan-s"
+  },
+  "targets": {},
+  "etags": {}
 }

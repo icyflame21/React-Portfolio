@@ -15,11 +15,7 @@ const Hero = () => {
   const theme = useTheme()
   const isMatch = useMediaQuery(theme.breakpoints.down('md'))
   return (
-    <Section
-      style={{
-        background: 'linear-gradient(180deg, rgba(204,235,254,1) 0%, rgba(255,255,255,1) 100%)'
-      }}
-    >
+    <Section bg='light'>
       <Row className="justify-content-center align-items-center pt-3">
         <Col
           lg={7}
@@ -39,14 +35,14 @@ const Hero = () => {
           <p className='fs-1 text-youtube fw-semi-bold'>
             Software Developer
           </p>
-          <h1 className="fw-bold gradient_hero_sub_text">
+          <h1 className="fw-bold text-1000">
             Hey I'm <br />
             <span className='gradient_hero_text'>
               Biswaranjan Subudhi
             </span>
           </h1>
           <i>
-            <p className="fs-1 mt-2 gradient_hero_sub_text">
+            <p className="fs-1 mt-2 text-1000 opacity-75">
               Am a dedicated Indian software developer with a passion for crafting and extensive experience in constructing web applications.
             </p>
           </i>

@@ -5,6 +5,7 @@ import '../../CSS/GradientText.css'
 import SectionHeader from './SectionHeader';
 import { VerticalTimelineData } from 'data/timeline';
 import classNames from 'classnames';
+import { useMediaQuery, useTheme } from '@mui/material';
 
 const Background = () => {
     const handleItalic = (text) => {
@@ -32,17 +33,21 @@ const Background = () => {
 
         return <p className='fs--1 mb-0 fw-semi-bold'>{formattedDateRange}</p>;
     }
+
+    const theme = useTheme()
+    const isMatch = useMediaQuery(theme.breakpoints.down('lg'))
+
     return (
         <Section id="background" bg='white'>
             <Row className="justify-content-center">
                 <Col>
                     <SectionHeader
-                        title="My education and experience form a solid foundation."
-                        subtitle="Education and Experience"
+                        title="My education & experience form a solid foundation."
+                        subtitle="Education & Experience"
                         dropCap
-                        className='justify-content-center text-center'
+                        className={`justify-content-center text-center  ${isMatch ? 'px-3' : 'px-0'}`}
                     />
-                    <Card className="shadow-none border-0 bg-transparent">
+                    <Card className="shadow-none border-0 bg-transparent mt-3">
                         <Card.Body>
                             <div className="timeline-vertical">
                                 {VerticalTimelineData.map((item, index) => {
