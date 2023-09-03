@@ -43,7 +43,7 @@ const Services = () => {
             dropCap
             className='justify-content-center text-center'
           />
-          <div className="mt-5">
+          <div className="mt-3">
             {serviceList.map((service, index) => (
               <CardService {...service} key={index} />
             ))}

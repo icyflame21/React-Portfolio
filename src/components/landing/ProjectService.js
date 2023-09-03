@@ -103,13 +103,13 @@ const ProjectService = ({ subTitle, title, liveUrl, githubUrl, thumbnail, techSt
                         </Col>
                         <Col xs={12}>
                             <Card.Body>
-                                <Card.Title className='text-dark'>{title}</Card.Title>
-                                <Card.Text className='fs--1 text-900'>{subTitle}</Card.Text>
-                                <div className='mb-3 '>
+                            <div className='mb-3 '>
                                     {techStack.map((ele) => (
                                         <SoftBadge key={ele.id} pill bg='success' className='fs--2 me-2 text-wrap text-start'>{ele.title}</SoftBadge>
                                     ))}
                                 </div>
+                                <Card.Title className='text-dark'>{title}</Card.Title>
+                                <Card.Text className='fs--1 text-900'>{subTitle}</Card.Text>
                                 <div className="mt-2">
                                     <Flex className='gap-3 align-items-center'>
                                         {liveUrl && <Button

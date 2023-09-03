@@ -6,11 +6,14 @@ import SectionHeader from './SectionHeader';
 import { softSkills, technical, toolsSet } from 'data/skills';
 import { useMediaQuery, useTheme } from '@mui/material';
 import Flex from 'components/common/Flex';
-import Avatar from 'components/common/Avatar';
 import { PrioritySelect } from './PrioritySelect';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SimpleBarReact from 'simplebar-react';
 import FalconCardHeader from 'components/common/FalconCardHeader';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { SiCodersrank } from 'react-icons/si'
+import { FaTools } from 'react-icons/fa'
+import { MdOutlineManageHistory } from 'react-icons/md'
 
 const Skills = () => {
     const theme = useTheme()
@@ -44,7 +47,7 @@ const Skills = () => {
                                                     eventKey="technical"
                                                     className="mb-0 d-flex align-items-center gap-2 py-3 justify-content-center"
                                                 >
-                                                    <FontAwesomeIcon icon="ticket-alt" className="text-600" />
+                                                    <SiCodersrank className="text-600 fs-1" />
                                                     <h6 className="mb-0 text-600 fs-0">
                                                         Technical
                                                     </h6>
@@ -55,7 +58,7 @@ const Skills = () => {
                                                     eventKey="soft"
                                                     className="mb-0 d-flex align-items-center gap-2 py-3 justify-content-center"
                                                 >
-                                                    <FontAwesomeIcon icon="check" className="text-600" />
+                                                    <MdOutlineManageHistory className="text-600 fs-1" />
                                                     <h6 className="mb-0 text-600 fs-0">Soft</h6>
                                                 </Nav.Link>
                                             </Nav.Item>
@@ -64,9 +67,8 @@ const Skills = () => {
                                                     eventKey="tools"
                                                     className="mb-0 d-flex align-items-center gap-2 py-3 justify-content-center text-center"
                                                 >
-                                                    <FontAwesomeIcon
-                                                        icon="envelope-open-text"
-                                                        className="text-600"
+                                                    <FaTools
+                                                        className="text-600 fs-0"
                                                     />
                                                     <h6 className="mb-0 text-600 fs-0">Tools</h6>
                                                 </Nav.Link>
@@ -83,7 +85,14 @@ const Skills = () => {
                                                         <tr key={ele.id}>
                                                             <td>
                                                                 <Flex alignItems="center">
-                                                                    {ele.logo && <Avatar src={ele.logo} size="m" className="me-2" />}
+                                                                    {ele.logo && <LazyLoadImage
+                                                                        effect='blur' src={ele.logo}
+                                                                        style={{
+                                                                            width: '25px',
+                                                                            height: '25px',
+                                                                            objectFit: 'contain'
+                                                                        }}
+                                                                        className="fluid me-2" />}
                                                                     <h6 className="mb-0 text-900">
                                                                         {ele.name}
                                                                     </h6>
@@ -108,7 +117,14 @@ const Skills = () => {
                                                         <tr key={ele.id}>
                                                             <td>
                                                                 <Flex alignItems="center">
-                                                                    {ele.logo && <Avatar src={ele.logo} size="m" className="me-2" />}
+                                                                    {ele.logo && <LazyLoadImage
+                                                                        effect='blur' src={ele.logo}
+                                                                        style={{
+                                                                            width: '25px',
+                                                                            height: '25px',
+                                                                            objectFit: 'contain'
+                                                                        }}
+                                                                        className="fluid me-2" />}
                                                                     <h6 className="mb-0 text-900">
                                                                         {ele.name}
                                                                     </h6>
@@ -133,8 +149,14 @@ const Skills = () => {
                                                         <tr key={ele.id}>
                                                             <td>
                                                                 <Flex alignItems="center">
-                                                                    {ele.logo &&
-                                                                        <Avatar src={ele.logo} size="m" className="me-2" />}
+                                                                    {ele.logo && <LazyLoadImage
+                                                                        effect='blur' src={ele.logo}
+                                                                        style={{
+                                                                            width: '25px',
+                                                                            height: '25px',
+                                                                            objectFit: 'contain'
+                                                                        }}
+                                                                        className="fluid me-2" />}
                                                                     <h6 className="mb-0 text-900">
                                                                         {ele.name}
                                                                     </h6>
@@ -172,7 +194,14 @@ const Skills = () => {
                                                     <tr key={ele.id}>
                                                         <td>
                                                             <Flex alignItems="center">
-                                                                {ele.logo && <Avatar src={ele.logo} size="m" className="me-2" />}
+                                                                {ele.logo && <LazyLoadImage
+                                                                    effect='blur' src={ele.logo}
+                                                                    style={{
+                                                                        width: '25px',
+                                                                        height: '25px',
+                                                                        objectFit: 'contain'
+                                                                    }}
+                                                                    className="fluid me-2" />}
                                                                 <h6 className="mb-0 text-900">
                                                                     {ele.name}
                                                                 </h6>
@@ -225,8 +254,14 @@ const Skills = () => {
                                                     <tr key={ele.id}>
                                                         <td>
                                                             <Flex alignItems="center">
-                                                                {ele.logo &&
-                                                                    <Avatar src={ele.logo} size="m" className="me-2" />}
+                                                                {ele.logo && <LazyLoadImage
+                                                                    effect='blur' src={ele.logo}
+                                                                    style={{
+                                                                        width: '25px',
+                                                                        height: '25px',
+                                                                        objectFit: 'contain'
+                                                                    }}
+                                                                    className="fluid me-2" />}
                                                                 <h6 className="mb-0 text-900">
                                                                     {ele.name}
                                                                 </h6>
@@ -261,7 +296,14 @@ const Skills = () => {
                                                     <tr key={ele.id}>
                                                         <td>
                                                             <Flex alignItems="center">
-                                                                {ele.logo && <Avatar src={ele.logo} size="m" className="me-2" />}
+                                                                {ele.logo && <LazyLoadImage
+                                                                    effect='blur' src={ele.logo}
+                                                                    style={{
+                                                                        width: '25px',
+                                                                        height: '25px',
+                                                                        objectFit: 'contain'
+                                                                    }}
+                                                                    className="fluid me-2" />}
                                                                 <h6 className="mb-0 text-900">
                                                                     {ele.name}
                                                                 </h6>

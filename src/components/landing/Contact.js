@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Row, Col, Form, Button, Spinner, Card } from 'react-bootstrap';
 import Section from 'components/common/Section';
 import { useMediaQuery, useTheme } from '@mui/material';
@@ -8,47 +8,7 @@ import Flex from 'components/common/Flex';
 import { toast } from 'react-toastify';
 import { settings } from 'config';
 import emailjs from '@emailjs/browser';
-import GoogleMap from 'components/common/GoogleMap';
-import AppContext from 'context/Context';
-
-
-const MapDark = () => {
-  return (
-    <GoogleMap
-      initialCenter={{
-        lat: 12.903960,
-        lng: 77.578651
-      }}
-      mapStyle="Midnight"
-      className="rounded-soft position-relative w-100 rounded"
-      style={{ minHeight: '50vh' }}
-    >
-      <h1 className="fs-0 text-youtube">Current Location</h1>
-      <p className="m-0 text-900 fw-medium">
-        17th Cross Road, JP Nagar,<span className='text-twitter ms-1'>Bangalore</span>
-      </p>
-    </GoogleMap>
-  );
-};
-
-const MapLight = () => {
-  return (
-    <GoogleMap
-      initialCenter={{
-        lat: 12.903960,
-        lng: 77.578651
-      }}
-      mapStyle="Default"
-      className="rounded-soft position-relative w-100 rounded"
-      style={{ minHeight: '50vh' }}
-    >
-      <h1 className="fs-0 text-youtube">Current Location</h1>
-      <p className="m-0 text-900 fw-medium">
-        17th Cross Road, JP Nagar,<span className='text-twitter ms-1'>Bangalore</span>
-      </p>
-    </GoogleMap>
-  );
-};
+import LeafletMap from 'components/common/LeafletMap';
 
 const Contact = () => {
   const theme = useTheme()
@@ -57,6 +17,17 @@ const Contact = () => {
 
   const form = useRef();
 
+  const position = [12.903960, 77.578651]
+  const data = [
+    {
+      id: 0,
+      lat: 12.903960,
+      long: 77.578651,
+      name: 'Current Location',
+      street: '17th Cross Road, JP Nagar, ',
+      location: 'Bangalore'
+    },
+  ]
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -70,17 +41,13 @@ const Contact = () => {
           theme: 'colored'
         });
       }).catch(() => {
-        toast.warn('Network Error\nPlease try again later', {
+        toast.warn('Network Error \nPlease try again later', {
           theme: 'colored'
         });
         setLoading(false)
         e.target.reset()
       })
   };
-
-  const {
-    config: { isDark }
-  } = useContext(AppContext);
 
   return (
     <Section id="contact" bg='white'>
@@ -94,7 +61,9 @@ const Contact = () => {
         <Card className="h-100 m-3">
           <Card.Body className="p-0">
             <Row className="g-0 h-100">
-              <Col xs={12}>{isDark ? <MapDark /> : <MapLight />}</Col>
+              <Col xs={12}>
+                <LeafletMap position={position} data={data} className='min-vh-50 w-100' />
+              </Col>
               <Col xs={12} className="p-x1 flex-1">
                 <h5 className="fs-0 mt-3 mb-2">Connect with me </h5>
                 <Flex className="gap-2">
@@ -122,7 +91,7 @@ const Contact = () => {
             lg={6}
             xl={6}
           >
-            {isDark ? <MapDark /> : <MapLight />}
+            <LeafletMap position={position} data={data} className='min-vh-50 w-100' />
             <h5 className="fs-0 mt-3 mb-2">Connect with me </h5>
             <Flex className="gap-2">
               {socialShares.map(({ id, icon, href }) => (
@@ -145,7 +114,7 @@ const Contact = () => {
             lg={6}
             xl={6}>
             <Form ref={form} onSubmit={sendEmail}
-              className={isMatch ? 'mt-4' : ''}>
+              className={isMatch ? 'mt-4' : ''} autoComplete='off'>
               <Row className="g-3">
                 <Form.Group as={Col} lg={6} xl={6}>
                   <Form.Control

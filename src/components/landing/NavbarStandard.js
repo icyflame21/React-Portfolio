@@ -9,6 +9,11 @@ import { useMediaQuery, useTheme } from '@mui/material';
 import { HiOutlineMenuAlt2 } from 'react-icons/hi'
 import Avatar from 'components/common/Avatar';
 import Logo from 'assets/img/team/logo.png'
+import { FcAbout, FcServices, FcContacts } from 'react-icons/fc'
+import { GiSkills } from 'react-icons/gi'
+import { MdCastForEducation } from 'react-icons/md'
+import { GrProjects } from 'react-icons/gr'
+
 
 const NavbarStandard = () => {
   const {
@@ -43,7 +48,9 @@ const NavbarStandard = () => {
       expanded={navbarToggle}
       fixed='top'
       expand={topNavbarBreakpoint}
-
+      style={{
+        background: showDropShadow ? 'linear-gradient(180deg, rgba(204,235,254,1) 0%, rgba(255,255,255,1) 100%)' : 'transparent'
+      }}
       className={classNames('navbar-glass', {
         'navbar-glass-shadow bg-light': showDropShadow,
         'bg-transparent': !showDropShadow
@@ -98,6 +105,7 @@ const NavbarStandard = () => {
                       href='#about'
                       className='p-0 fs-0 fw-medium text-700'
                     >
+                      <FcAbout className='me-2 fs-1' />
                       About
                     </Button></td>
                 </tr>
@@ -108,6 +116,7 @@ const NavbarStandard = () => {
                       href='#skills'
                       className='p-0 fs-0 fw-medium text-700'
                     >
+                      <GiSkills className='me-2 fs-1 text-google-plus' />
                       Skills
                     </Button></td>
                 </tr>
@@ -118,18 +127,20 @@ const NavbarStandard = () => {
                       href='#background'
                       className='p-0 fs-0 fw-medium text-700'
                     >
+                      <MdCastForEducation className='me-2 fs-1 text-success' />
                       Background
                     </Button></td>
                 </tr>
                 <tr>
-                  {/* <td>
-                   <Button
+                  <td>
+                    <Button
                       variant="link"
                       href='#services'
                       className='p-0 fs-0 fw-medium text-700'
                     >
+                      <FcServices className='me-2 fs-1' />
                       Services
-                    </Button></td> */}
+                    </Button></td>
                 </tr>
                 <tr>
                   <td>
@@ -138,6 +149,7 @@ const NavbarStandard = () => {
                       href='#projects'
                       className='p-0 fs-0 fw-medium text-700'
                     >
+                      <GrProjects className='me-2 fs-1' />
                       Projects
                     </Button>
                   </td>
@@ -149,6 +161,7 @@ const NavbarStandard = () => {
                       href='#contact'
                       className='p-0 fs-0 fw-medium text-700'
                     >
+                      <FcContacts className='me-2 fs-1' />
                       Contact
                     </Button>
                   </td>
@@ -164,8 +177,8 @@ const NavbarStandard = () => {
                   variant="outline-primary" className='fs-0 fw-medium border-0 rounded-pill'>Skills</Button>
                 <Button as='a' href="#background"
                   variant="outline-primary" className='fs-0 fw-medium border-0 rounded-pill'>Background</Button>
-                {/* <Button as='a' href="#services"
-                  variant="outline-primary" className='fs-0 fw-medium border-0 rounded-pill'>Services</Button> */}
+                <Button as='a' href="#services"
+                  variant="outline-primary" className='fs-0 fw-medium border-0 rounded-pill'>Services</Button>
                 <Button as='a' href="#projects"
                   variant="outline-primary" className='fs-0 fw-medium border-0 rounded-pill'>Projects</Button>
                 <Button as='a' href="#contact"
