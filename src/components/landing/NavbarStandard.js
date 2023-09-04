@@ -12,7 +12,7 @@ import Logo from 'assets/img/team/logo.png'
 import { FcAbout, FcServices, FcContacts } from 'react-icons/fc'
 import { GiSkills } from 'react-icons/gi'
 import { MdCastForEducation } from 'react-icons/md'
-import { GrProjects } from 'react-icons/gr'
+import { AiFillProject } from 'react-icons/ai'
 
 
 const NavbarStandard = () => {
@@ -55,16 +55,16 @@ const NavbarStandard = () => {
         'navbar-glass-shadow bg-light': showDropShadow,
         'bg-transparent': !showDropShadow
       })}>
-      <Container fluid className={`d-flex justify-content-between align-items-center ${isMatch ? 'py-2' : ''}`}>
+      <Container fluid className={`d-flex justify-content-between align-items-center py-2`}>
         {isMatch ? <Avatar
           size="3xl"
           src={Logo}
-        /> : <Navbar.Brand className="fw-semi-bold fs-6 px-1 gradient_hero_text" href="#" style={{
-          fontFamily: 'Great Vibes'
+        /> : <Navbar.Brand className="fw-semi-bold fs-5 px-1 gradient_hero_text" href="#" style={{
+          fontFamily: 'Great Vibes',
         }}>
           Biswaranjan S.
         </Navbar.Brand>}
-        {isMatch && <Nav className="ms-auto">
+        {/* {isMatch && <Nav className="ms-auto">
           <Nav.Link
             className="theme-control-toggle me-3"
             onClick={() => setConfig('isDark', !isDark)}
@@ -76,21 +76,22 @@ const NavbarStandard = () => {
               />
             </div>
           </Nav.Link>
-        </Nav>}
+        </Nav>} */}
         <Navbar.Toggle >
           <HiOutlineMenuAlt2 className='fs-4 gradient_hero_text' />
         </Navbar.Toggle>
         <Navbar.Offcanvas
-          scroll={true}
+          className='bg-light border-0 shadow-none'
           style={{
-            background: 'transparent',
-            border: 'none',
             width: '70%',
           }}
         >
-          {navbarToggle && isMatch ? <Modal.Header className='bg-light border-0 border-bottom border-2 border-primary w-100'>
+          {navbarToggle && isMatch ? <Modal.Header className='bg-light border-0 border-bottom border-2 border-primary w-100'
+            style={{
+              background: 'linear-gradient(180deg, rgba(204,235,254,1) 0%, rgba(255,255,255,1) 100%)'
+            }}>
             <Navbar.Brand className="fw-semi-bold fs-3 p-3 gradient_hero_text" href="#" style={{
-              fontFamily: 'Great Vibes'
+              fontFamily: 'Great Vibes',
             }}>
               Biswaranjan S.
             </Navbar.Brand>
@@ -149,7 +150,7 @@ const NavbarStandard = () => {
                       href='#projects'
                       className='p-0 fs-0 fw-medium text-700'
                     >
-                      <GrProjects className='me-2 fs-1' />
+                      <AiFillProject className='me-2 fs-1 gradient_hero_text' />
                       Projects
                     </Button>
                   </td>
@@ -183,7 +184,7 @@ const NavbarStandard = () => {
                   variant="outline-primary" className='fs-0 fw-medium border-0 rounded-pill'>Projects</Button>
                 <Button as='a' href="#contact"
                   variant="outline-primary" className='fs-0 fw-medium border-0 rounded-pill'>Contact</Button>
-                <Nav.Link
+                {/* <Nav.Link
                   className="theme-control-toggle"
                   onClick={() => setConfig('isDark', !isDark)}
                 >
@@ -193,7 +194,7 @@ const NavbarStandard = () => {
                       className="fs-0"
                     />
                   </div>
-                </Nav.Link>
+                </Nav.Link> */}
               </Flex>
             </Nav>}
         </Navbar.Offcanvas>
