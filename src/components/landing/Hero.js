@@ -34,14 +34,14 @@ const Hero = () => {
           <p className='fs-1 text-youtube fw-semi-bold'>
             Software Developer
           </p>
-          <h1 className="fw-bold text-1000">
+          <h1 className="fw-bold text-black">
             Hey I'm <br />
             <span className='gradient_hero_text'>
               Biswaranjan Subudhi
             </span>
           </h1>
           <i>
-            <p className="fs-1 mt-2 text-1000 opacity-75">
+            <p className="fs-1 mt-2 text-800">
               Am a dedicated Indian software developer with a passion for crafting and extensive experience in constructing web applications.
             </p>
           </i>

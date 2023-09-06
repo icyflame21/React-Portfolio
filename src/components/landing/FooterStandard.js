@@ -8,16 +8,15 @@ const FooterStandard = () => {
 
   return (
     <section className=" bg-dark py-0 text-center fs-0 light">
-      <hr className="my-0 border-600 opacity-25" />
       <div className="container py-3">
         <Row className="justify-content-center">
           <Col xs={12} sm="auto">
-            <p className="mb-0 text-600 fs--1">
+            <p className="mb-0 text-400 fs--1">
               &copy;{' '}{new Date().getFullYear()}-{new Date().getFullYear() + 3}{' '} All rights reserved.
-              <span className="mb-0 mt-2 d-block text-600 fs-0">
+              <span className="mb-0 mt-2 d-block text-400 fs-0">
                 Made with{' '}❤️ by {' '}
                 <a
-                  className="text-white opacity-85"
+                  className="text-white"
                   href="#"
                   rel="noopener noreferrer"
                 >

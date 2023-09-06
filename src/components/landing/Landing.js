@@ -32,7 +32,7 @@ const Landing = () => {
       <About />
       <Skills />
       <Background />
-      <Services />
+      {/* <Services /> */}
       <Projects />
       <Contact />
       <FooterStandard />

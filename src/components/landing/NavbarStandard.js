@@ -104,7 +104,10 @@ const NavbarStandard = () => {
                     <Button
                       variant="link"
                       href='#about'
-                      className='p-0 fs-0 fw-medium text-700'
+                      className='p-0 fs-0 fw-medium text-700 w-100'
+                      style={{
+                        textAlign: 'left'
+                      }}
                     >
                       <FcAbout className='me-2 fs-1' />
                       About
@@ -115,7 +118,10 @@ const NavbarStandard = () => {
                     <Button
                       variant="link"
                       href='#skills'
-                      className='p-0 fs-0 fw-medium text-700'
+                      className='p-0 fs-0 fw-medium text-700 w-100'
+                      style={{
+                        textAlign: 'left'
+                      }}
                     >
                       <GiSkills className='me-2 fs-1 text-google-plus' />
                       Skills
@@ -126,29 +132,35 @@ const NavbarStandard = () => {
                     <Button
                       variant="link"
                       href='#background'
-                      className='p-0 fs-0 fw-medium text-700'
+                      className='p-0 fs-0 fw-medium text-700 w-100'
+                      style={{
+                        textAlign: 'left'
+                      }}
                     >
                       <MdCastForEducation className='me-2 fs-1 text-success' />
                       Background
                     </Button></td>
                 </tr>
-                <tr>
+                {/* <tr>
                   <td>
                     <Button
                       variant="link"
                       href='#services'
-                      className='p-0 fs-0 fw-medium text-700'
+                      className='p-0 fs-0 fw-medium text-700 w-100'
                     >
                       <FcServices className='me-2 fs-1' />
                       Services
                     </Button></td>
-                </tr>
+                </tr> */}
                 <tr>
                   <td>
                     <Button
                       variant="link"
                       href='#projects'
-                      className='p-0 fs-0 fw-medium text-700'
+                      className='p-0 fs-0 fw-medium text-700 w-100'
+                      style={{
+                        textAlign: 'left'
+                      }}
                     >
                       <AiFillProject className='me-2 fs-1 gradient_hero_text' />
                       Projects
@@ -160,7 +172,10 @@ const NavbarStandard = () => {
                     <Button
                       variant="link"
                       href='#contact'
-                      className='p-0 fs-0 fw-medium text-700'
+                      className='p-0 fs-0 fw-medium text-700 w-100'
+                      style={{
+                        textAlign: 'left'
+                      }}
                     >
                       <FcContacts className='me-2 fs-1' />
                       Contact
@@ -173,17 +188,17 @@ const NavbarStandard = () => {
             <Nav className="ms-auto">
               <Flex direction='row' alignItems='center' >
                 <Button as='a' href="#about"
-                  variant="outline-primary" className='fs-0 fw-medium border-0 rounded-pill'>About</Button>
+                  variant="outline-primary" className='fs-1 fw-medium border-0 rounded-pill'>About</Button>
                 <Button as='a' href="#skills"
-                  variant="outline-primary" className='fs-0 fw-medium border-0 rounded-pill'>Skills</Button>
+                  variant="outline-primary" className='fs-1 fw-medium border-0 rounded-pill'>Skills</Button>
                 <Button as='a' href="#background"
-                  variant="outline-primary" className='fs-0 fw-medium border-0 rounded-pill'>Background</Button>
-                <Button as='a' href="#services"
-                  variant="outline-primary" className='fs-0 fw-medium border-0 rounded-pill'>Services</Button>
+                  variant="outline-primary" className='fs-1 fw-medium border-0 rounded-pill'>Background</Button>
+                {/* <Button as='a' href="#services"
+                  variant="outline-primary" className='fs-1 fw-medium border-0 rounded-pill'>Services</Button> */}
                 <Button as='a' href="#projects"
-                  variant="outline-primary" className='fs-0 fw-medium border-0 rounded-pill'>Projects</Button>
+                  variant="outline-primary" className='fs-1 fw-medium border-0 rounded-pill'>Projects</Button>
                 <Button as='a' href="#contact"
-                  variant="outline-primary" className='fs-0 fw-medium border-0 rounded-pill'>Contact</Button>
+                  variant="outline-primary" className='fs-1 fw-medium border-0 rounded-pill'>Contact</Button>
                 {/* <Nav.Link
                   className="theme-control-toggle"
                   onClick={() => setConfig('isDark', !isDark)}

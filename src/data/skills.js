@@ -161,36 +161,36 @@ export const technical = [
       data: 45
     },
   },
-  {
-    id: 18,
-    logo: webpack,
-    name: 'Webpack',
-    priority: {
-      title: 'Beginner',
-      color: '#228B22',
-      data: 35
-    },
-  },
-  {
-    id: 17,
-    logo: stripe,
-    name: 'Stripe',
-    priority: {
-      title: 'Beginner',
-      color: '#228B22',
-      data: 45
-    },
-  },
-  {
-    id: 41,
-    logo: jest,
-    name: 'Jest',
-    priority: {
-      title: 'Beginner',
-      color: '#228B22',
-      data: 25
-    },
-  },
+  // {
+  //   id: 18,
+  //   logo: webpack,
+  //   name: 'Webpack',
+  //   priority: {
+  //     title: 'Beginner',
+  //     color: '#228B22',
+  //     data: 35
+  //   },
+  // },
+  // {
+  //   id: 17,
+  //   logo: stripe,
+  //   name: 'Stripe',
+  //   priority: {
+  //     title: 'Beginner',
+  //     color: '#228B22',
+  //     data: 45
+  //   },
+  // },
+  // {
+  //   id: 41,
+  //   logo: jest,
+  //   name: 'Jest',
+  //   priority: {
+  //     title: 'Beginner',
+  //     color: '#228B22',
+  //     data: 25
+  //   },
+  // },
 ]
 
 export const toolsSet = [
@@ -255,16 +255,16 @@ export const toolsSet = [
       data: 78
     },
   },
-  {
-    id: 32,
-    logo: teams,
-    name: 'Microsoft Teams',
-    priority: {
-      title: 'Intermediate',
-      color: '#38B6FF',
-      data: 68
-    },
-  },
+  // {
+  //   id: 32,
+  //   logo: teams,
+  //   name: 'Microsoft Teams',
+  //   priority: {
+  //     title: 'Intermediate',
+  //     color: '#38B6FF',
+  //     data: 68
+  //   },
+  // },
 ];
 
 export const softSkills = [

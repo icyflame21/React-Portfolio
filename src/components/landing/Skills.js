@@ -47,10 +47,10 @@ const Skills = () => {
                                                     eventKey="technical"
                                                     className="mb-0 d-flex align-items-center gap-2 py-3 justify-content-center"
                                                 >
-                                                    <SiCodersrank className="text-600" />
-                                                    <h6 className="mb-0 text-600 fs-0">
+                                                    <SiCodersrank className="text-800" />
+                                                    <h5 className="mb-0 text-800 fs-0">
                                                         Technical
-                                                    </h6>
+                                                    </h5>
                                                 </Nav.Link>
                                             </Nav.Item>
                                             <Nav.Item className="w-100">
@@ -58,8 +58,8 @@ const Skills = () => {
                                                     eventKey="soft"
                                                     className="mb-0 d-flex align-items-center gap-2 py-3 justify-content-center"
                                                 >
-                                                    <MdOutlineManageHistory className="text-600" />
-                                                    <h6 className="mb-0 text-600 fs-0">Soft</h6>
+                                                    <MdOutlineManageHistory className="text-800" />
+                                                    <h5 className="mb-0 text-800 fs-0">Soft</h5>
                                                 </Nav.Link>
                                             </Nav.Item>
                                             <Nav.Item className="w-100">
@@ -68,9 +68,9 @@ const Skills = () => {
                                                     className="mb-0 d-flex align-items-center gap-2 py-3 justify-content-center text-center"
                                                 >
                                                     <FaTools
-                                                        className="text-600"
+                                                        className="text-800"
                                                     />
-                                                    <h6 className="mb-0 text-600 fs-0">Tools</h6>
+                                                    <h5 className="mb-0 text-800 fs-0">Tools</h5>
                                                 </Nav.Link>
                                             </Nav.Item>
                                         </Nav>
@@ -162,13 +162,13 @@ const Skills = () => {
                                                                     </h6>
                                                                 </Flex>
                                                             </td>
-                                                            <td>
+                                                            {/* <td>
                                                                 <PrioritySelect
                                                                     title={ele.priority.title}
                                                                     color={ele.priority.color}
                                                                     data={ele.priority.data}
                                                                 />
-                                                            </td>
+                                                            </td> */}
                                                         </tr>
                                                     ))}
                                                 </tbody>
@@ -267,13 +267,13 @@ const Skills = () => {
                                                                 </h6>
                                                             </Flex>
                                                         </td>
-                                                        <td>
+                                                        {/* <td>
                                                             <PrioritySelect
                                                                 title={ele.priority.title}
                                                                 color={ele.priority.color}
                                                                 data={ele.priority.data}
                                                             />
-                                                        </td>
+                                                        </td> */}
                                                     </tr>
                                                 ))}
                                             </tbody>
@@ -320,7 +320,7 @@ const Skills = () => {
                                                 ))}
                                             </tbody>
                                         </Table>
-                                        <Button
+                                        {/* <Button
                                             variant="link"
                                             className='w-100 p-0 m-0 mb-2'
                                             onClick={() => {
@@ -337,7 +337,7 @@ const Skills = () => {
                                                 className="ms-2 fs--2"
                                                 transform={collapsed.toolsSet ? 'rotate-180' : ''}
                                             />
-                                        </Button>
+                                        </Button> */}
                                     </Card.Body>
                                 </Card>
                             </Col>

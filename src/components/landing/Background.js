@@ -16,7 +16,7 @@ const Background = () => {
                 <span className='text-warning'>@<i>{parts[1]}</i></span>
             </>
         ) : text;
-        return <h5 className="mb-2">{modifiedText}</h5>;
+        return <h5 className="mb-2 text-black">{modifiedText}</h5>;
     };
 
     const handleColorPresentYr = (year) => {
@@ -26,12 +26,12 @@ const Background = () => {
             <>
                 {parts.length === 1 ? parts[0] : <>
                     {parts[0]}-
-                    {parts[1] === "Present" ? <span className="text-success">Present</span> : parts[1]}
+                    {parts[1] === "Present" ? <span className="text-linkedin">Present</span> : parts[1]}
                 </>}
             </>
         );
 
-        return <p className='fs--1 mb-0 fw-semi-bold'>{formattedDateRange}</p>;
+        return <p className='fs--1 mb-0 fw-semi-bold text-black'>{formattedDateRange}</p>;
     }
 
     const theme = useTheme()
@@ -72,14 +72,14 @@ const Background = () => {
                                                 <Col lg={6} className="timeline-item-time">
                                                     <div>
                                                         {handleColorPresentYr(year)}
-                                                        <p className="fs--2 text-600">{date}</p>
+                                                        <p className="fs--2 text-800">{date}</p>
                                                     </div>
                                                 </Col>
                                                 <Col lg={6}>
                                                     <div className="timeline-item-content">
                                                         <div className="timeline-item-card">
                                                             {handleItalic(title)}
-                                                            <p className="fs--1 mb-0">{description}</p>
+                                                            <p className="fs--1 mb-0 text-800">{description}</p>
                                                         </div>
                                                     </div>
                                                 </Col>
