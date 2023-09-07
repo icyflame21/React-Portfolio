@@ -34,15 +34,12 @@ const About = () => {
                                 />
                             </Card.Header>
                             <Card.Body>
-                                <i>
-                                    <p className="lead text-700 fs-1 mt-2">
-                                        Experienced software engineer with <span className='fw-bold'>1+ year</span> in MERN stack and React-Native. <span className='fw-bold'>7 months</span> freelancer for Indian clients. Committed to learning, complex problem-solving, and impactful collaboration.
-                                    </p>
-                                </i>
+                                <p className="gray1 fs-1 mt-2">
+                                    Experienced software engineer with <span className='fw-bold'>1+ year</span> in MERN stack and React-Native. <span className='fw-bold'>7 months</span> freelancer for Indian clients. Committed to learning, complex problem-solving, and impactful collaboration.
+                                </p>
                                 <Button
                                     as='a'
-                                    variant="outline-warning"
-                                    className="fs-1 border-2 mt-3"
+                                    className="mb-4 fs-0 fw-semi-bold border-0 mt-3 rounded-0 shadow-none button px-5 py-2"
                                     href={settings.resumelink}
                                     target='_blank'
                                     rel='noreferrer'
@@ -68,15 +65,12 @@ const About = () => {
                             title="About Me"
                             subtitle="Why hire me for your next project?"
                         />
-                        <i>
-                            <p className="lead text-800 fs-1 mt-2">
-                                Experienced software engineer with <span className='fw-bold'>1+ year</span> in MERN stack and React-Native. <span className='fw-bold'>7 months</span> freelancer for Indian clients. Committed to learning, complex problem-solving, and impactful collaboration.
-                            </p>
-                        </i>
+                        <p className="gray1 fs-1 mt-2">
+                            Experienced software engineer with <span className='fw-bold'>1+ year</span> in MERN stack and React-Native. <span className='fw-bold'>7 months</span> freelancer for Indian clients. Committed to learning, complex problem-solving, and impactful collaboration.
+                        </p>
                         <Button
                             as='a'
-                            variant="outline-warning"
-                            className="fs-1 border-2 mt-3"
+                            className="mb-4 fs-0 fw-semi-bold border-0 mt-3 rounded-0 shadow-none button px-5 py-2"
                             href={settings.resumelink}
                             target='_blank'
                             rel='noreferrer'

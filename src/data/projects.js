@@ -7,7 +7,7 @@ export const projectData = [
   {
     id: 0,
     title: 'ezSCM (Web App)',
-    subTitle: "Leveraged the Falcon theme's capabilities to ensure a seamless and uniform user interface across all screens.                                                                                               Key responsibilities encompassed order management, vendor collaboration, SKU management, seamless Stripe subscription integration, and the development of essential admin modules.",
+    subTitle: "Leveraged the Falcon theme's capabilities to ensure a seamless and uniform user interface across all screens. Key responsibilities encompassed order management, vendor collaboration, SKU management, seamless Stripe subscription integration, and the development of essential admin modules.",
     liveUrl: 'https://ezscm.ai/',
     thumbnail: ezSCM,
     techStack: [

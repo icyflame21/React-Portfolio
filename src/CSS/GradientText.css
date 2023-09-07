@@ -1,27 +1,48 @@
-.gradient_hero_text {
-  /** TEXT GRADIENT */
-  color: #5270dc;
-  background-image: -webkit-linear-gradient(225deg, #5270dc 41%, #fc0fba 72%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  text-fill-color: transparent;
-  -webkit-text-fill-color: transparent;
+.gradient_hero_text,
+.heading_text {
+  color: #38b6ff !important;
 }
-.gradient_hero_sub_text {
-  /** TEXT GRADIENT */
-  color: #828282;
-  background-image: -webkit-linear-gradient(225deg, #828282 0%, #242424 50%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  text-fill-color: transparent;
-  -webkit-text-fill-color: transparent;
+
+.title_text {
+  color: #34076b !important;
 }
-.gradient_skills_bg {
-  /** TEXT GRADIENT */
-  color: #cdcdcd;
-  background-image: -webkit-linear-gradient(225deg, #cdcdcd 0%, #f5f5f5 50%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  text-fill-color: transparent;
-  -webkit-text-fill-color: transparent;
+
+.info {
+  color: #2f80ed !important;
+}
+.gray1{
+  color: #333333 !important;
+}
+.success {
+  color: #27ae60 !important;
+}
+.warning {
+  color: #e2b93b !important;
+}
+.black3 {
+  color: #282828 !important;
+}
+.gray2 {
+  color: #4f4f4f !important;
+}
+.error {
+  color: #eb5757 !important;
+}
+
+.button {
+  background-color: #38b6ff !important;
+  color: #fff !important;
+}
+.button:hover {
+  background-color: #33a6e8 !important;
+  color: #fff !important;
+}
+.button:active {
+  background-color: #1f648c !important;
+  color: #fff !important;
+}
+
+.badge-button{
+  background-color: #27ae60 !important;
+  color: #fff !important;
 }

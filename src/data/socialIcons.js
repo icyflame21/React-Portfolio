@@ -3,6 +3,7 @@ import { FiPhoneCall } from 'react-icons/fi'
 import { SiGmail } from 'react-icons/si'
 import { FaLinkedin } from 'react-icons/fa'
 import { AiFillGithub } from 'react-icons/ai'
+import '../CSS/GradientText.css'
 
 export const bgWhiteIcons = [
   {
@@ -20,7 +21,7 @@ export const bgWhiteIcons = [
 export const socialShares = [
   {
     id: 0,
-    icon: <FiPhoneCall className='text-success' />,
+    icon: <FiPhoneCall className='success' />,
     href: settings.number,
   },
   {

@@ -35,7 +35,7 @@ export const technical = [
     name: 'HTML',
     priority: {
       title: 'Intermediate',
-      color: '#38B6FF',
+      color: '#2F80ED',
       data: 65
     },
   },
@@ -45,7 +45,7 @@ export const technical = [
     name: 'CSS',
     priority: {
       title: 'Intermediate',
-      color: '#38B6FF',
+      color: '#2F80ED',
       data: 75
     },
   },
@@ -55,7 +55,7 @@ export const technical = [
     name: 'JavaScript',
     priority: {
       title: 'Intermediate',
-      color: '#38B6FF',
+      color: '#2F80ED',
       data: 75
     },
   },
@@ -65,7 +65,7 @@ export const technical = [
     name: 'React',
     priority: {
       title: 'Intermediate',
-      color: '#38B6FF',
+      color: '#2F80ED',
       data: 80
     },
   },
@@ -75,7 +75,7 @@ export const technical = [
     name: 'React Native',
     priority: {
       title: 'Intermediate',
-      color: '#38B6FF',
+      color: '#2F80ED',
       data: 75
     },
   },
@@ -85,7 +85,7 @@ export const technical = [
     name: 'Firebase',
     priority: {
       title: 'Intermediate',
-      color: '#38B6FF',
+      color: '#2F80ED',
       data: 70
     },
   },
@@ -95,7 +95,7 @@ export const technical = [
     name: 'Redux',
     priority: {
       title: 'Intermediate',
-      color: '#38B6FF',
+      color: '#2F80ED',
       data: 80
     },
   },
@@ -105,7 +105,7 @@ export const technical = [
     name: 'Node.js',
     priority: {
       title: 'Beginner',
-      color: '#228B22',
+      color: '#27AE60',
       data: 40
     },
 
@@ -116,7 +116,7 @@ export const technical = [
     name: 'MongoDB',
     priority: {
       title: 'Beginner',
-      color: '#228B22',
+      color: '#27AE60',
       data: 40
     },
 
@@ -127,7 +127,7 @@ export const technical = [
     name: 'Bootstrap 5',
     priority: {
       title: 'Intermediate',
-      color: '#38B6FF',
+      color: '#2F80ED',
       data: 80
     },
   },
@@ -137,7 +137,7 @@ export const technical = [
     name: 'Material UI',
     priority: {
       title: 'Intermediate',
-      color: '#38B6FF',
+      color: '#2F80ED',
       data: 65
     },
   },
@@ -147,7 +147,7 @@ export const technical = [
     name: 'Tailwind CSS',
     priority: {
       title: 'Beginner',
-      color: '#228B22',
+      color: '#27AE60',
       data: 38
     },
   },
@@ -157,7 +157,7 @@ export const technical = [
     name: 'SASS',
     priority: {
       title: 'Beginner',
-      color: '#228B22',
+      color: '#27AE60',
       data: 45
     },
   },
@@ -167,7 +167,7 @@ export const technical = [
   //   name: 'Webpack',
   //   priority: {
   //     title: 'Beginner',
-  //     color: '#228B22',
+  //     color: '#27AE60',
   //     data: 35
   //   },
   // },
@@ -177,7 +177,7 @@ export const technical = [
   //   name: 'Stripe',
   //   priority: {
   //     title: 'Beginner',
-  //     color: '#228B22',
+  //     color: '#27AE60',
   //     data: 45
   //   },
   // },
@@ -187,7 +187,7 @@ export const technical = [
   //   name: 'Jest',
   //   priority: {
   //     title: 'Beginner',
-  //     color: '#228B22',
+  //     color: '#27AE60',
   //     data: 25
   //   },
   // },
@@ -200,7 +200,7 @@ export const toolsSet = [
     name: 'Postman',
     priority: {
       title: 'Intermediate',
-      color: '#38B6FF',
+      color: '#2F80ED',
       data: 60
     },
   },
@@ -210,7 +210,7 @@ export const toolsSet = [
     name: 'Git',
     priority: {
       title: 'Intermediate',
-      color: '#38B6FF',
+      color: '#2F80ED',
       data: 55
     },
   },
@@ -220,7 +220,7 @@ export const toolsSet = [
     name: 'Microsoft Azure TFS',
     priority: {
       title: 'Intermediate',
-      color: '#38B6FF',
+      color: '#2F80ED',
       data: 65
     },
   },
@@ -230,7 +230,7 @@ export const toolsSet = [
     name: 'Microsoft Office',
     priority: {
       title: 'Intermediate',
-      color: '#38B6FF',
+      color: '#2F80ED',
       data: 65
     },
   },
@@ -240,7 +240,7 @@ export const toolsSet = [
     name: 'Intellij',
     priority: {
       title: 'Beginner',
-      color: '#228B22',
+      color: '#27AE60',
       data: 35
     },
 
@@ -251,7 +251,7 @@ export const toolsSet = [
     name: 'VS Code',
     priority: {
       title: 'Intermediate',
-      color: '#38B6FF',
+      color: '#2F80ED',
       data: 78
     },
   },
@@ -261,7 +261,7 @@ export const toolsSet = [
   //   name: 'Microsoft Teams',
   //   priority: {
   //     title: 'Intermediate',
-  //     color: '#38B6FF',
+  //     color: '#2F80ED',
   //     data: 68
   //   },
   // },
@@ -274,7 +274,7 @@ export const softSkills = [
     name: 'Teamwork',
     priority: {
       title: 'Intermediate',
-      color: '#38B6FF',
+      color: '#2F80ED',
       data: 69
     },
   },
@@ -284,7 +284,7 @@ export const softSkills = [
     name: 'Time Management',
     priority: {
       title: 'Intermediate',
-      color: '#38B6FF',
+      color: '#2F80ED',
       data: 58
     },
   },
@@ -294,7 +294,7 @@ export const softSkills = [
     name: 'Problem Solving',
     priority: {
       title: 'Intermediate',
-      color: '#38B6FF',
+      color: '#2F80ED',
       data: 67
     },
   },
@@ -304,7 +304,7 @@ export const softSkills = [
     name: 'Remote Collaboration',
     priority: {
       title: 'Intermediate',
-      color: '#38B6FF',
+      color: '#2F80ED',
       data: 79
     },
   },
@@ -314,7 +314,7 @@ export const softSkills = [
     name: 'Adaptability',
     priority: {
       title: 'Intermediate',
-      color: '#38B6FF',
+      color: '#2F80ED',
       data: 65
     },
   },
@@ -324,7 +324,7 @@ export const softSkills = [
     name: 'Leadership',
     priority: {
       title: 'Intermediate',
-      color: '#38B6FF',
+      color: '#2F80ED',
       data: 75
     },
   },

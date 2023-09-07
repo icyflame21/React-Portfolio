@@ -14,7 +14,7 @@ const Hero = () => {
   const theme = useTheme()
   const isMatch = useMediaQuery(theme.breakpoints.down('md'))
   return (
-    <Section bg='light'>
+    <Section bg='white'>
       <Row className="justify-content-center align-items-center pt-3">
         <Col
           lg={7}
@@ -31,7 +31,7 @@ const Hero = () => {
         <Col
           lg={5}
           xl={5} className="text-center text-xl-start">
-          <p className='fs-1 text-youtube fw-semi-bold'>
+          <p className='fs-1 title_text fw-semi-bold '>
             Software Developer
           </p>
           <h1 className="fw-bold text-black">
@@ -40,16 +40,13 @@ const Hero = () => {
               Biswaranjan Subudhi
             </span>
           </h1>
-          <i>
-            <p className="fs-1 mt-2 text-800">
-              Am a dedicated Indian software developer with a passion for crafting and extensive experience in constructing web applications.
-            </p>
-          </i>
+          <p className="fs-1 mt-2 gray1 fw-normal">
+            Am a dedicated Indian software developer with a passion for crafting and extensive experience in constructing web applications.
+          </p>
           <Flex alignItems='center' className='justify-content-lg-start justify-content-center'>
             <Button
               as='a'
-              variant="outline-success"
-              className="mb-4 fs-1 border-2 rounded-pill mt-3"
+              className="mb-4 fs-0 fw-semi-bold border-0 mt-3 rounded-0 shadow-none button px-5 py-2"
               href={settings.gmail}
               target='_blank'
               rel='noreferrer'
@@ -69,9 +66,6 @@ const Hero = () => {
                 type="button"
                 size="sm"
                 className="icon-item icon-item-lg fs-5"
-                style={{
-                  background: 'linear-gradient(180deg, rgba(204,235,254,1) 0%, rgba(255,255,255,1) 100%)'
-                }}
               >
                 {icon}
               </Button>

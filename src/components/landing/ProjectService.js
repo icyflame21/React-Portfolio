@@ -1,6 +1,6 @@
 import SoftBadge from 'components/common/SoftBadge';
 import React from 'react';
-import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { Button, Card, Col, Row } from 'react-bootstrap';
 import { BsFillLaptopFill } from 'react-icons/bs'
 import { BiLogoPlayStore } from 'react-icons/bi'
 import { SiAppstore } from 'react-icons/si'
@@ -8,6 +8,7 @@ import { AiOutlineGithub } from 'react-icons/ai'
 import Flex from 'components/common/Flex';
 import { useMediaQuery, useTheme } from '@mui/material';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import '../../CSS/GradientText.css'
 
 const ProjectService = ({ subTitle, title, liveUrl, githubUrl, thumbnail, techStack,
     appstoreURL, playstoreURL }) => {
@@ -36,7 +37,7 @@ const ProjectService = ({ subTitle, title, liveUrl, githubUrl, thumbnail, techSt
                                     ))}
                                 </div>
                                 <Card.Title className='text-black'>{title}</Card.Title>
-                                <Card.Text className='fs--1 text-800'>{subTitle}</Card.Text>
+                                <Card.Text className='fs--1 gray1'>{subTitle}</Card.Text>
                                 <div className="mt-2">
                                     <Flex className='gap-3 align-items-center'>
                                         {liveUrl && <Button
@@ -48,7 +49,7 @@ const ProjectService = ({ subTitle, title, liveUrl, githubUrl, thumbnail, techSt
                                             size="sm"
                                             className="icon-item icon-item-lg fs-2"
                                         >
-                                            <BsFillLaptopFill className='text-success' />
+                                            <BsFillLaptopFill className='success' />
                                         </Button>}
                                         {githubUrl && <Button
                                             as='a'
@@ -81,7 +82,7 @@ const ProjectService = ({ subTitle, title, liveUrl, githubUrl, thumbnail, techSt
                                             size="sm"
                                             className="icon-item icon-item-lg fs-2"
                                         >
-                                            <BiLogoPlayStore className='text-success' />
+                                            <BiLogoPlayStore className='success' />
                                         </Button>}
                                     </Flex>
                                 </div>
@@ -109,7 +110,7 @@ const ProjectService = ({ subTitle, title, liveUrl, githubUrl, thumbnail, techSt
                                     ))}
                                 </div>
                                 <Card.Title className='text-black'>{title}</Card.Title>
-                                <Card.Text className='fs--1 text-800'>{subTitle}</Card.Text>
+                                <Card.Text className='fs--1 gray1'>{subTitle}</Card.Text>
                                 <div className="mt-2">
                                     <Flex className='gap-3 align-items-center'>
                                         {liveUrl && <Button
@@ -121,7 +122,7 @@ const ProjectService = ({ subTitle, title, liveUrl, githubUrl, thumbnail, techSt
                                             size="sm"
                                             className="icon-item icon-item-lg fs-2"
                                         >
-                                            <BsFillLaptopFill className='text-success' />
+                                            <BsFillLaptopFill className='success' />
                                         </Button>}
                                         {githubUrl && <Button
                                             as='a'
@@ -143,7 +144,7 @@ const ProjectService = ({ subTitle, title, liveUrl, githubUrl, thumbnail, techSt
                                             size="sm"
                                             className="icon-item icon-item-lg fs-2"
                                         >
-                                            <SiAppstore className='text-primary' />
+                                            <SiAppstore className='info' />
                                         </Button>}
                                         {playstoreURL && <Button
                                             as='a'
@@ -154,7 +155,7 @@ const ProjectService = ({ subTitle, title, liveUrl, githubUrl, thumbnail, techSt
                                             size="sm"
                                             className="icon-item icon-item-lg fs-2"
                                         >
-                                            <BiLogoPlayStore className='text-success' />
+                                            <BiLogoPlayStore className='success' />
                                         </Button>}
                                     </Flex>
                                 </div>

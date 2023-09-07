@@ -9,9 +9,8 @@ import 'slick-carousel/slick/slick-theme.css';
 import './App.css'
 
 const App = () => {
-
   const customStyles = {
-    backgroundColor: "#5270dc",
+    backgroundColor: "#34076b",
     borderRadius: "50%",
     boxShadow: 'none',
     width: "40px",

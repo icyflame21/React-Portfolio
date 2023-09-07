@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import '../../CSS/GradientText.css'
 
 const SoftBadge = ({ bg = 'primary', pill, children, className }) => {
   return (
     <div
-      className={classNames(className, `badge badge-soft-${bg}`, {
+      className={classNames(className, `badge badge-button`, {
         'rounded-pill': pill
       })}
     >

@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import '../../CSS/GradientText.css'
 
 export const PrioritySelect = ({ title, color, data, className, style }) => {
     return (
@@ -34,7 +35,7 @@ export const PrioritySelect = ({ title, color, data, className, style }) => {
             ></circle>
           </svg>
         </div>
-        <h6 className="mb-0 text-700">{title}</h6>
+        <h6 className="mb-0 gray1">{title}</h6>
       </div>
     );
   };

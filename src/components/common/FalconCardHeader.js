@@ -27,7 +27,7 @@ const FalconCardHeader = ({
   endEl,
   children
 }) => (
-  <Card.Header className={classNames(className, { 'bg-soft-secondary': light })}>
+  <Card.Header className={classNames(className, { 'bg-200': light })}>
     {endEl ? (
       <Row className="align-items-center">
         <Col>
@@ -62,7 +62,7 @@ Title.propTypes = {
   children: PropTypes.node
 };
 
-Title.defaultProps = { titleTag: 'h5' };
+Title.defaultProps = { titleTag: 'h5'};
 
 FalconCardHeader.propTypes = {
   title: PropTypes.node.isRequired,

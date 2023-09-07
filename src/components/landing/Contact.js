@@ -65,7 +65,7 @@ const Contact = () => {
                 <LeafletMap position={position} data={data} className='min-vh-50 w-100' />
               </Col>
               <Col xs={12} className="p-x1 flex-1">
-                <h5 className="fs-0 mt-3 mb-2">Connect with me </h5>
+                <h5 className="fs-0 mt-3 mb-2 text-black">Connect with me </h5>
                 <Flex className="gap-2">
                   {socialShares.map(({ id, icon, href }) => (
                     <Button
@@ -92,7 +92,7 @@ const Contact = () => {
             xl={6}
           >
             <LeafletMap position={position} data={data} className='min-vh-50 w-100' />
-            <h5 className="fs-0 mt-3 mb-2">Connect with me </h5>
+            <h5 className="fs-0 mt-3 mb-2 text-black">Connect with me </h5>
             <Flex className="gap-2">
               {socialShares.map(({ id, icon, href }) => (
                 <Button
@@ -120,20 +120,29 @@ const Contact = () => {
                   <Form.Control
                     disabled={loading}
                     required
-                    placeholder="Your Name*" name='clientName' />
+                    className='shadow-none'
+                    placeholder="Your Name*"
+                    name='clientName' />
                 </Form.Group>
 
                 <Form.Group className="mb-3" as={Col} lg={6} xl={6}>
                   <Form.Control
                     disabled={loading}
-                    type="email" required placeholder="Your Email*" name='clientEmail' />
+                    className='shadow-none'
+                    type="email"
+                    required
+                    placeholder="Your Email*"
+                    name='clientEmail' />
                 </Form.Group>
               </Row>
 
               <Form.Group className="mb-3">
                 <Form.Control
+                  className='shadow-none'
                   disabled={loading}
-                  required as="textarea" rows={7} placeholder="Your Message*"
+                  required as="textarea"
+                  rows={7}
+                  placeholder="Your Message*"
                   name='clientMessage'
                   style={{
                     resize: 'none'
@@ -147,7 +156,7 @@ const Contact = () => {
                   </Flex>
                 </Col>
               </Row> : <Button
-                variant="outline-primary"
+                className="fs-0 fw-semi-bold border-0 rounded-0 shadow-none button px-5 py-2"
                 type="submit"
               >
                 Send Message

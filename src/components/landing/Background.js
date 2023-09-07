@@ -9,29 +9,29 @@ import { useMediaQuery, useTheme } from '@mui/material';
 
 const Background = () => {
     const handleItalic = (text) => {
-        const parts = text.split("@");
-        const modifiedText = parts.length === 2 ? (
-            <>
-                {parts[0]}
-                <span className='text-warning'>@<i>{parts[1]}</i></span>
-            </>
-        ) : text;
-        return <h5 className="mb-2 text-black">{modifiedText}</h5>;
+        // const parts = text.split("@");
+        // const modifiedText = parts.length === 2 ? (
+        //     <>
+        //         {parts[0]}
+        //         <span className='info'>@{parts[1]}</span>
+        //     </>
+        // ) : text;
+        return <h5 className="mb-2 text-black">{text}</h5>;
     };
 
     const handleColorPresentYr = (year) => {
-        const parts = year.split("-");
+        // const parts = year.split("-");
 
-        const formattedDateRange = (
-            <>
-                {parts.length === 1 ? parts[0] : <>
-                    {parts[0]}-
-                    {parts[1] === "Present" ? <span className="text-linkedin">Present</span> : parts[1]}
-                </>}
-            </>
-        );
+        // const formattedDateRange = (
+        //     <>
+        //         {parts.length === 1 ? parts[0] : <>
+        //             {parts[0]}-
+        //             {parts[1] === "Present" ? <span className="success">Present</span> : parts[1]}
+        //         </>}
+        //     </>
+        // );
 
-        return <p className='fs--1 mb-0 fw-semi-bold text-black'>{formattedDateRange}</p>;
+        return <p className='fs--1 mb-0 fw-semi-bold text-black'>{year}</p>;
     }
 
     const theme = useTheme()
@@ -60,7 +60,7 @@ const Background = () => {
                                                 'timeline-item-end': index % 2 !== 0
                                             })}
                                         >
-                                            <div className="timeline-icon icon-item icon-item-lg text-primary border-300">
+                                            <div className="timeline-icon icon-item">
                                                 {icon}
                                             </div>
                                             <Row
@@ -72,14 +72,14 @@ const Background = () => {
                                                 <Col lg={6} className="timeline-item-time">
                                                     <div>
                                                         {handleColorPresentYr(year)}
-                                                        <p className="fs--2 text-800">{date}</p>
+                                                        <p className="fs--2 gray1">{date}</p>
                                                     </div>
                                                 </Col>
                                                 <Col lg={6}>
                                                     <div className="timeline-item-content">
                                                         <div className="timeline-item-card">
                                                             {handleItalic(title)}
-                                                            <p className="fs--1 mb-0 text-800">{description}</p>
+                                                            <p className="fs--1 mb-0 gray1">{description}</p>
                                                         </div>
                                                     </div>
                                                 </Col>
