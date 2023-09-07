@@ -11,7 +11,7 @@ const Projects = () => {
     const isMatch = useMediaQuery(theme.breakpoints.down('lg'))
 
     return (
-        <Section id="projects" bg='white'>
+        <Section id="projects" bg='light'>
             <Row className={`justify-content-center align-items-center ${isMatch ? 'px-3' : 'px-0'}`}>
                 <Col>
                     <SectionHeader

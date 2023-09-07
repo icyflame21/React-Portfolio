@@ -34,7 +34,7 @@ const Services = () => {
   };
 
   return (
-    <Section id="services" bg='white'>
+    <Section id="services" bg='light'>
       <Row className={`justify-content-center align-items-center ${isMatch ? 'px-3' : 'px-0'}`}>
         {isMatch ? <Col>
           <SectionHeader

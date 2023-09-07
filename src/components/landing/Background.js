@@ -38,7 +38,7 @@ const Background = () => {
     const isMatch = useMediaQuery(theme.breakpoints.down('lg'))
 
     return (
-        <Section id="background" bg='white'>
+        <Section id="background" bg='light'>
             <Row className="justify-content-center">
                 <Col>
                     <SectionHeader

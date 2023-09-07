@@ -3,7 +3,7 @@ import L from 'leaflet';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import PropTypes from 'prop-types';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
-
+import '../../CSS/GradientText.css'
 import mapMarkerIcon from 'assets/img/designs/map-marker.png';
 
 const mapMarker = L.icon({
@@ -40,9 +40,9 @@ const LayerComponent = ({ data }) => {
         icon={mapMarker}
       >
         <Popup>
-          <h1 className="fs-0 text-youtube">{marker.name}</h1>
-          <p className="m-0 text-900">
-            {marker.street}<span className='text-twitter'>{marker.location}</span>
+          <h1 className="fs-0 text-black">{marker.name}</h1>
+          <p className="m-0 gray1">
+            {marker.street}<span className='info'>{marker.location}</span>
           </p>
         </Popup>
       </Marker>

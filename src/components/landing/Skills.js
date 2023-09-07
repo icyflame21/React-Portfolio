@@ -27,7 +27,7 @@ const Skills = () => {
     });
 
     return (
-        <Section id="skills" bg='white'>
+        <Section id="skills" bg='light'>
             <Row className={`justify-content-center align-items-center ${isMatch ? 'px-3' : 'px-0'}`}>
                 <Col>
                     <SectionHeader

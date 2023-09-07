@@ -50,7 +50,7 @@ const Contact = () => {
   };
 
   return (
-    <Section id="contact" bg='white'>
+    <Section id="contact" bg='light'>
       <SectionHeader
         title="I want to hear from you"
         subtitle="Contact Me"

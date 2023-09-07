@@ -22,33 +22,28 @@ const About = () => {
         }
     };
     return (
-        <Section id="about" bg='white'>
+        <Section id="about" bg='light'>
             {isMatch ?
-                <Row className={`justify-content-center align-items-center px-3`}>
+                <Row className={`justify-content-center align-items-center px-4`}>
                     <Col>
-                        <Card className="h-100 bg-transparent shadow-none border-0">
-                            <Card.Header>
-                                <SectionHeader
-                                    title="About Me"
-                                    subtitle="Why hire me for your next project?"
-                                />
-                            </Card.Header>
-                            <Card.Body>
-                                <p className="gray1 fs-1 mt-2">
-                                    Experienced software engineer with <span className='fw-bold'>1+ year</span> in MERN stack and React-Native. <span className='fw-bold'>7 months</span> freelancer for Indian clients. Committed to learning, complex problem-solving, and impactful collaboration.
-                                </p>
-                                <Button
-                                    as='a'
-                                    className="mb-4 fs-0 fw-semi-bold border-0 mt-3 rounded-0 shadow-none button px-5 py-2"
-                                    href={settings.resumelink}
-                                    target='_blank'
-                                    rel='noreferrer'
-                                >
-                                    Download CV
-                                    <FontAwesomeIcon icon={faFileDownload} transform="shrink-5 down-1 right-5" />
-                                </Button>
-                            </Card.Body>
-                        </Card>
+                        <SectionHeader
+                            title="About Me"
+                            subtitle="Why hire me for your next project?"
+                            dropCap
+                        />
+                        <p className="gray1 fs-1 mt-2">
+                            Experienced software engineer with <span className='fw-bold'>1+ year</span> in MERN stack and React-Native. <span className='fw-bold'>7 months</span> freelancer for Indian clients. Committed to learning, complex problem-solving, and impactful collaboration.
+                        </p>
+                        <Button
+                            as='a'
+                            className="mb-4 fs-0 fw-semi-bold border-0 mt-3 rounded-0 shadow-none button px-5 py-2"
+                            href={settings.resumelink}
+                            target='_blank'
+                            rel='noreferrer'
+                        >
+                            Download CV
+                            <FontAwesomeIcon icon={faFileDownload} transform="shrink-5 down-1 right-5" />
+                        </Button>
                     </Col>
                 </Row> :
                 <Row className={`justify-content-center align-items-center px-0`}>
