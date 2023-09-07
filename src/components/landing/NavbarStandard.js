@@ -64,7 +64,7 @@ const NavbarStandard = () => {
             width: '70%',
           }}
         >
-          {navbarToggle && isMatch ? <Modal.Header className='bg-200 w-100'
+          {navbarToggle && isMatch ? <Modal.Header className='bg-white w-100'
           >
             <Navbar.Brand className="fw-semi-bold fs-3 p-3 gradient_hero_text w-100" href="#" style={{
               fontFamily: 'Great Vibes',
@@ -73,8 +73,8 @@ const NavbarStandard = () => {
               Biswaranjan S.
             </Navbar.Brand>
           </Modal.Header> : ''}
-          {navbarToggle && isMatch ? <Modal.Body className='bg-white'>
-            <Table responsive bordered striped>
+          {navbarToggle && isMatch ? <Modal.Body>
+            <Table responsive bordered striped className='bg-200'>
               <tbody className=''>
                 <tr>
                   <td>
