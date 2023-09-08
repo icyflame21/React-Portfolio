@@ -10,7 +10,7 @@ import './App.css'
 
 const App = () => {
   const customStyles = {
-    backgroundColor: "#34076b",
+    backgroundColor: "#2f80ed",
     borderRadius: "50%",
     boxShadow: 'none',
     width: "40px",

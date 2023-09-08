@@ -13,7 +13,7 @@ import { BiSolidContact } from 'react-icons/bi'
 import { MdCastForEducation } from 'react-icons/md'
 import { AiFillProject } from 'react-icons/ai'
 import '../../CSS/GradientText.css'
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const NavbarStandard = () => {
   const [navbarToggle, setNavbarToggle] = useState(false)
@@ -47,16 +47,23 @@ const NavbarStandard = () => {
         'navbar-glass-shadow': showDropShadow,
       })}>
       <Container className='d-flex justify-content-between align-items-center py-2'>
-        {isMatch ? <Avatar
-          size="3xl"
-          src={Logo}
-        /> : <Navbar.Brand className="fw-semi-bold fs-5 px-1 gradient_hero_text" style={{
-          fontFamily: 'Great Vibes',
-        }}>
-          Biswaranjan S.
-        </Navbar.Brand>}
+        {isMatch ?
+          <Avatar
+            size="3xl"
+            src={Logo}
+          /> : <Navbar.Brand className="fw-semi-bold fs-4 px-1 gradient_hero_text" style={{
+            fontFamily: 'Tenor Sans',
+          }}>
+            <Flex alignItems='center' className='gap-2'>
+              <Avatar
+                size="3xl"
+                src={Logo}
+              />
+              Biswaranjan
+            </Flex>
+          </Navbar.Brand>}
         <Navbar.Toggle >
-          <HiOutlineMenuAlt2 className='fs-4 gradient_hero_text' />
+          <HiOutlineMenuAlt2 className='fs-5 gradient_hero_text' />
         </Navbar.Toggle>
         <Navbar.Offcanvas
           className='bg-white border-0 shadow-none'
@@ -66,11 +73,17 @@ const NavbarStandard = () => {
         >
           {navbarToggle && isMatch ? <Modal.Header className='bg-white w-100'
           >
-            <Navbar.Brand className="fw-semi-bold fs-3 p-3 gradient_hero_text w-100" href="#" style={{
-              fontFamily: 'Great Vibes',
+            <Navbar.Brand className="fw-semi-bold fs-2 p-3 gradient_hero_text w-100" href="#" style={{
+              fontFamily: 'Tenor Sans',
               borderBottom: '2px solid #34076b'
             }}>
-              Biswaranjan S.
+              <Flex alignItems='center' className='gap-2'>
+                <Avatar
+                  size="2xl"
+                  src={Logo}
+                />
+                Biswaranjan
+              </Flex>
             </Navbar.Brand>
           </Modal.Header> : ''}
           {navbarToggle && isMatch ? <Modal.Body>

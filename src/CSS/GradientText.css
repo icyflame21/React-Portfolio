@@ -30,15 +30,15 @@
 }
 
 .button {
-  background-color: #38b6ff !important;
+  background-color: #2f80ed !important;
   color: #fff !important;
 }
 .button:hover {
-  background-color: #33a6e8 !important;
+  background-color: #2b78dc !important;
   color: #fff !important;
 }
 .button:active {
-  background-color: #1f648c !important;
+  background-color: #1d5092 !important;
   color: #fff !important;
 }
 

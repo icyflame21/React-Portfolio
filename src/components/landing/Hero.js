@@ -14,7 +14,7 @@ const Hero = () => {
   const theme = useTheme()
   const isMatch = useMediaQuery(theme.breakpoints.down('md'))
   return (
-    <Section bg='200'>
+    <Section bg='white'>
       <Row className="justify-content-center align-items-center pt-3">
         <Col
           lg={7}
@@ -25,7 +25,6 @@ const Hero = () => {
             alt="user1"
             src={user1}
             size='6xl'
-            mediaClass="img-thumbnail shadow"
             className='w-75 my-lg-0 mt-6 mb-4'
           />
         </Col>
@@ -66,7 +65,7 @@ const Hero = () => {
                 variant="falcon-default"
                 type="button"
                 size="sm"
-                className="icon-item icon-item-lg fs-5"
+                className="icon-item icon-item-lg fs-2"
               >
                 {icon}
               </Button>
