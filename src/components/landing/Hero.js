@@ -49,7 +49,7 @@ const Hero = () => {
           <Flex alignItems='center' className='justify-content-lg-start justify-content-center'>
             <Button
               as='a'
-              className="mb-4 fs-0 fw-semi-bold border-0 mt-3 rounded-0 shadow-none button px-5 py-2"
+              className="mb-4 fs-0 fw-semi-bold border-0 mt-3 shadow-none button px-5 py-2"
               href={settings.gmail}
               target='_blank'
               rel='noreferrer'

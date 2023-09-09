@@ -36,7 +36,7 @@ const About = () => {
                         </p>
                         <Button
                             as='a'
-                            className="mb-4 fs-0 fw-semi-bold border-0 mt-3 rounded-0 shadow-none button px-5 py-2"
+                            className="mb-4 fs-0 fw-semi-bold border-0 mt-3 shadow-none button px-5 py-2"
                             href={settings.resumelink}
                             target='_blank'
                             rel='noreferrer'
@@ -65,7 +65,7 @@ const About = () => {
                         </p>
                         <Button
                             as='a'
-                            className="mb-4 fs-0 fw-semi-bold border-0 mt-3 rounded-0 shadow-none button px-5 py-2"
+                            className="mb-4 fs-0 fw-semi-bold border-0 mt-3 shadow-none button px-5 py-2"
                             href={settings.resumelink}
                             target='_blank'
                             rel='noreferrer'

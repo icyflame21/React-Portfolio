@@ -51,7 +51,7 @@ const NavbarStandard = () => {
           <Avatar
             size="3xl"
             src={Logo}
-          /> : <Navbar.Brand className="fw-semi-bold fs-4 px-1 gradient_hero_text" style={{
+          /> : <Navbar.Brand className="fw-semi-bold fs-4 px-1 info" style={{
             fontFamily: 'Tenor Sans',
           }}>
             <Flex alignItems='center' className='gap-2'>
@@ -63,7 +63,7 @@ const NavbarStandard = () => {
             </Flex>
           </Navbar.Brand>}
         <Navbar.Toggle >
-          <HiOutlineMenuAlt2 className='fs-5 gradient_hero_text' />
+          <HiOutlineMenuAlt2 className='fs-5 info' />
         </Navbar.Toggle>
         <Navbar.Offcanvas
           className='bg-white border-0 shadow-none'
@@ -73,7 +73,7 @@ const NavbarStandard = () => {
         >
           {navbarToggle && isMatch ? <Modal.Header className='bg-white w-100'
           >
-            <Navbar.Brand className="fw-semi-bold fs-2 p-3 gradient_hero_text w-100" href="#" style={{
+            <Navbar.Brand className="fw-semi-bold fs-2 p-3 info w-100" href="#" style={{
               fontFamily: 'Tenor Sans',
               borderBottom: '2px solid #34076b'
             }}>
@@ -167,15 +167,15 @@ const NavbarStandard = () => {
             <Nav className="ms-auto">
               <Flex direction='row' alignItems='center' >
                 <Button as='a' href="#about"
-                  style={{ fontSize: '16px', fontWeight: 500 }} className='bg-transparent title_text border-0 rounded-0 shadow-none px-4 py-2'>About</Button>
+                  style={{ fontSize: '16px', fontWeight: 500 }} className='bg-transparent title_text border-0 shadow-none px-4 py-2'>About</Button>
                 <Button as='a' href="#skills"
-                  style={{ fontSize: '16px', fontWeight: 500 }} className='bg-transparent title_text border-0 rounded-0 shadow-none px-4 py-2'>Skills</Button>
+                  style={{ fontSize: '16px', fontWeight: 500 }} className='bg-transparent title_text border-0 shadow-none px-4 py-2'>Skills</Button>
                 <Button as='a' href="#background"
-                  style={{ fontSize: '16px', fontWeight: 500 }} className='bg-transparent title_text border-0 rounded-0 shadow-none px-4 py-2'>Background</Button>
+                  style={{ fontSize: '16px', fontWeight: 500 }} className='bg-transparent title_text border-0 shadow-none px-4 py-2'>Background</Button>
                 <Button as='a' href="#projects"
-                  style={{ fontSize: '16px', fontWeight: 500 }} className='bg-transparent title_text border-0 rounded-0 shadow-none px-4 py-2'>Projects</Button>
+                  style={{ fontSize: '16px', fontWeight: 500 }} className='bg-transparent title_text border-0 shadow-none px-4 py-2'>Projects</Button>
                 <Button as='a' href="#contact"
-                  style={{ fontSize: '16px', fontWeight: 500 }} className='border-0 rounded-0 shadow-none button px-4 py-2'>Contact</Button>
+                  style={{ fontSize: '16px', fontWeight: 500 }} className='border-0 shadow-none button px-4 py-2'>Contact</Button>
               </Flex>
             </Nav>}
         </Navbar.Offcanvas>

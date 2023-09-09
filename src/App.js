@@ -7,6 +7,7 @@ import { FaArrowUp } from "react-icons/fa";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './App.css'
+import { useMediaQuery, useTheme } from '@mui/material';
 
 const App = () => {
   const customStyles = {
@@ -25,14 +26,16 @@ const App = () => {
     },
   };
 
+  const theme = useTheme()
+  const isMatch = useMediaQuery(theme.breakpoints.down('md'))
 
   return (
     <Router basename={process.env.PUBLIC_URL}>
-      <ScrollToTop
+      {isMatch ? null : <ScrollToTop
         smooth
         component={<FaArrowUp className='text-white' />}
         style={customStyles}
-      />
+      />}
       <Layout />
     </Router>
   );

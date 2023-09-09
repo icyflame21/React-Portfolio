@@ -156,7 +156,7 @@ const Contact = () => {
                   </Flex>
                 </Col>
               </Row> : <Button
-                className="fs-0 fw-semi-bold border-0 rounded-0 shadow-none button px-5 py-2"
+                className="fs-0 fw-semi-bold border-0 shadow-none button px-5 py-2"
                 type="submit"
               >
                 Send Message
