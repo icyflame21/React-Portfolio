@@ -17,11 +17,11 @@ const Hero = () => {
     <Section style={{
       backgroundColor: '#f5f5f5'
     }}>
-      <Row className="justify-content-center align-items-center px-5 pt-5">
+      <Row className="justify-content-center align-items-center pt-5">
         <Col
           md={7}
           xxl={7}>
-          <div className='position-relative overflow-hidden h-sm-100'>
+          <div className={`position-relative overflow-hidden h-sm-100 ${isMatch ? 'px-3' : 'px-5'}`}>
             <LazyLoadImage
               alt="user1"
               src={user1}

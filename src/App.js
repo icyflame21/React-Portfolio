@@ -30,7 +30,7 @@ const App = () => {
   const isMatch = useMediaQuery(theme.breakpoints.down('md'))
 
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router>
       {isMatch ? null : <ScrollToTop
         smooth
         component={<FaArrowUp className='text-white' />}

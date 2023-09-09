@@ -5,8 +5,7 @@ import Flex from 'components/common/Flex';
 import classNames from 'classnames';
 import { useMediaQuery, useTheme } from '@mui/material';
 import { HiOutlineMenuAlt2 } from 'react-icons/hi'
-import Avatar from 'components/common/Avatar';
-import Logo from 'assets/img/team/logo.png'
+import Logo from 'assets/img/team/logo.svg'
 import { GiSkills } from 'react-icons/gi'
 import { BsInfoSquareFill } from 'react-icons/bs'
 import { BiSolidContact } from 'react-icons/bi'
@@ -48,17 +47,32 @@ const NavbarStandard = () => {
       })}>
       <Container className='d-flex justify-content-between align-items-center py-2'>
         {isMatch ?
-          <Avatar
-            size="3xl"
-            src={Logo}
-          /> : <Navbar.Brand className="fw-semi-bold fs-4 px-1 info" style={{
-            fontFamily: 'Tenor Sans',
+          <div className='position-relative overflow-hidden h-sm-100'>
+            <LazyLoadImage
+              alt="Logo"
+              src={Logo}
+              effect='blur'
+              style={{
+                objectFit: 'contain',
+                width: '50px',
+              }}
+            />
+          </div> : <Navbar.Brand className="fw-medium fs-4 info" style={{
+            fontFamily: 'Forum',
+            letterSpacing: '5px'
           }}>
             <Flex alignItems='center' className='gap-2'>
-              <Avatar
-                size="3xl"
-                src={Logo}
-              />
+              <div className='position-relative overflow-hidden h-sm-100'>
+                <LazyLoadImage
+                  alt="Logo"
+                  src={Logo}
+                  effect='blur'
+                  style={{
+                    objectFit: 'contain',
+                    width: '65px',
+                  }}
+                />
+              </div>
               Biswaranjan
             </Flex>
           </Navbar.Brand>}
@@ -71,22 +85,33 @@ const NavbarStandard = () => {
             width: '70%',
           }}
         >
-          {navbarToggle && isMatch ? <Modal.Header className='bg-white w-100'
+          {navbarToggle && isMatch ? <Modal.Header className='bg-white'
           >
-            <Navbar.Brand className="fw-semi-bold fs-2 p-3 info w-100" href="#" style={{
-              fontFamily: 'Tenor Sans',
-              borderBottom: '2px solid #34076b'
+            <Navbar.Brand className="fw-semi-bold fs-2 p-3 info w-100" style={{
+              fontFamily: 'Forum',
+              borderBottom: '2px solid #34076b',
+              letterSpacing: '5px'
             }}>
               <Flex alignItems='center' className='gap-2'>
-                <Avatar
-                  size="2xl"
-                  src={Logo}
-                />
+                <div className='position-relative overflow-hidden h-sm-100'>
+                  <LazyLoadImage
+                    alt="Logo"
+                    src={Logo}
+                    effect='blur'
+                    style={{
+                      objectFit: 'contain',
+                      width: '40px',
+                    }}
+                  />
+                </div>
                 Biswaranjan
               </Flex>
             </Navbar.Brand>
           </Modal.Header> : ''}
-          {navbarToggle && isMatch ? <Modal.Body>
+          {navbarToggle && isMatch ? <Modal.Body
+            style={{
+              backgroundColor: '#f5f5f5'
+            }}>
             <Table responsive bordered striped className='bg-200'>
               <tbody className=''>
                 <tr>
