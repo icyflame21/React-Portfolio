@@ -14,7 +14,9 @@ const Hero = () => {
   const theme = useTheme()
   const isMatch = useMediaQuery(theme.breakpoints.down('md'))
   return (
-    <Section bg='white'>
+    <Section style={{
+      backgroundColor: '#f5f5f5'
+    }}>
       <Row className="justify-content-center align-items-center pt-3">
         <Col
           lg={7}
@@ -25,6 +27,7 @@ const Hero = () => {
             alt="user1"
             src={user1}
             size='6xl'
+            mediaClass='shadow img-thumbnail'
             className='w-75 my-lg-0 mt-6 mb-4'
           />
         </Col>
