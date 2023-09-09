@@ -3,12 +3,12 @@ import { Row, Col, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Section from 'components/common/Section';
 import user1 from 'assets/img/team/biswa.png';
-import Avatar from 'components/common/Avatar';
 import { bgWhiteIcons } from 'data/socialIcons';
 import { settings } from 'config';
 import Flex from 'components/common/Flex';
 import '../../CSS/GradientText.css'
 import { useMediaQuery, useTheme } from '@mui/material';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const Hero = () => {
   const theme = useTheme()
@@ -17,23 +17,25 @@ const Hero = () => {
     <Section style={{
       backgroundColor: '#f5f5f5'
     }}>
-      <Row className="justify-content-center align-items-center pt-3">
+      <Row className="justify-content-center align-items-center px-5 pt-5">
         <Col
-          lg={7}
-          xl={7}
-          className='d-flex justify-content-center'
-        >
-          <Avatar
-            alt="user1"
-            src={user1}
-            size='6xl'
-            mediaClass='shadow img-thumbnail'
-            className='w-75 my-lg-0 mt-6 mb-4'
-          />
+          md={7}
+          xxl={7}>
+          <div className='position-relative overflow-hidden h-sm-100'>
+            <LazyLoadImage
+              alt="user1"
+              src={user1}
+              effect='blur'
+              style={{
+                borderRadius: '50%'
+              }}
+              className='w-100 my-lg-0 mt-6 mb-4 img-thumbnail'
+            />
+          </div>
         </Col>
         <Col
-          lg={5}
-          xl={5} className="text-center text-xl-start">
+          md={5}
+          xxl={5} className="text-center text-xl-start">
           <p className='fs-1 title_text fw-semi-bold '>
             Software Developer
           </p>
