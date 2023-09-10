@@ -17,7 +17,7 @@ const Hero = () => {
     <Section style={{
       backgroundColor: '#f5f5f5'
     }}>
-      <Row className="justify-content-center align-items-center pt-5">
+      <Row className={`justify-content-center align-items-center pt-5`}>
         <Col
           md={7}
           xxl={7}>

@@ -13,14 +13,12 @@ import react_native from 'assets/img/skills/react_native.svg';
 import postman from 'assets/img/skills/postman.svg';
 import sass from 'assets/img/skills/sass.svg';
 import jest from 'assets/img/skills/jest.svg';
-import stripe from 'assets/img/skills/stripe.svg';
-import webpack from 'assets/img/skills/webpack.svg';
 import office from 'assets/img/skills/microsoftoffice.svg';
 import nodejs from 'assets/img/skills/nodejs-icon.svg';
 import mongoDb from 'assets/img/skills/mongoDB.svg';
 import intellij from 'assets/img/skills/intellij.svg'
 import vscode from 'assets/img/skills/vsCode.svg'
-import teams from 'assets/img/skills/microsoft-teams.svg'
+import figma from 'assets/img/skills/figma.svg'
 import teamwork from 'assets/img/skills/teamwork.svg'
 import timeManagement from 'assets/img/skills/time-management.svg'
 import problemSolving from 'assets/img/skills/problem-solving.svg'
@@ -181,16 +179,16 @@ export const technical = [
   //     data: 45
   //   },
   // },
-  // {
-  //   id: 41,
-  //   logo: jest,
-  //   name: 'Jest',
-  //   priority: {
-  //     title: 'Beginner',
-  //     color: '#27AE60',
-  //     data: 25
-  //   },
-  // },
+  {
+    id: 41,
+    logo: jest,
+    name: 'Jest',
+    priority: {
+      title: 'Beginner',
+      color: '#27AE60',
+      data: 25
+    },
+  },
 ]
 
 export const toolsSet = [
@@ -222,6 +220,16 @@ export const toolsSet = [
       title: 'Intermediate',
       color: '#2F80ED',
       data: 65
+    },
+  },
+  {
+    id: 20,
+    logo: figma,
+    name: 'Figma',
+    priority: {
+      title: 'Beginner',
+      color: '#27AE60',
+      data: 35
     },
   },
   {

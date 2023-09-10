@@ -306,6 +306,24 @@ const Skills = () => {
                                                 ))}
                                             </tbody>
                                         </Table>
+                                        <Button
+                                            variant="link"
+                                            onClick={() => {
+                                                setCollapsed({
+                                                    ...collapsed,
+                                                    toolsSet: !collapsed.toolsSet,
+                                                    toolSetNum: !collapsed.toolsSet ? toolsSet.length : 6
+                                                })
+                                            }}
+                                            className='w-100 p-0 m-0 mb-2'
+                                        >
+                                            Show {collapsed.toolsSet ? 'less' : 'more'}
+                                            <FontAwesomeIcon
+                                                icon="chevron-down"
+                                                className="ms-2 fs--2"
+                                                transform={collapsed.toolsSet ? 'rotate-180' : ''}
+                                            />
+                                        </Button>
                                     </Card.Body>
                                 </Card>
                             </Col>

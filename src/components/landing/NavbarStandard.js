@@ -5,7 +5,7 @@ import Flex from 'components/common/Flex';
 import classNames from 'classnames';
 import { useMediaQuery, useTheme } from '@mui/material';
 import { HiOutlineMenuAlt2 } from 'react-icons/hi'
-import Logo from 'assets/img/team/logo.svg'
+import Logo from 'assets/img/team/logo.jpg'
 import { GiSkills } from 'react-icons/gi'
 import { BsInfoSquareFill } from 'react-icons/bs'
 import { BiSolidContact } from 'react-icons/bi'
@@ -54,10 +54,10 @@ const NavbarStandard = () => {
               effect='blur'
               style={{
                 objectFit: 'contain',
-                width: '50px',
+                width: '40px',
               }}
             />
-          </div> : <Navbar.Brand className="fw-medium fs-4 info" style={{
+          </div> : <Navbar.Brand className="fs-4 info" style={{
             fontFamily: 'Forum',
             letterSpacing: '5px'
           }}>
@@ -87,7 +87,7 @@ const NavbarStandard = () => {
         >
           {navbarToggle && isMatch ? <Modal.Header className='bg-white'
           >
-            <Navbar.Brand className="fw-semi-bold fs-2 p-3 info w-100" style={{
+            <Navbar.Brand className="fs-2 p-3 info w-100" style={{
               fontFamily: 'Forum',
               borderBottom: '2px solid #34076b',
               letterSpacing: '5px'
