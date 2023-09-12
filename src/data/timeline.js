@@ -12,7 +12,7 @@ export const VerticalTimelineData = [
     icon: <GiSuitcase className='fs-2 success' />
   },
   {
-    title: 'Full Stack Developer Trainee @FYND',
+    title: 'Full Stack Developer Trainee @FYND Academy',
     description:
       'Completed 4-month Full Stack Developer Trainee program at Fynd Academy (Shopsense Retail Technologies Ltd.), successfully creating independent, industry-level projects using the MERN tech stack.',
     year: '2023',

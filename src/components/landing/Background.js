@@ -9,14 +9,15 @@ import { useMediaQuery, useTheme } from '@mui/material';
 
 const Background = () => {
     const handleItalic = (text) => {
-        // const parts = text.split("@");
-        // const modifiedText = parts.length === 2 ? (
-        //     <>
-        //         {parts[0]}
-        //         <span className='info'>@{parts[1]}</span>
-        //     </>
-        // ) : text;
-        return <h5 className="mb-2 text-black">{text}</h5>;
+        // border-dashed border-bottom border-2
+        const parts = text.split("@");
+        const modifiedText = parts.length === 2 ? (
+            <>
+                {parts[0]}
+                @<span className='title_text'>{parts[1]}</span>
+            </>
+        ) : text;
+        return <h5 className="mb-2 text-black">{modifiedText}</h5>;
     };
 
     const handleColorPresentYr = (year) => {
