@@ -4,8 +4,6 @@ import 'react-toastify/dist/ReactToastify.min.css';
 import Layout from './layouts/Layout';
 import ScrollToTop from 'react-scroll-to-top';
 import { FaArrowUp } from "react-icons/fa";
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import './App.css'
 import { useMediaQuery, useTheme } from '@mui/material';
 

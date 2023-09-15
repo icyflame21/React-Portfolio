@@ -5,7 +5,7 @@ import Flex from 'components/common/Flex';
 import classNames from 'classnames';
 import { useMediaQuery, useTheme } from '@mui/material';
 import { HiOutlineMenuAlt2 } from 'react-icons/hi'
-import Logo from 'assets/img/team/logo.jpg'
+import Logo from 'assets/img/team/logo.webp'
 import { GiSkills } from 'react-icons/gi'
 import { BsInfoSquareFill } from 'react-icons/bs'
 import { BiSolidContact } from 'react-icons/bi'

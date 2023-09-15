@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Section from 'components/common/Section';
-import user1 from 'assets/img/team/biswa.png';
+import user1 from 'assets/img/team/biswa.webp';
 import { bgWhiteIcons } from 'data/socialIcons';
 import { settings } from 'config';
 import Flex from 'components/common/Flex';

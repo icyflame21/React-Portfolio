@@ -10,7 +10,7 @@ import git from 'assets/img/skills/git.svg';
 import tailwind from 'assets/img/skills/tailwind.svg';
 import redux from 'assets/img/skills/redux.svg';
 import react_native from 'assets/img/skills/react_native.svg';
-import postman from 'assets/img/skills/postman.svg';
+import postman from 'assets/img/skills/postman.webp';
 import sass from 'assets/img/skills/sass.svg';
 import jest from 'assets/img/skills/jest.svg';
 import office from 'assets/img/skills/microsoftoffice.svg';
