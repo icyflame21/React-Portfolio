@@ -1,5 +1,5 @@
 import SoftBadge from 'components/common/SoftBadge';
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Button, Card, Col, Row } from 'react-bootstrap';
 import { BsFillLaptopFill } from 'react-icons/bs'
 import { BiLogoPlayStore } from 'react-icons/bi'
@@ -9,11 +9,25 @@ import Flex from 'components/common/Flex';
 import { useMediaQuery, useTheme } from '@mui/material';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import '../../CSS/GradientText.css'
+import { styled } from '@mui/material/styles';
+import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 
 const ProjectService = ({ subTitle, title, liveUrl, githubUrl, thumbnail, techStack,
     appstoreURL, playstoreURL }) => {
     const theme = useTheme()
     const isMatch = useMediaQuery(theme.breakpoints.down('lg'))
+
+    const HtmlTooltip = styled(({ className, ...props }) => (
+        <Tooltip {...props} classes={{ popper: className }} />
+    ))(({ theme }) => ({
+        [`& .${tooltipClasses.tooltip}`]: {
+            backgroundColor: '#f5f5f9',
+            color: 'rgba(0, 0, 0, 0.87)',
+            maxWidth: 400,
+            fontSize: theme.typography.pxToRem(12),
+            border: '1px solid #dadde9',
+        },
+    }));
     return (
         <>
             {isMatch ?
@@ -104,7 +118,7 @@ const ProjectService = ({ subTitle, title, liveUrl, githubUrl, thumbnail, techSt
                         </Col>
                         <Col xs={12}>
                             <Card.Body>
-                            <div className='mb-3 '>
+                                <div className='mb-3 '>
                                     {techStack.map((ele) => (
                                         <SoftBadge key={ele.id} pill bg='success' className='fs--2 me-2 text-wrap text-start'>{ele.title}</SoftBadge>
                                     ))}

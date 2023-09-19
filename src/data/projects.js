@@ -7,7 +7,7 @@ export const projectData = [
   {
     id: 0,
     title: 'ezSCM (Web App)',
-    subTitle: "Leveraged the Falcon theme's capabilities to ensure a seamless and uniform user interface across all screens. Key responsibilities encompassed order management, vendor collaboration, SKU management, seamless Stripe subscription integration, and the development of essential admin modules.",
+    subTitle: "Leveraged the customized Bootstrap theme's capabilities to ensure a seamless and uniform user interface across all screens. Key responsibilities encompassed order management, vendor collaboration, SKU management, seamless Stripe subscription integration, and the development of essential admin modules.",
     liveUrl: 'https://ezscm.ai/',
     thumbnail: ezSCM,
     techStack: [
@@ -17,7 +17,7 @@ export const projectData = [
       { id: 4, title: 'Localization' },
       { id: 5, title: 'Stripe' },
       { id: 6, title: 'SASS' },
-      { id: 9, title: 'Webpack' },
+      { id: 6, title: 'Webpack' },
       { id: 10, title: 'Azure TFS' },
     ]
   },
@@ -32,7 +32,7 @@ export const projectData = [
       { id: 8, title: 'React Native' },
       { id: 2, title: 'React Native Paper' },
       { id: 7, title: 'Redux' },
-      { id: 4, title: 'Localization' },
+      { id: 8, title: 'Google Maps Module' },
       { id: 10, title: 'Azure TFS' },
     ]
   },
