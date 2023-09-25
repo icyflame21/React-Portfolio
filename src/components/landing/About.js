@@ -61,7 +61,7 @@ const About = () => {
                             subtitle="Why hire me for your next project?"
                         />
                         <p className="gray1 fs-1 mt-2">
-                            Experienced software engineer with <span className='fw-bold'>1+ year</span> in MERN stack and React-Native. <span className='fw-bold'>4 months</span> freelancer for Indian clients. Committed to learning, complex problem-solving, and impactful collaboration.
+                            Experienced software engineer with <span className='fw-bold'>1.5 years</span> in MERN stack and React-Native. <span className='fw-bold'>4 months</span> freelancer for Indian clients. Committed to learning, complex problem-solving, and impactful collaboration.
                         </p>
                         <Button
                             as='a'

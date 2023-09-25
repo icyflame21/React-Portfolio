@@ -46,7 +46,7 @@ const Hero = () => {
             </span>
           </h1>
           <p className="fs-1 mt-2 gray1 fw-normal">
-            Am a dedicated Indian software developer with a passion for crafting and extensive experience in constructing web applications.
+            Am a dedicated software artisan from India with a passion for crafting and extensive experience in constructing web applications.
           </p>
           <Flex alignItems='center' className='justify-content-lg-start justify-content-center'>
             <Button
