@@ -6,7 +6,7 @@ export const VerticalTimelineData = [
   {
     title: 'Software Engineer @TechVibrant',
     description:
-      'Contributed to 2 global SaaS products, ezSCM and iFarm, playing a key role as a lead React Native developer for ezSCM. Achieved rapid UI enhancements for web and mobile platforms, delivering the mobile app in just 2 months, resulting in a 40% boost in mobile efficiency and improved web security against unauthorized access.',
+      'Contributed to 2 global SaaS products, ezSCM and iFarm, playing a key role as a lead React Native developer for ezSCM. Achieved rapid UI enhancements for web and mobile platforms, delivering the mobile app in just 2 months, resulting in a 70% boost in mobile efficiency and improved web security against unauthorized access.',
     year: '2022-Present',
     date: '18 Jul',
     icon: <GiSuitcase className='fs-2 success' />
@@ -20,7 +20,7 @@ export const VerticalTimelineData = [
     icon: <GiSuitcase className='fs-2 success' />
   },
   {
-    title: 'Masai',
+    title: 'Masai, Bangalore',
     description:
       'Certified in Full Stack Web Development from Masai, specializing in the MERN stack with a strong command of JavaScript. Proficient in solving data structures and algorithms through extensive hands-on coding practice.',
     year: '2021-2022',
@@ -28,7 +28,7 @@ export const VerticalTimelineData = [
     icon: <MdOutlineModelTraining className='fs-2 success' />
   },
   {
-    title: 'Central University of Haryana',
+    title: 'Central University of Haryana, Mahendragarh',
     description:
       'I hold a B.Tech in Electrical Engineering and concurrently served 2 years as Cultural Secretary and Class Representative, showcasing diverse leadership skills and technical prowess.',
     year: '2018-2022',

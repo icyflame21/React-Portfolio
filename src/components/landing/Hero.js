@@ -37,7 +37,7 @@ const Hero = () => {
           md={5}
           xxl={5} className="text-center text-xl-start">
           <p className='fs-1 title_text fw-semi-bold '>
-            Software Developer
+            Full Stack Software Developer
           </p>
           <h1 className="fw-bold text-black">
             Hey I'm <br />

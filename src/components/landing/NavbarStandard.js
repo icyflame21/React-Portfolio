@@ -47,34 +47,24 @@ const NavbarStandard = () => {
       })}>
       <Container className='d-flex justify-content-between align-items-center py-2'>
         {isMatch ?
-          <div className='position-relative overflow-hidden h-sm-100'>
+          <LazyLoadImage
+            alt="Logo"
+            src={Logo}
+            effect='blur'
+            style={{
+              objectFit: 'contain',
+              width: '180px',
+            }}
+          /> : <Navbar.Brand>
             <LazyLoadImage
               alt="Logo"
               src={Logo}
               effect='blur'
               style={{
                 objectFit: 'contain',
-                width: '40px',
+                width: '210px',
               }}
             />
-          </div> : <Navbar.Brand className="fs-4 info" style={{
-            fontFamily: 'Forum',
-            letterSpacing: '5px'
-          }}>
-            <Flex alignItems='center' className='gap-2'>
-              <div className='position-relative overflow-hidden h-sm-100'>
-                <LazyLoadImage
-                  alt="Logo"
-                  src={Logo}
-                  effect='blur'
-                  style={{
-                    objectFit: 'contain',
-                    width: '65px',
-                  }}
-                />
-              </div>
-              Biswaranjan
-            </Flex>
           </Navbar.Brand>}
         <Navbar.Toggle >
           <HiOutlineMenuAlt2 className='fs-5 info' />
@@ -85,27 +75,17 @@ const NavbarStandard = () => {
             width: '70%',
           }}
         >
-          {navbarToggle && isMatch ? <Modal.Header className='bg-white'
-          >
-            <Navbar.Brand className="fs-2 p-3 info w-100" style={{
-              fontFamily: 'Forum',
-              borderBottom: '2px solid #34076b',
-              letterSpacing: '5px'
-            }}>
-              <Flex alignItems='center' className='gap-2'>
-                <div className='position-relative overflow-hidden h-sm-100'>
-                  <LazyLoadImage
-                    alt="Logo"
-                    src={Logo}
-                    effect='blur'
-                    style={{
-                      objectFit: 'contain',
-                      width: '40px',
-                    }}
-                  />
-                </div>
-                Biswaranjan
-              </Flex>
+          {navbarToggle && isMatch ? <Modal.Header className='bg-white' >
+            <Navbar.Brand className="fs-2 p-3 info w-100">
+              <LazyLoadImage
+                alt="Logo"
+                src={Logo}
+                effect='blur'
+                style={{
+                  objectFit: 'contain',
+                  width: '180px',
+                }}
+              />
             </Navbar.Brand>
           </Modal.Header> : ''}
           {navbarToggle && isMatch ? <Modal.Body
