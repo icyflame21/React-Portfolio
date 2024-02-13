@@ -1,14 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import Main from './Main';
-import 'helpers/initFA';
+import React from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App";
+import "helpers/initFA";
 
-ReactDOM.render(
+const rootElement = document.getElementById("main");
+const root = createRoot(rootElement);
+root.render(
   <React.StrictMode>
-    <Main>
-      <App />
-    </Main>
-  </React.StrictMode>,
-  document.getElementById('main')
+    <App />
+  </React.StrictMode>
 );

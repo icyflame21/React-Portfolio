@@ -1,82 +1,93 @@
-import React from 'react';
-import { Row, Col, Button, Card } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Section from 'components/common/Section';
-import { settings } from 'config';
-import '../../CSS/GradientText.css'
-import { faFileDownload } from '@fortawesome/free-solid-svg-icons'
-import SectionHeader from './SectionHeader';
-import AboutUs from '../../assets/img/animated-icons/about-us.json'
-import Lottie from 'react-lottie';
-import { useMediaQuery, useTheme } from '@mui/material';
+import React from "react";
+import { Row, Col, Button, Card } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Section from "components/common/Section";
+import { settings } from "config";
+import "../../CSS/GradientText.css";
+import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
+import SectionHeader from "./SectionHeader";
+import AboutUs from "../../assets/img/animated-icons/about-us.json";
+import Lottie from "react-lottie";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 const About = () => {
-    const theme = useTheme()
-    const isMatch = useMediaQuery(theme.breakpoints.down('lg'))
-    const aboutUsOptions = {
-        loop: true,
-        autoplay: false,
-        animationData: AboutUs,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice'
-        }
-    };
-    return (
-        <Section id="about" bg='light'>
-            {isMatch ?
-                <Row className={`justify-content-center align-items-center px-4`}>
-                    <Col>
-                        <SectionHeader
-                            title="About Me"
-                            subtitle="Why hire me for your next project?"
-                            dropCap
-                        />
-                        <p className="gray1 fs-1 mt-2">
-                            Experienced full stack software developer with <span className='fw-bold'>1.5 years</span> in MERN stack and React-Native. <span className='fw-bold'>4 months</span> freelancer for Indian clients. Committed to learning, complex problem-solving, and impactful collaboration.
-                        </p>
-                        <Button
-                            as='a'
-                            className="mb-4 fs-0 fw-semi-bold border-0 mt-3 shadow-none button px-5 py-2"
-                            href={settings.resumelink}
-                            target='_blank'
-                            rel='noreferrer'
-                        >
-                            Download CV
-                            <FontAwesomeIcon icon={faFileDownload} transform="shrink-5 down-1 right-5" />
-                        </Button>
-                    </Col>
-                </Row> :
-                <Row className={`justify-content-center align-items-center px-0`}>
-                    <Col
-                        lg={5}
-                        xl={5}
-                    >
-                        <Lottie options={aboutUsOptions} />
-                    </Col>
-                    <Col
-                        lg={7}
-                        xl={7}>
-                        <SectionHeader
-                            title="About Me"
-                            subtitle="Why hire me for your next project?"
-                        />
-                        <p className="gray1 fs-1 mt-2">
-                            Experienced full stack software developer with <span className='fw-bold'>1.5 years</span> in MERN stack and React-Native. <span className='fw-bold'>4 months</span> freelancer for Indian clients. Committed to learning, complex problem-solving, and impactful collaboration.
-                        </p>
-                        <Button
-                            as='a'
-                            className="mb-4 fs-0 fw-semi-bold border-0 mt-3 shadow-none button px-5 py-2"
-                            href={settings.resumelink}
-                            target='_blank'
-                            rel='noreferrer'
-                        >
-                            Download CV
-                            <FontAwesomeIcon icon={faFileDownload} transform="shrink-5 down-1 right-5" />
-                        </Button>
-                    </Col>
-                </Row>}
-        </Section >
-    );
+  const theme = useTheme();
+  const isMatch = useMediaQuery(theme.breakpoints.down("lg"));
+  const aboutUsOptions = {
+    loop: true,
+    autoplay: false,
+    animationData: AboutUs,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+  return (
+    <Section id="about" bg="light">
+      {isMatch ? (
+        <Row className={`justify-content-center align-items-center px-4`}>
+          <Col>
+            <SectionHeader
+              title="About Me"
+              subtitle="Why hire me for your next project?"
+              dropCap
+            />
+            <p className="gray1 fs-1 mt-2">
+              Experienced full stack software developer with{" "}
+              <span className="fw-bold">1.5 years</span> in MERN stack and
+              React-Native. <span className="fw-bold">4 months</span> freelancer
+              for Indian clients. Committed to learning, complex
+              problem-solving, and impactful collaboration.
+            </p>
+            <Button
+              as="a"
+              className="mb-4 fs-0 fw-semi-bold border-0 mt-3 shadow-none button px-5 py-2"
+              href={settings.resumelink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Download CV
+              <FontAwesomeIcon
+                icon={faFileDownload}
+                transform="shrink-5 down-1 right-5"
+              />
+            </Button>
+          </Col>
+        </Row>
+      ) : (
+        <Row className={`justify-content-center align-items-center px-0`}>
+          <Col lg={5} xl={5}>
+            <Lottie options={aboutUsOptions} />
+          </Col>
+          <Col lg={7} xl={7}>
+            <SectionHeader
+              title="About Me"
+              subtitle="Why hire me for your next project?"
+            />
+            <p className="gray1 fs-1 mt-2">
+              Experienced full stack software developer with{" "}
+              <span className="fw-bold">1.5 years</span> in MERN stack and
+              React-Native. <span className="fw-bold">4 months</span> freelancer
+              for Indian clients. Committed to learning, complex
+              problem-solving, and impactful collaboration.
+            </p>
+            <Button
+              as="a"
+              className="mb-4 fs-0 fw-semi-bold border-0 mt-3 shadow-none button px-5 py-2"
+              href={settings.resumelink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Download CV
+              <FontAwesomeIcon
+                icon={faFileDownload}
+                transform="shrink-5 down-1 right-5"
+              />
+            </Button>
+          </Col>
+        </Row>
+      )}
+    </Section>
+  );
 };
 
 export default About;
