@@ -247,7 +247,7 @@ const Skills = () => {
               </Col>
               <Col md={4} xxl={4}>
                 <Card>
-                  <Card.Body className="p-0">
+                  <Card.Body className="p-0" style={{height:'419px'}}>
                     <FalconCardHeader
                       light
                       title="Soft Skills"

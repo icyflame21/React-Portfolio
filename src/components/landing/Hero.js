@@ -15,37 +15,18 @@ const Hero = () => {
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <Section
-      style={{
-        backgroundColor: "#f5f5f5",
-      }}
+        className='hero_img'
     >
-      <Row className={`justify-content-center align-items-center pt-5`}>
-        <Col md={6} xxl={6}>
-          <div
-            className={`position-relative overflow-hidden h-sm-100 ${
-              isMatch ? "px-3" : "px-7"
-            }`}
-          >
-            <LazyLoadImage
-              alt="user1"
-              src={user1}
-              effect="blur"
-              style={{
-                borderRadius: "50%",
-              }}
-              className="w-100 my-lg-0 mt-6 mb-4 img-thumbnail"
-            />
-          </div>
-        </Col>
+        <Row className={`justify-content-center align-items-center pt-5`}>
         <Col md={6} xxl={6} className="text-center text-xl-start">
-          <p className="fs-1 title_text fw-semi-bold ">
+         <p className="fs-2 text-white fw-semi-bold ">
             Full Stack Software Developer
           </p>
-          <h1 className="fw-bold text-black">
+          <h1 className="fw-bold text-white">
             Hey I'm <br />
-            <span className="gradient_hero_text">Biswaranjan Subudhi</span>
+            <span className="text-white">Biswaranjan Subudhi</span>
           </h1>
-          <p className="fs-1 mt-2 gray1 fw-normal">
+          <p className="fs-1 mt-2 text-white">
             Am a dedicated software artisan from India with a passion for
             crafting and extensive experience in constructing web applications.
           </p>
@@ -69,7 +50,7 @@ const Hero = () => {
           </Flex>
           <Flex
             alignItems="center"
-            className="justify-content-lg-start gap-2 mt-2 justify-content-center"
+            className="justify-content-lg-start gap-3 mt-2 justify-content-center"
           >
             {bgWhiteIcons.map(({ id, icon, href }) => (
               <Button
@@ -80,13 +61,28 @@ const Hero = () => {
                 variant="falcon-default"
                 type="button"
                 size="sm"
-                className="icon-item icon-item-lg fs-2"
+                className="icon-item icon-item fs-2"
               >
                 {icon}
               </Button>
             ))}
           </Flex>
         </Col>
+       {isMatch?null: <Col md={6} xxl={6}>
+          <div
+            className={`position-relative overflow-hidden h-sm-100 px-7`}
+          >
+        <LazyLoadImage
+              alt="user1"
+              src={user1}
+              effect="blur"
+              style={{
+                borderRadius: "50%",
+              }}
+              className="w-100 my-lg-0 mt-6 mb-4 img-thumbnail"
+            />
+          </div>
+        </Col>}
       </Row>
     </Section>
   );

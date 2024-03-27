@@ -3,6 +3,11 @@
   color: #38b6ff !important;
 }
 
+.hero_img{
+  background-image: url(../assets/img/designs/bg-2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .title_text {
   color: #34076b !important;
 }

@@ -1,22 +1,32 @@
 import React, { useEffect, useState } from "react";
-import { Button, Container, Modal, Nav, Navbar, Table } from "react-bootstrap";
+import {
+  Button,
+  CloseButton,
+  Container,
+  Modal,
+  Nav,
+  Navbar,
+  Table,
+} from "react-bootstrap";
 import { topNavbarBreakpoint } from "config";
 import Flex from "components/common/Flex";
 import classNames from "classnames";
 import { useMediaQuery, useTheme } from "@mui/material";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import Logo from "assets/img/team/logo.webp";
-import { GiSkills } from "react-icons/gi";
-import { BsInfoSquareFill } from "react-icons/bs";
-import { BiSolidContact } from "react-icons/bi";
-import { MdCastForEducation } from "react-icons/md";
-import { AiFillProject } from "react-icons/ai";
 import "../../CSS/GradientText.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Link } from "react-scroll";
+import sections from "data/nav";
 
-const NavbarStandard = ({ activeSection }) => {
+const NavbarStandard = () => {
   const [navbarToggle, setNavbarToggle] = useState(false);
   const [showDropShadow, setShowDropShadow] = useState(false);
+  const [activeLink, setActiveLink] = useState("");
+
+  const handleSetActive = (to) => {
+    setActiveLink(to);
+  };
 
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
@@ -34,7 +44,6 @@ const NavbarStandard = ({ activeSection }) => {
     return () => window.removeEventListener("scroll", setDropShadow);
   }, []);
 
-  console.log("activeSection", activeSection);
   return (
     <Navbar
       onToggle={(expand) => {
@@ -48,7 +57,7 @@ const NavbarStandard = ({ activeSection }) => {
       })}
     >
       <Container
-        fluid
+        fluid={isMatch?true:false}
         className="d-flex justify-content-between align-items-center py-2 px-5"
       >
         {isMatch ? (
@@ -84,8 +93,8 @@ const NavbarStandard = ({ activeSection }) => {
           }}
         >
           {navbarToggle && isMatch ? (
-            <Modal.Header className="bg-white">
-              <Navbar.Brand className="fs-2 p-3 info w-100">
+            <Modal.Header className="bg-white border-0 p-3 w-100">
+              <Navbar.Brand className="fs-2">
                 <LazyLoadImage
                   alt="Logo"
                   src={Logo}
@@ -96,6 +105,12 @@ const NavbarStandard = ({ activeSection }) => {
                   }}
                 />
               </Navbar.Brand>
+              <CloseButton
+                className="btn btn-circle btn-sm transition-base p-0"
+                onClick={() => {
+                  setNavbarToggle(false);
+                }}
+              />
             </Modal.Header>
           ) : (
             ""
@@ -106,129 +121,53 @@ const NavbarStandard = ({ activeSection }) => {
                 backgroundColor: "#f5f5f5",
               }}
             >
-              <Table responsive bordered striped className="bg-200">
+              <Table responsive bordered hover>
                 <tbody className="">
-                  <tr>
-                    <td>
-                      <Button
-                        as="a"
-                        href="#about"
-                        className="gray1 fs-0 fw-medium p-0 w-100 bg-transparent border-0 shadow-none"
-                        style={{
-                          textAlign: "left",
-                        }}
-                      >
-                        <BsInfoSquareFill className="me-2 fs-1 gray1" />
-                        About
-                      </Button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <Button
-                        as="a"
-                        href="#skills"
-                        className="gray1 fs-0 fw-medium p-0 w-100 bg-transparent border-0 shadow-none"
-                        style={{
-                          textAlign: "left",
-                        }}
-                      >
-                        <GiSkills className="me-2 fs-1 gray1" />
-                        Skills
-                      </Button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <Button
-                        as="a"
-                        href="#background"
-                        className="gray1 fs-0 fw-medium p-0 w-100 bg-transparent border-0 shadow-none"
-                        style={{
-                          textAlign: "left",
-                        }}
-                      >
-                        <MdCastForEducation className="me-2 fs-1 gray1" />
-                        Background
-                      </Button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <Button
-                        as="a"
-                        href="#projects"
-                        className="gray1 fs-0 fw-medium p-0 w-100 bg-transparent border-0 shadow-none"
-                        style={{
-                          textAlign: "left",
-                        }}
-                      >
-                        <AiFillProject className="me-2 fs-1 gray1" />
-                        Projects
-                      </Button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <Button
-                        as="a"
-                        href="#contact"
-                        className="gray1 fs-0 fw-medium p-0 w-100 bg-transparent border-0 shadow-none"
-                        style={{
-                          textAlign: "left",
-                        }}
-                      >
-                        <BiSolidContact className="me-2 fs-1 gray1" />
-                        Contact
-                      </Button>
-                    </td>
-                  </tr>
+                  {sections.map((ele, idx) => (
+                    <tr
+                      className={`${activeLink == ele.id ? "bg-info border-info" : "border-300"} align-middle border  rounded`}
+                      key={ele.id + "-" + idx}
+                    >
+                      <td>
+                        <Link
+                          activeClass="text-white"
+                          to={ele.id}
+                          spy={true}
+                          as={Button}
+                          smooth={true}
+                          offset={-70}
+                          onSetActive={handleSetActive}
+                          duration={300}
+                          style={{ textAlign: "left" }}
+                          className="gray1 fs-0 fw-medium p-0 w-100 bg-transparent border-0 shadow-none cursor-pointer text-decoration-none"
+                        >
+                          {ele.icon}
+                          {ele.label}
+                        </Link>
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </Table>
             </Modal.Body>
           ) : isMatch ? null : (
             <Nav className="ms-auto">
               <Flex direction="row" alignItems="center">
-                <Button
-                  as="a"
-                  href="#about"
-                  style={{ fontSize: "16px", fontWeight: 500 }}
-                  className="bg-transparent title_text border-0 shadow-none px-4 py-2"
-                >
-                  About
-                </Button>
-                <Button
-                  as="a"
-                  href="#skills"
-                  style={{ fontSize: "16px", fontWeight: 500 }}
-                  className="bg-transparent title_text border-0 shadow-none px-4 py-2"
-                >
-                  Skills
-                </Button>
-                <Button
-                  as="a"
-                  href="#background"
-                  style={{ fontSize: "16px", fontWeight: 500 }}
-                  className="bg-transparent title_text border-0 shadow-none px-4 py-2"
-                >
-                  Background
-                </Button>
-                <Button
-                  as="a"
-                  href="#projects"
-                  style={{ fontSize: "16px", fontWeight: 500 }}
-                  className="bg-transparent title_text border-0 shadow-none px-4 py-2"
-                >
-                  Projects
-                </Button>
-                <Button
-                  as="a"
-                  href="#contact"
-                  style={{ fontSize: "16px", fontWeight: 500 }}
-                  className="border-0 shadow-none button px-4 py-2"
-                >
-                  Contact
-                </Button>
+                {sections.map((ele, idx) => (
+                  <Link
+                    key={ele.id + "-" + idx}
+                    activeClass="button"
+                    to={ele.id}
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={300}
+                    style={{ fontSize: "16px", fontWeight: 500 }}
+                    className="title_text border-0 rounded shadow-none px-4 py-2 cursor-pointer text-decoration-none"
+                  >
+                    {ele.label}
+                  </Link>
+                ))}
               </Flex>
             </Nav>
           )}

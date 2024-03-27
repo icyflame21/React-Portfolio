@@ -8,7 +8,13 @@ const SectionHeader = ({ title, subtitle, dropCap, ...rest }) => {
     <Row {...rest}>
       <Col lg={8} xl={7} xxl={6} className="col-xxl-6">
         <p className="fs-1 title_text fw-semi-bold text-capitalize">{title}</p>
-        {!dropCap ? <p className="fs-3 text-capitalize fw-bold heading_text dropcap">{subtitle}</p> : <p className="fs-3 text-capitalize fw-bold heading_text">{subtitle}</p>}
+        {!dropCap ? (
+          <p className="fs-3 text-capitalize fw-bold info dropcap">
+            {subtitle}
+          </p>
+        ) : (
+          <p className="fs-3 text-capitalize fw-bold info">{subtitle}</p>
+        )}
       </Col>
     </Row>
   );

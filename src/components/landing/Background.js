@@ -9,7 +9,6 @@ import { useMediaQuery, useTheme } from '@mui/material';
 
 const Background = () => {
     const handleItalic = (text) => {
-        // border-dashed border-bottom border-2
         const parts = text.split("@");
         const modifiedText = parts.length === 2 ? (
             <>
@@ -21,17 +20,6 @@ const Background = () => {
     };
 
     const handleColorPresentYr = (year) => {
-        // const parts = year.split("-");
-
-        // const formattedDateRange = (
-        //     <>
-        //         {parts.length === 1 ? parts[0] : <>
-        //             {parts[0]}-
-        //             {parts[1] === "Present" ? <span className="success">Present</span> : parts[1]}
-        //         </>}
-        //     </>
-        // );
-
         return <p className='fs--1 mb-0 fw-semi-bold text-black'>{year}</p>;
     }
 

@@ -46,9 +46,6 @@ const Contact = () => {
         });
       })
       .catch(() => {
-        toast.warn("Network Error \nPlease try again later", {
-          theme: "colored",
-        });
         setLoading(false);
         e.target.reset();
       });
@@ -157,7 +154,7 @@ const Contact = () => {
                   disabled={loading}
                   required
                   as="textarea"
-                  rows={7}
+                  rows={10}
                   placeholder="Your Message*"
                   name="clientMessage"
                   style={{
@@ -166,22 +163,17 @@ const Contact = () => {
                 />
               </Form.Group>
 
-              {loading ? (
-                <Row className="g-0">
-                  <Col xs={12} className="w-100 h-100">
-                    <Flex className="align-items-center justify-content-center">
-                      <Spinner animation="border" variant="primary" size="sm" />
-                    </Flex>
-                  </Col>
-                </Row>
-              ) : (
-                <Button
-                  className="fs-0 fw-semi-bold border-0 shadow-none button px-5 py-2"
-                  type="submit"
-                >
-                  Send Message
-                </Button>
-              )}
+              <Button
+                disabled={loading}
+                className="fs-0 fw-semi-bold border-0 shadow-none button px-5 py-2"
+                type="submit"
+              >
+                {loading ? (
+                  <Spinner animation="border" variant="primary" size="sm" />
+                ) : (
+                  "Send Message"
+                )}
+              </Button>
             </Form>
           </Col>
         </Row>

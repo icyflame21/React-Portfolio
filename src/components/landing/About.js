@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Button, Card } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Section from "components/common/Section";
 import { settings } from "config";
@@ -22,7 +22,7 @@ const About = () => {
     },
   };
   return (
-    <Section id="about" bg="light">
+    <Section  bg="light" id='about'>
       {isMatch ? (
         <Row className={`justify-content-center align-items-center px-4`}>
           <Col>

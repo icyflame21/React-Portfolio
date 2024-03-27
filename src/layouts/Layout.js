@@ -5,11 +5,11 @@ import { toast, ToastContainer } from "react-toastify";
 import Landing from "components/landing/Landing";
 import PageNotFound from "components/errors/PageNotFound";
 
-const Layout = () => {
+const Layout = ({isBelowLargeBreakpoint}) => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Landing />} />
+        <Route path="/" element={<Landing isBelowLargeBreakpoint={isBelowLargeBreakpoint}/>} />
         <Route element={<ErrorLayout />}>
           <Route path="errors/404" element={<PageNotFound />} />
         </Route>

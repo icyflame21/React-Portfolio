@@ -23,7 +23,7 @@ const Loader = () => {
 };
 
 const Landing = () => {
-  const NavbarStandard = React.lazy(() => import("./NavbarStandard"));
+const NavbarStandard = React.lazy(() => import("./NavbarStandard"));
   const Hero = React.lazy(() => import("./Hero"));
   const About = React.lazy(() => import("./About"));
   const Skills = React.lazy(() => import("./Skills"));
@@ -33,9 +33,9 @@ const Landing = () => {
   const Contact = React.lazy(() => import("./Contact"));
   const FooterStandard = React.lazy(() => import("./FooterStandard"));
 
-  
+
   return (
-    <Suspense fallback={<Loader />}>
+  <Suspense fallback={<Loader />}>
       <NavbarStandard />
       <Hero />
       <About />
@@ -45,7 +45,7 @@ const Landing = () => {
       <Projects />
       <Contact />
       <FooterStandard />
-    </Suspense>
+      </Suspense>
   );
 };
 
