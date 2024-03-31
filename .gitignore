@@ -28,3 +28,4 @@ yarn-error.log*
 # Custom files #
 ################
 .vercel
+/config.js
