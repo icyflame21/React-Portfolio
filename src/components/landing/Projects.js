@@ -15,7 +15,7 @@ const Projects = () => {
   return (
     <Section id="projects" bg="white">
       <Row
-        className={`justify-content-center align-items-center ${
+        className={`justify-content-center align-items-center pt-3 ${
           isMatch ? "px-3" : "px-0"
         }`}
       >
