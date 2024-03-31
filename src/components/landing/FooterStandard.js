@@ -8,8 +8,7 @@ const FooterStandard = () => {
         <Row className="justify-content-center">
           <Col xs={12} sm="auto">
             <p className="mb-0 text-400 fs--1">
-              &copy; {new Date().getFullYear()}-{new Date().getFullYear() + 3}{" "}
-              All rights reserved.
+              &copy; {new Date().getFullYear()} All rights reserved.
               <span className="mb-0 mt-2 d-block text-400 fs-0">
                 Made with ❤️ by{" "}
                 <a className="text-white" href="#" rel="noopener noreferrer">

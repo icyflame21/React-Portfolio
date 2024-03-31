@@ -32,7 +32,7 @@ const Background = () => {
 
   return (
     <Section id="background" bg="white">
-      <Row className="justify-content-center pt-3">
+      <Row className="justify-content-center pt-4">
         <Col>
           <SectionHeader
             title="My education & experience form a solid foundation."

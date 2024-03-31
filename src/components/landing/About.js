@@ -18,7 +18,7 @@ const About = () => {
   return (
     <Section bg="white" id="about">
       <Row
-        className={`justify-content-between pt-3 ${
+        className={`justify-content-between pt-4 ${
           isMatch ? "px-4 align-items-center" : ""
         }`}
       >

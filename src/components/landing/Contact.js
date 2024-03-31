@@ -61,12 +61,12 @@ const Contact = () => {
         title="I want to hear from you"
         subtitle="Contact Me"
         dropCap
-        className="justify-content-center text-center"
+        className="justify-content-center text-center pt-4"
       />
       {isMatch ? (
-        <motion.div variants={fadeIn("up", "tween", 0.3, 0.75)}>
-          <Card className="h-100 m-3">
-            <Card.Body className="p-0">
+        <Card className="h-100 m-3">
+          <Card.Body className="p-0">
+            <motion.div variants={fadeIn("up", "tween", 0.3, 0.75)}>
               <Row className="g-0 h-100">
                 <Col xs={12}>
                   <LeafletMap
@@ -97,9 +97,9 @@ const Contact = () => {
                   </Flex>
                 </Col>
               </Row>
-            </Card.Body>
-          </Card>
-        </motion.div>
+            </motion.div>
+          </Card.Body>
+        </Card>
       ) : (
         <Row className="mt-3">
           <Col lg={6} xl={6}>
