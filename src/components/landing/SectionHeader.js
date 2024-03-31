@@ -9,15 +9,15 @@ const SectionHeader = ({ title, subtitle, dropCap, ...rest }) => {
     <Row {...rest}>
       <Col lg={8} xl={7} xxl={6} className="col-xxl-6">
         <motion.div variants={textVariant()}>
-          <p className="fs-1 title_text fw-semi-bold text-capitalize">
-            {title}
-          </p>
+          <p className="fs-1 text-900 fw-semi-bold text-capitalize">{title}</p>
           {!dropCap ? (
-            <p className="fs-3 text-capitalize fw-bold info dropcap">
+            <p className="fs-3 text-capitalize fw-bold blue-text-gradient dropcap">
               {subtitle}
             </p>
           ) : (
-            <p className="fs-3 text-capitalize fw-bold info">{subtitle}</p>
+            <p className="fs-3 text-capitalize fw-bold blue-text-gradient">
+              {subtitle}
+            </p>
           )}
         </motion.div>
       </Col>

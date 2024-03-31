@@ -15,7 +15,7 @@ const Background = () => {
     const modifiedText =
       parts.length === 2 ? (
         <>
-          {parts[0]}@<span className="fs-1 title_text">{parts[1]}</span>
+          {parts[0]}@<span className="fs-1 pink-text-gradient">{parts[1]}</span>
         </>
       ) : (
         text

@@ -3,6 +3,7 @@ import {
   Button,
   CloseButton,
   Container,
+  Image,
   Modal,
   Nav,
   Navbar,
@@ -15,7 +16,6 @@ import { useMediaQuery, useTheme } from "@mui/material";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import Logo from "assets/img/team/logo.webp";
 import "../../CSS/GradientText.css";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-scroll";
 import sections from "data/nav";
 
@@ -61,10 +61,9 @@ const NavbarStandard = () => {
         className="d-flex justify-content-between align-items-center py-2 px-lg-5"
       >
         {isMatch ? (
-          <LazyLoadImage
+          <Image
             alt="Logo"
             src={Logo}
-            effect="blur"
             style={{
               objectFit: "contain",
               width: "180px",
@@ -72,10 +71,9 @@ const NavbarStandard = () => {
           />
         ) : (
           <Navbar.Brand>
-            <LazyLoadImage
+            <Image
               alt="Logo"
               src={Logo}
-              effect="blur"
               style={{
                 objectFit: "contain",
                 width: "200px",
@@ -95,10 +93,9 @@ const NavbarStandard = () => {
           {navbarToggle && isMatch ? (
             <Modal.Header className="bg-white border-0 p-3 w-100">
               <Navbar.Brand className="fs-2">
-                <LazyLoadImage
+                <Image
                   alt="Logo"
                   src={Logo}
-                  effect="blur"
                   style={{
                     objectFit: "contain",
                     width: "180px",

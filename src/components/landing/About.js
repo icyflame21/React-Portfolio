@@ -31,20 +31,20 @@ const About = () => {
             >
               Experienced full-stack software developer proficient in the MERN
               stack and React-Native, with{" "}
-              <span className="fw-bold">2 years</span> of hands-on experience.
+              <span className="fw-bold orange-text-gradient">2 years</span> of
+              hands-on experience.
               <br />
               <br />
-              Successfully completed <span className="fw-bold">
-                4 months
-              </span>{" "}
-              of freelance projects for clients in India. <br /> <br />{" "}
-              Dedicated to continual learning, adept at complex problem-solving,
-              and thrive in collaborative environments focused on delivering
+              Successfully completed{" "}
+              <span className="fw-bold orange-text-gradient">4 months</span> of
+              freelance projects for clients in India. <br /> <br /> Dedicated
+              to continual learning, adept at complex problem-solving, and
+              thrive in collaborative environments focused on delivering
               impactful solutions.
             </motion.p>
             <Button
               as="a"
-              className="mb-4 fs-0 fw-semi-bold border-0 mt-3 shadow-none button rounded px-5 py-2"
+              className="mb-4 fs-0 fw-semi-bold border-0 mt-3 shadow-none violet-gradient rounded px-5 py-2"
               href={settings.resumelink}
               target="_blank"
               rel="noreferrer"
@@ -52,7 +52,7 @@ const About = () => {
               Download CV
               <FontAwesomeIcon
                 icon={faFileDownload}
-                transform="shrink-5 down-1 right-5"
+                transform="shrink-4 down-1 right-5"
               />
             </Button>
           </Col>
@@ -78,20 +78,20 @@ const About = () => {
             >
               Experienced full-stack software developer proficient in the MERN
               stack and React-Native, with{" "}
-              <span className="fw-bold">2 years</span> of hands-on experience.
+              <span className="fw-bold orange-text-gradient">2 years</span> of
+              hands-on experience.
               <br />
               <br />
-              Successfully completed <span className="fw-bold">
-                4 months
-              </span>{" "}
-              of freelance projects for clients in India. <br /> <br />{" "}
-              Dedicated to continual learning, adept at complex problem-solving,
-              and thrive in collaborative environments focused on delivering
+              Successfully completed{" "}
+              <span className="fw-bold orange-text-gradient">4 months</span> of
+              freelance projects for clients in India. <br /> <br /> Dedicated
+              to continual learning, adept at complex problem-solving, and
+              thrive in collaborative environments focused on delivering
               impactful solutions.
             </motion.p>
             <Button
               as="a"
-              className="mb-4 fs-0 fw-semi-bold border-0 mt-3 shadow-none button rounded px-5 py-2"
+              className="mb-4 fs-0 fw-semi-bold border-0 mt-3 shadow-none violet-gradient rounded px-5 py-2"
               href={settings.resumelink}
               target="_blank"
               rel="noreferrer"
@@ -99,7 +99,7 @@ const About = () => {
               Download CV
               <FontAwesomeIcon
                 icon={faFileDownload}
-                transform="shrink-5 down-1 right-5"
+                transform="shrink-4 down-1 right-5"
               />
             </Button>
           </Col>

@@ -8,6 +8,8 @@ import "./App.css";
 import { useMediaQuery, useTheme } from "@mui/material";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react";
 
 const App = () => {
   const customStyles = {
@@ -43,6 +45,8 @@ const App = () => {
 
   return (
     <Router>
+      <SpeedInsights />
+      <Analytics />
       {isMatch ? null : (
         <ScrollToTop
           smooth

@@ -23,7 +23,7 @@ const Hero = () => {
           </p>
           <h1 className="fw-bold text-white">
             Hey I'm <br />
-            <span className="gradient_hero_text">Biswaranjan Subudhi</span>
+            <span className="blue-text-gradient">Biswaranjan Subudhi</span>
           </h1>
           <p className=" mt-5 text-white" style={{ fontSize: "20px" }}>
             <AnimateText animatedText={animatedText} />
@@ -31,7 +31,7 @@ const Hero = () => {
           <Flex alignItems="center" className="justify-content-center mt-2">
             <Button
               as="a"
-              className="mb-4 fs-0 fw-semi-bold border-0 mt-3 shadow-none button px-5 py-2 rounded"
+              className="mb-4 fs-0 fw-semi-bold border-0 mt-3 shadow-none violet-gradient px-4 py-2 rounded"
               href={settings.gmail}
               target="_blank"
               rel="noreferrer"
@@ -39,7 +39,7 @@ const Hero = () => {
               Hire Me
               <FontAwesomeIcon
                 icon="play"
-                transform="shrink-6 down-1 right-5"
+                transform="shrink-4 down-1 right-5"
               />
             </Button>
           </Flex>

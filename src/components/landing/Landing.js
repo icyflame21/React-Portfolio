@@ -18,7 +18,7 @@ const Landing = () => {
   const FooterStandard = React.lazy(() => import("./FooterStandard"));
 
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<Loader />}>
       <NavbarStandard />
       <Hero />
       <About />

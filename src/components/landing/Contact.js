@@ -11,6 +11,8 @@ import emailjs from "@emailjs/browser";
 import LeafletMap from "components/common/LeafletMap";
 import { motion } from "framer-motion";
 import { fadeIn } from "helpers/motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 
 const Contact = () => {
   const theme = useTheme();
@@ -176,13 +178,20 @@ const Contact = () => {
 
               <Button
                 disabled={loading}
-                className="fs-0 fw-semi-bold border-0 shadow-none button px-5 py-2 rounded"
+                className="fs-0 fw-semi-bold border-0 shadow-none violet-gradient px-4 py-2 rounded align-items-center"
                 type="submit"
               >
                 {loading ? (
-                  <Spinner animation="border" variant="primary" size="sm" />
+                  <Spinner animation="border" variant="light" size="sm" />
                 ) : (
-                  "Send Message"
+                  <>
+                    {" "}
+                    Send Message
+                    <FontAwesomeIcon
+                      icon={faPaperPlane}
+                      transform="down-1 shrink-4 right-5"
+                    />
+                  </>
                 )}
               </Button>
             </Form>
