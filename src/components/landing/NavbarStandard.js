@@ -57,8 +57,8 @@ const NavbarStandard = () => {
       })}
     >
       <Container
-        fluid={isMatch?true:false}
-        className="d-flex justify-content-between align-items-center py-2 px-5"
+        fluid
+        className="d-flex justify-content-between align-items-center py-2 px-lg-5"
       >
         {isMatch ? (
           <LazyLoadImage
@@ -78,7 +78,7 @@ const NavbarStandard = () => {
               effect="blur"
               style={{
                 objectFit: "contain",
-                width: "210px",
+                width: "200px",
               }}
             />
           </Navbar.Brand>
@@ -125,7 +125,11 @@ const NavbarStandard = () => {
                 <tbody className="">
                   {sections.map((ele, idx) => (
                     <tr
-                      className={`${activeLink == ele.id ? "bg-info border-info" : "border-300"} align-middle border  rounded`}
+                      className={`${
+                        activeLink == ele.id
+                          ? "bg-info border-info"
+                          : "border-300"
+                      } align-middle border  rounded`}
                       key={ele.id + "-" + idx}
                     >
                       <td>
@@ -135,9 +139,8 @@ const NavbarStandard = () => {
                           spy={true}
                           as={Button}
                           smooth={true}
-                          offset={-70}
                           onSetActive={handleSetActive}
-                          duration={300}
+                          duration={500}
                           style={{ textAlign: "left" }}
                           className="gray1 fs-0 fw-medium p-0 w-100 bg-transparent border-0 shadow-none cursor-pointer text-decoration-none"
                         >
@@ -160,8 +163,7 @@ const NavbarStandard = () => {
                     to={ele.id}
                     spy={true}
                     smooth={true}
-                    offset={-70}
-                    duration={300}
+                    duration={500}
                     style={{ fontSize: "16px", fontWeight: 500 }}
                     className="title_text border-0 rounded shadow-none px-4 py-2 cursor-pointer text-decoration-none"
                   >

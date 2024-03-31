@@ -1,6 +1,8 @@
-import React from 'react';
-import classNames from 'classnames';
-import { Container } from 'react-bootstrap';
+import React from "react";
+import classNames from "classnames";
+import { Container } from "react-bootstrap";
+import { AnimatePresence, motion } from "framer-motion";
+import { staggerContainer } from "helpers/motion";
 
 const Section = ({
   fluid,
@@ -18,14 +20,23 @@ const Section = ({
   bgClassName && (bgProps.className = bgClassName);
 
   return (
-    <section className={classNames({ [`bg-${bg}`]: bg }, className)} {...rest}>
-      <Container fluid={fluid}>{children}</Container>
-    </section>
+    <AnimatePresence mode="wait" presenceAffectsLayout>
+      <motion.section
+        variants={staggerContainer()}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.25 }}
+        className={classNames({ [`bg-${bg}`]: bg }, className)}
+        {...rest}
+      >
+        <Container fluid={fluid}>{children}</Container>
+      </motion.section>
+    </AnimatePresence>
   );
 };
 
 Section.defaultProps = {
-  fluid: false
+  fluid: false,
 };
 
 export default Section;

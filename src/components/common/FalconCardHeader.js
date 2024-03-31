@@ -1,14 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Col, Card, Row } from 'react-bootstrap';
-import classNames from 'classnames';
+import React from "react";
+import PropTypes from "prop-types";
+import { Col, Card, Row } from "react-bootstrap";
+import classNames from "classnames";
 
 const Title = ({ titleTag: TitleTag, className, breakPoint, children }) => (
   <TitleTag
     className={classNames(
       {
-        'mb-0': !breakPoint,
-        [`mb-${breakPoint}-0`]: !!breakPoint
+        "mb-0": !breakPoint,
+        [`mb-${breakPoint}-0`]: !!breakPoint,
       },
       className
     )}
@@ -25,9 +25,9 @@ const FalconCardHeader = ({
   className,
   breakPoint,
   endEl,
-  children
+  children,
 }) => (
-  <Card.Header className={classNames(className, { 'bg-200': light })}>
+  <Card.Header className={classNames(className, { "bg-200": light })}>
     {endEl ? (
       <Row className="align-items-center">
         <Col>
@@ -41,8 +41,8 @@ const FalconCardHeader = ({
           {children}
         </Col>
         <Col
-          {...{ [breakPoint ? breakPoint : 'xs']: 'auto' }}
-          className={`text${breakPoint ? `-${breakPoint}` : ''}-right`}
+          {...{ [breakPoint ? breakPoint : "xs"]: "auto" }}
+          className={`text${breakPoint ? `-${breakPoint}` : ""}-right`}
         >
           {endEl}
         </Col>
@@ -56,23 +56,23 @@ const FalconCardHeader = ({
 );
 
 Title.propTypes = {
-  breakPoint: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl', 'xxl']),
+  breakPoint: PropTypes.oneOf(["xs", "sm", "md", "lg", "xl", "xxl"]),
   titleTag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   className: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
-Title.defaultProps = { titleTag: 'h5'};
+Title.defaultProps = { titleTag: "h5" };
 
 FalconCardHeader.propTypes = {
   title: PropTypes.node.isRequired,
   light: PropTypes.bool,
-  breakPoint: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl', 'xxl']),
+  breakPoint: PropTypes.oneOf(["xs", "sm", "md", "lg", "xl", "xxl"]),
   endEl: PropTypes.node,
   titleTag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   titleClass: PropTypes.string,
   className: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 export default FalconCardHeader;

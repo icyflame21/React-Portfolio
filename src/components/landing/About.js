@@ -6,23 +6,17 @@ import { settings } from "config";
 import "../../CSS/GradientText.css";
 import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
 import SectionHeader from "./SectionHeader";
-import AboutUs from "../../assets/img/animated-icons/about-us.json";
-import Lottie from "react-lottie";
 import { useMediaQuery, useTheme } from "@mui/material";
+import { motion } from "framer-motion";
+import { fadeIn } from "helpers/motion";
+import ProfileCanvas from "components/common/Profile_Canvas";
 
 const About = () => {
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("lg"));
-  const aboutUsOptions = {
-    loop: true,
-    autoplay: false,
-    animationData: AboutUs,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
+
   return (
-    <Section  bg="light" id='about'>
+    <Section bg="white" id="about">
       {isMatch ? (
         <Row className={`justify-content-center align-items-center px-4`}>
           <Col>
@@ -31,16 +25,26 @@ const About = () => {
               subtitle="Why hire me for your next project?"
               dropCap
             />
-            <p className="gray1 fs-1 mt-2">
-              Experienced full stack software developer with{" "}
-              <span className="fw-bold">1.5 years</span> in MERN stack and
-              React-Native. <span className="fw-bold">4 months</span> freelancer
-              for Indian clients. Committed to learning, complex
-              problem-solving, and impactful collaboration.
-            </p>
+            <motion.p
+              variants={fadeIn("", "", 0.1, 1)}
+              className="gray1 fs-1 mt-2"
+            >
+              Experienced full-stack software developer proficient in the MERN
+              stack and React-Native, with{" "}
+              <span className="fw-bold">2 years</span> of hands-on experience.
+              <br />
+              <br />
+              Successfully completed <span className="fw-bold">
+                4 months
+              </span>{" "}
+              of freelance projects for clients in India. <br /> <br />{" "}
+              Dedicated to continual learning, adept at complex problem-solving,
+              and thrive in collaborative environments focused on delivering
+              impactful solutions.
+            </motion.p>
             <Button
               as="a"
-              className="mb-4 fs-0 fw-semi-bold border-0 mt-3 shadow-none button px-5 py-2"
+              className="mb-4 fs-0 fw-semi-bold border-0 mt-3 shadow-none button rounded px-5 py-2"
               href={settings.resumelink}
               target="_blank"
               rel="noreferrer"
@@ -54,25 +58,40 @@ const About = () => {
           </Col>
         </Row>
       ) : (
-        <Row className={`justify-content-center align-items-center px-0`}>
+        <Row className={`justify-content-between`}>
           <Col lg={5} xl={5}>
-            <Lottie options={aboutUsOptions} />
+            <motion.div
+              variants={fadeIn("right", "tween", 0.2, 1)}
+              className="h-100"
+            >
+              <ProfileCanvas />
+            </motion.div>
           </Col>
           <Col lg={7} xl={7}>
             <SectionHeader
               title="About Me"
               subtitle="Why hire me for your next project?"
             />
-            <p className="gray1 fs-1 mt-2">
-              Experienced full stack software developer with{" "}
-              <span className="fw-bold">1.5 years</span> in MERN stack and
-              React-Native. <span className="fw-bold">4 months</span> freelancer
-              for Indian clients. Committed to learning, complex
-              problem-solving, and impactful collaboration.
-            </p>
+            <motion.p
+              variants={fadeIn("", "", 0.1, 1)}
+              className="gray1 fs-1 mt-2"
+            >
+              Experienced full-stack software developer proficient in the MERN
+              stack and React-Native, with{" "}
+              <span className="fw-bold">2 years</span> of hands-on experience.
+              <br />
+              <br />
+              Successfully completed <span className="fw-bold">
+                4 months
+              </span>{" "}
+              of freelance projects for clients in India. <br /> <br />{" "}
+              Dedicated to continual learning, adept at complex problem-solving,
+              and thrive in collaborative environments focused on delivering
+              impactful solutions.
+            </motion.p>
             <Button
               as="a"
-              className="mb-4 fs-0 fw-semi-bold border-0 mt-3 shadow-none button px-5 py-2"
+              className="mb-4 fs-0 fw-semi-bold border-0 mt-3 shadow-none button rounded px-5 py-2"
               href={settings.resumelink}
               target="_blank"
               rel="noreferrer"

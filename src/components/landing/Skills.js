@@ -14,6 +14,8 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { SiCodersrank } from "react-icons/si";
 import { FaTools } from "react-icons/fa";
 import { MdOutlineManageHistory } from "react-icons/md";
+import { fadeIn } from "helpers/motion";
+import { motion } from "framer-motion";
 
 const Skills = () => {
   const theme = useTheme();
@@ -27,7 +29,7 @@ const Skills = () => {
   });
 
   return (
-    <Section id="skills" bg="light">
+    <Section id="skills" bg="white">
       <Row
         className={`justify-content-center align-items-center ${
           isMatch ? "px-3" : "px-0"
@@ -41,112 +43,224 @@ const Skills = () => {
             className="justify-content-center text-center"
           />
           {isMatch ? (
-            <Card className="mt-3">
-              <Tab.Container defaultActiveKey="technical">
-                <SimpleBarReact>
-                  <Card.Header className="p-0 bg-light">
-                    <Nav className="nav-tabs tab-tickets-status flex-nowrap border-0">
-                      <Nav.Item className="w-100">
-                        <Nav.Link
-                          eventKey="technical"
-                          className="mb-0 d-flex align-items-center gap-2 py-3 justify-content-center"
-                        >
-                          <SiCodersrank className="text-black" />
-                          <h5 className="mb-0 text-black fs-0">Technical</h5>
-                        </Nav.Link>
-                      </Nav.Item>
-                      <Nav.Item className="w-100">
-                        <Nav.Link
-                          eventKey="soft"
-                          className="mb-0 d-flex align-items-center gap-2 py-3 justify-content-center"
-                        >
-                          <MdOutlineManageHistory className="text-black" />
-                          <h5 className="mb-0 text-black fs-0">Soft</h5>
-                        </Nav.Link>
-                      </Nav.Item>
-                      <Nav.Item className="w-100">
-                        <Nav.Link
-                          eventKey="tools"
-                          className="mb-0 d-flex align-items-center gap-2 py-3 justify-content-center text-center"
-                        >
-                          <FaTools className="text-black" />
-                          <h5 className="mb-0 text-black fs-0">Tools</h5>
-                        </Nav.Link>
-                      </Nav.Item>
-                    </Nav>
-                  </Card.Header>
-                </SimpleBarReact>
-                <Card.Body className="p-0">
-                  <Tab.Content>
-                    <Tab.Pane eventKey="technical">
+            <motion.div variants={fadeIn("up", "spring", 1, 0.75)}>
+              <Card className="mt-3">
+                <Tab.Container defaultActiveKey="technical">
+                  <SimpleBarReact>
+                    <Card.Header className="p-0 bg-light">
+                      <Nav className="nav-tabs tab-tickets-status flex-nowrap border-0">
+                        <Nav.Item className="w-100">
+                          <Nav.Link
+                            eventKey="technical"
+                            className="mb-0 d-flex align-items-center gap-2 py-3 justify-content-center"
+                          >
+                            <SiCodersrank className="text-black" />
+                            <h5 className="mb-0 text-black fs-0">Technical</h5>
+                          </Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item className="w-100">
+                          <Nav.Link
+                            eventKey="soft"
+                            className="mb-0 d-flex align-items-center gap-2 py-3 justify-content-center"
+                          >
+                            <MdOutlineManageHistory className="text-black" />
+                            <h5 className="mb-0 text-black fs-0">Soft</h5>
+                          </Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item className="w-100">
+                          <Nav.Link
+                            eventKey="tools"
+                            className="mb-0 d-flex align-items-center gap-2 py-3 justify-content-center text-center"
+                          >
+                            <FaTools className="text-black" />
+                            <h5 className="mb-0 text-black fs-0">Tools</h5>
+                          </Nav.Link>
+                        </Nav.Item>
+                      </Nav>
+                    </Card.Header>
+                  </SimpleBarReact>
+                  <Card.Body className="p-0">
+                    <Tab.Content>
+                      <Tab.Pane eventKey="technical">
+                        <Table responsive bordered striped>
+                          <tbody>
+                            {technical.map((ele, idx) => (
+                              <tr key={ele.id + "-" + idx}>
+                                <td>
+                                  <Flex alignItems="center">
+                                    {ele.logo && (
+                                      <LazyLoadImage
+                                        effect="blur"
+                                        src={ele.logo}
+                                        style={{
+                                          width: "25px",
+                                          height: "25px",
+                                          objectFit: "contain",
+                                        }}
+                                        className="fluid me-2"
+                                      />
+                                    )}
+                                    <h6 className="mb-0 gray1">{ele.name}</h6>
+                                  </Flex>
+                                </td>
+                                <td>
+                                  <PrioritySelect
+                                    title={ele.priority.title}
+                                    color={ele.priority.color}
+                                    data={ele.priority.data}
+                                  />
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </Table>
+                      </Tab.Pane>
+                      <Tab.Pane eventKey="tools">
+                        <Table responsive bordered striped>
+                          <tbody>
+                            {toolsSet.map((ele, idx) => (
+                              <tr key={ele.id + "-" + idx}>
+                                <td>
+                                  <Flex alignItems="center">
+                                    {ele.logo && (
+                                      <LazyLoadImage
+                                        effect="blur"
+                                        src={ele.logo}
+                                        style={{
+                                          width: "25px",
+                                          height: "25px",
+                                          objectFit: "contain",
+                                        }}
+                                        className="fluid me-2"
+                                      />
+                                    )}
+                                    <h6 className="mb-0 gray1">{ele.name}</h6>
+                                  </Flex>
+                                </td>
+                                <td>
+                                  <PrioritySelect
+                                    title={ele.priority.title}
+                                    color={ele.priority.color}
+                                    data={ele.priority.data}
+                                  />
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </Table>
+                      </Tab.Pane>
+                      <Tab.Pane eventKey="soft">
+                        <Table responsive bordered striped>
+                          <tbody>
+                            {softSkills.map((ele, idx) => (
+                              <tr key={ele.id + "-" + idx}>
+                                <td>
+                                  <Flex alignItems="center">
+                                    {ele.logo && (
+                                      <LazyLoadImage
+                                        effect="blur"
+                                        src={ele.logo}
+                                        style={{
+                                          width: "25px",
+                                          height: "25px",
+                                          objectFit: "contain",
+                                        }}
+                                        className="fluid me-2"
+                                      />
+                                    )}
+                                    <h6 className="mb-0 gray1">{ele.name}</h6>
+                                  </Flex>
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </Table>
+                      </Tab.Pane>
+                    </Tab.Content>
+                  </Card.Body>
+                </Tab.Container>
+              </Card>
+            </motion.div>
+          ) : (
+            <Row className="mt-3">
+              <Col md={4} xxl={4}>
+                <motion.div variants={fadeIn("left", "spring", 0.5, 0.75)}>
+                  <Card>
+                    <Card.Body className="p-0">
+                      <FalconCardHeader
+                        light
+                        title="Technical Skills"
+                        titleClass="text-black"
+                        className="p-3"
+                      />
                       <Table responsive bordered striped>
                         <tbody>
-                          {technical.map((ele, idx) => (
-                            <tr key={ele.id + "-" + idx}>
-                              <td>
-                                <Flex alignItems="center">
-                                  {ele.logo && (
-                                    <LazyLoadImage
-                                      effect="blur"
-                                      src={ele.logo}
-                                      style={{
-                                        width: "25px",
-                                        height: "25px",
-                                        objectFit: "contain",
-                                      }}
-                                      className="fluid me-2"
-                                    />
-                                  )}
-                                  <h6 className="mb-0 gray1">{ele.name}</h6>
-                                </Flex>
-                              </td>
-                              <td>
-                                <PrioritySelect
-                                  title={ele.priority.title}
-                                  color={ele.priority.color}
-                                  data={ele.priority.data}
-                                />
-                              </td>
-                            </tr>
-                          ))}
+                          {technical
+                            .slice(0, collapsed.technicalSum)
+                            .map((ele, idx) => (
+                              <tr key={ele.id + "-" + idx}>
+                                <td>
+                                  <Flex alignItems="center">
+                                    {ele.logo && (
+                                      <LazyLoadImage
+                                        effect="blur"
+                                        src={ele.logo}
+                                        style={{
+                                          width: "25px",
+                                          height: "25px",
+                                          objectFit: "contain",
+                                        }}
+                                        className="fluid me-2"
+                                      />
+                                    )}
+                                    <h6 className="mb-0 gray1">{ele.name}</h6>
+                                  </Flex>
+                                </td>
+                                <td>
+                                  <PrioritySelect
+                                    title={ele.priority.title}
+                                    color={ele.priority.color}
+                                    data={ele.priority.data}
+                                  />
+                                </td>
+                              </tr>
+                            ))}
                         </tbody>
                       </Table>
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="tools">
-                      <Table responsive bordered striped>
-                        <tbody>
-                          {toolsSet.map((ele, idx) => (
-                            <tr key={ele.id + "-" + idx}>
-                              <td>
-                                <Flex alignItems="center">
-                                  {ele.logo && (
-                                    <LazyLoadImage
-                                      effect="blur"
-                                      src={ele.logo}
-                                      style={{
-                                        width: "25px",
-                                        height: "25px",
-                                        objectFit: "contain",
-                                      }}
-                                      className="fluid me-2"
-                                    />
-                                  )}
-                                  <h6 className="mb-0 gray1">{ele.name}</h6>
-                                </Flex>
-                              </td>
-                              <td>
-                                <PrioritySelect
-                                  title={ele.priority.title}
-                                  color={ele.priority.color}
-                                  data={ele.priority.data}
-                                />
-                              </td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </Table>
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="soft">
+                      <Button
+                        variant="link"
+                        onClick={() => {
+                          setCollapsed({
+                            ...collapsed,
+                            technical: !collapsed.technical,
+                            technicalSum: !collapsed.technical
+                              ? technical.length
+                              : 6,
+                          });
+                        }}
+                        className="w-100 p-0 m-0 mb-2"
+                      >
+                        Show {collapsed.technical ? "less" : "more"}
+                        <FontAwesomeIcon
+                          icon="chevron-down"
+                          className="ms-2 fs--2"
+                          transform={collapsed.technical ? "rotate-180" : ""}
+                        />
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </motion.div>
+              </Col>
+              <Col md={4} xxl={4}>
+                <motion.div variants={fadeIn("up", "spring", 1, 0.75)}>
+                  <Card>
+                    <Card.Body className="p-0" style={{ height: "419px" }}>
+                      <FalconCardHeader
+                        light
+                        title="Soft Skills"
+                        titleClass="text-black"
+                        className="p-3"
+                      />
                       <Table responsive bordered striped>
                         <tbody>
                           {softSkills.map((ele, idx) => (
@@ -172,179 +286,77 @@ const Skills = () => {
                           ))}
                         </tbody>
                       </Table>
-                    </Tab.Pane>
-                  </Tab.Content>
-                </Card.Body>
-              </Tab.Container>
-            </Card>
-          ) : (
-            <Row className="mt-3">
-              <Col md={4} xxl={4}>
-                <Card>
-                  <Card.Body className="p-0">
-                    <FalconCardHeader
-                      light
-                      title="Technical Skills"
-                      titleClass="text-black"
-                      className="p-3"
-                    />
-                    <Table responsive bordered striped>
-                      <tbody>
-                        {technical
-                          .slice(0, collapsed.technicalSum)
-                          .map((ele, idx) => (
-                            <tr key={ele.id + "-" + idx}>
-                              <td>
-                                <Flex alignItems="center">
-                                  {ele.logo && (
-                                    <LazyLoadImage
-                                      effect="blur"
-                                      src={ele.logo}
-                                      style={{
-                                        width: "25px",
-                                        height: "25px",
-                                        objectFit: "contain",
-                                      }}
-                                      className="fluid me-2"
-                                    />
-                                  )}
-                                  <h6 className="mb-0 gray1">{ele.name}</h6>
-                                </Flex>
-                              </td>
-                              <td>
-                                <PrioritySelect
-                                  title={ele.priority.title}
-                                  color={ele.priority.color}
-                                  data={ele.priority.data}
-                                />
-                              </td>
-                            </tr>
-                          ))}
-                      </tbody>
-                    </Table>
-                    <Button
-                      variant="link"
-                      onClick={() => {
-                        setCollapsed({
-                          ...collapsed,
-                          technical: !collapsed.technical,
-                          technicalSum: !collapsed.technical
-                            ? technical.length
-                            : 6,
-                        });
-                      }}
-                      className="w-100 p-0 m-0 mb-2"
-                    >
-                      Show {collapsed.technical ? "less" : "more"}
-                      <FontAwesomeIcon
-                        icon="chevron-down"
-                        className="ms-2 fs--2"
-                        transform={collapsed.technical ? "rotate-180" : ""}
-                      />
-                    </Button>
-                  </Card.Body>
-                </Card>
+                    </Card.Body>
+                  </Card>
+                </motion.div>
               </Col>
               <Col md={4} xxl={4}>
-                <Card>
-                  <Card.Body className="p-0" style={{height:'419px'}}>
-                    <FalconCardHeader
-                      light
-                      title="Soft Skills"
-                      titleClass="text-black"
-                      className="p-3"
-                    />
-                    <Table responsive bordered striped>
-                      <tbody>
-                        {softSkills.map((ele, idx) => (
-                          <tr key={ele.id + "-" + idx}>
-                            <td>
-                              <Flex alignItems="center">
-                                {ele.logo && (
-                                  <LazyLoadImage
-                                    effect="blur"
-                                    src={ele.logo}
-                                    style={{
-                                      width: "25px",
-                                      height: "25px",
-                                      objectFit: "contain",
-                                    }}
-                                    className="fluid me-2"
+                <motion.div variants={fadeIn("right", "spring", 1.5, 0.75)}>
+                  <Card>
+                    <Card.Body className="p-0">
+                      <FalconCardHeader
+                        light
+                        title="Tools"
+                        titleClass="text-black"
+                        className="p-3"
+                      />
+                      <Table responsive bordered striped>
+                        <tbody>
+                          {toolsSet
+                            .slice(0, collapsed.toolSetNum)
+                            .map((ele, idx) => (
+                              <tr key={ele.id + "-" + idx}>
+                                <td>
+                                  <Flex alignItems="center">
+                                    {ele.logo && (
+                                      <LazyLoadImage
+                                        effect="blur"
+                                        src={ele.logo}
+                                        style={{
+                                          width: "25px",
+                                          height: "25px",
+                                          objectFit: "contain",
+                                        }}
+                                        className="fluid me-2"
+                                      />
+                                    )}
+                                    <h6 className="mb-0 gray1">{ele.name}</h6>
+                                  </Flex>
+                                </td>
+                                <td>
+                                  <PrioritySelect
+                                    title={ele.priority.title}
+                                    color={ele.priority.color}
+                                    data={ele.priority.data}
                                   />
-                                )}
-                                <h6 className="mb-0 gray1">{ele.name}</h6>
-                              </Flex>
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </Table>
-                  </Card.Body>
-                </Card>
-              </Col>
-              <Col md={4} xxl={4}>
-                <Card>
-                  <Card.Body className="p-0">
-                    <FalconCardHeader
-                      light
-                      title="Tools"
-                      titleClass="text-black"
-                      className="p-3"
-                    />
-                    <Table responsive bordered striped>
-                      <tbody>
-                        {toolsSet
-                          .slice(0, collapsed.toolSetNum)
-                          .map((ele, idx) => (
-                            <tr key={ele.id + "-" + idx}>
-                              <td>
-                                <Flex alignItems="center">
-                                  {ele.logo && (
-                                    <LazyLoadImage
-                                      effect="blur"
-                                      src={ele.logo}
-                                      style={{
-                                        width: "25px",
-                                        height: "25px",
-                                        objectFit: "contain",
-                                      }}
-                                      className="fluid me-2"
-                                    />
-                                  )}
-                                  <h6 className="mb-0 gray1">{ele.name}</h6>
-                                </Flex>
-                              </td>
-                              <td>
-                                <PrioritySelect
-                                  title={ele.priority.title}
-                                  color={ele.priority.color}
-                                  data={ele.priority.data}
-                                />
-                              </td>
-                            </tr>
-                          ))}
-                      </tbody>
-                    </Table>
-                    <Button
-                      variant="link"
-                      onClick={() => {
-                        setCollapsed({
-                          ...collapsed,
-                          toolsSet: !collapsed.toolsSet,
-                          toolSetNum: !collapsed.toolsSet ? toolsSet.length : 6,
-                        });
-                      }}
-                      className="w-100 p-0 m-0 mb-2"
-                    >
-                      Show {collapsed.toolsSet ? "less" : "more"}
-                      <FontAwesomeIcon
-                        icon="chevron-down"
-                        className="ms-2 fs--2"
-                        transform={collapsed.toolsSet ? "rotate-180" : ""}
-                      />
-                    </Button>
-                  </Card.Body>
-                </Card>
+                                </td>
+                              </tr>
+                            ))}
+                        </tbody>
+                      </Table>
+                      <Button
+                        variant="link"
+                        onClick={() => {
+                          setCollapsed({
+                            ...collapsed,
+                            toolsSet: !collapsed.toolsSet,
+                            toolSetNum: !collapsed.toolsSet
+                              ? toolsSet.length
+                              : 6,
+                          });
+                        }}
+                        className="w-100 p-0 m-0 mb-2"
+                      >
+                        Show {collapsed.toolsSet ? "less" : "more"}
+                        <FontAwesomeIcon
+                          icon="chevron-down"
+                          className="ms-2 fs--2"
+                          transform={collapsed.toolsSet ? "rotate-180" : ""}
+                        />
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </motion.div>
               </Col>
             </Row>
           )}

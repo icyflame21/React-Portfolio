@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Row, Col, Form, Button, Spinner, Card } from "react-bootstrap";
+import { Row, Col, Form, Spinner, Card, Button } from "react-bootstrap";
 import Section from "components/common/Section";
 import { useMediaQuery, useTheme } from "@mui/material";
 import SectionHeader from "./SectionHeader";
@@ -9,6 +9,8 @@ import { toast } from "react-toastify";
 import { settings } from "config";
 import emailjs from "@emailjs/browser";
 import LeafletMap from "components/common/LeafletMap";
+import { motion } from "framer-motion";
+import { fadeIn } from "helpers/motion";
 
 const Contact = () => {
   const theme = useTheme();
@@ -52,7 +54,7 @@ const Contact = () => {
   };
 
   return (
-    <Section id="contact" bg="light">
+    <Section id="contact" bg="white">
       <SectionHeader
         title="I want to hear from you"
         subtitle="Contact Me"
@@ -60,47 +62,53 @@ const Contact = () => {
         className="justify-content-center text-center"
       />
       {isMatch ? (
-        <Card className="h-100 m-3">
-          <Card.Body className="p-0">
-            <Row className="g-0 h-100">
-              <Col xs={12}>
-                <LeafletMap
-                  position={position}
-                  data={data}
-                  className="min-vh-50 w-100"
-                />
-              </Col>
-              <Col xs={12} className="p-x1 flex-1">
-                <h5 className="fs-0 mt-3 mb-2 text-black">Connect with me </h5>
-                <Flex className="gap-2">
-                  {socialShares.map(({ id, icon, href }) => (
-                    <Button
-                      key={id}
-                      as="a"
-                      target="_blank"
-                      href={href}
-                      variant="falcon-default"
-                      type="button"
-                      size="sm"
-                      className="icon-item icon-item-lg fs-2"
-                    >
-                      {icon}
-                    </Button>
-                  ))}
-                </Flex>
-              </Col>
-            </Row>
-          </Card.Body>
-        </Card>
+        <motion.div variants={fadeIn("up", "tween", 0.3, 0.75)}>
+          <Card className="h-100 m-3">
+            <Card.Body className="p-0">
+              <Row className="g-0 h-100">
+                <Col xs={12}>
+                  <LeafletMap
+                    position={position}
+                    data={data}
+                    className="min-vh-50 w-100"
+                  />
+                </Col>
+                <Col xs={12} className="p-x1 flex-1">
+                  <h5 className="fs-0 mt-3 mb-2 text-black">
+                    Connect with me{" "}
+                  </h5>
+                  <Flex className="gap-2">
+                    {socialShares.map(({ id, icon, href }) => (
+                      <Button
+                        key={id}
+                        as="a"
+                        target="_blank"
+                        href={href}
+                        variant="falcon-default"
+                        type="button"
+                        size="sm"
+                        className="icon-item icon-item-lg fs-2 bg-white"
+                      >
+                        {icon}
+                      </Button>
+                    ))}
+                  </Flex>
+                </Col>
+              </Row>
+            </Card.Body>
+          </Card>
+        </motion.div>
       ) : (
         <Row className="mt-3">
           <Col lg={6} xl={6}>
-            <LeafletMap
-              position={position}
-              data={data}
-              className="min-vh-50 w-100"
-            />
-            <h5 className="fs-0 mt-3 mb-2 text-black">Connect with me </h5>
+            <motion.div variants={fadeIn("right", "tween", 0.3, 0.75)}>
+              <LeafletMap
+                position={position}
+                data={data}
+                className="min-vh-50 w-100"
+              />
+            </motion.div>
+            <h5 className="fs-0 mt-4 mb-2 text-black">Connect with me </h5>
             <Flex className="gap-2">
               {socialShares.map(({ id, icon, href }) => (
                 <Button
@@ -111,7 +119,7 @@ const Contact = () => {
                   variant="falcon-default"
                   type="button"
                   size="sm"
-                  className="icon-item icon-item-lg fs-2"
+                  className="icon-item icon-item-lg fs-2 bg-white"
                 >
                   {icon}
                 </Button>
@@ -125,47 +133,50 @@ const Contact = () => {
               className={isMatch ? "mt-4" : ""}
               autoComplete="off"
             >
-              <Row className="g-3">
-                <Form.Group as={Col} lg={6} xl={6}>
+              <motion.div variants={fadeIn("left", "tween", 0.3, 0.75)}>
+                <Row className="g-3">
+                  <Form.Group as={Col} lg={6} xl={6}>
+                    <Form.Control
+                      disabled={loading}
+                      required
+                      className="shadow-none"
+                      placeholder="Your Name*"
+                      name="clientName"
+                    />
+                  </Form.Group>
+                  <Form.Group className="mb-3" as={Col} lg={6} xl={6}>
+                    <Form.Control
+                      disabled={loading}
+                      className="shadow-none"
+                      type="email"
+                      required
+                      placeholder="Your Email*"
+                      name="clientEmail"
+                    />
+                  </Form.Group>
+                </Row>
+              </motion.div>
+
+              <motion.div variants={fadeIn("left", "tween", 0.5, 0.75)}>
+                <Form.Group className="mb-3">
                   <Form.Control
+                    className="shadow-none"
                     disabled={loading}
                     required
-                    className="shadow-none"
-                    placeholder="Your Name*"
-                    name="clientName"
+                    as="textarea"
+                    rows={10}
+                    placeholder="Your Message*"
+                    name="clientMessage"
+                    style={{
+                      resize: "none",
+                    }}
                   />
                 </Form.Group>
-
-                <Form.Group className="mb-3" as={Col} lg={6} xl={6}>
-                  <Form.Control
-                    disabled={loading}
-                    className="shadow-none"
-                    type="email"
-                    required
-                    placeholder="Your Email*"
-                    name="clientEmail"
-                  />
-                </Form.Group>
-              </Row>
-
-              <Form.Group className="mb-3">
-                <Form.Control
-                  className="shadow-none"
-                  disabled={loading}
-                  required
-                  as="textarea"
-                  rows={10}
-                  placeholder="Your Message*"
-                  name="clientMessage"
-                  style={{
-                    resize: "none",
-                  }}
-                />
-              </Form.Group>
+              </motion.div>
 
               <Button
                 disabled={loading}
-                className="fs-0 fw-semi-bold border-0 shadow-none button px-5 py-2"
+                className="fs-0 fw-semi-bold border-0 shadow-none button px-5 py-2 rounded"
                 type="submit"
               >
                 {loading ? (

@@ -6,6 +6,8 @@ import ScrollToTop from "react-scroll-to-top";
 import { FaArrowUp } from "react-icons/fa";
 import "./App.css";
 import { useMediaQuery, useTheme } from "@mui/material";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const App = () => {
   const customStyles = {

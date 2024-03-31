@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { isIterableArray } from 'helpers/utils';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Flex from './Flex';
-import classNames from 'classnames';
+import React from "react";
+import PropTypes from "prop-types";
+import { isIterableArray } from "helpers/utils";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Flex from "./Flex";
+import classNames from "classnames";
 
 const Avatar = ({
   size,
@@ -14,13 +14,13 @@ const Avatar = ({
   className,
   mediaClass,
   isExact,
-  icon
+  icon,
 }) => {
-  const classNames = ['avatar', `avatar-${size}`, className].join(' ');
+  const classNames = ["avatar", `avatar-${size}`, className].join(" ");
   const mediaClasses = [
-    rounded ? `rounded-${rounded}` : 'rounded',
-    mediaClass
-  ].join(' ');
+    rounded ? `rounded-${rounded}` : "rounded",
+    mediaClass,
+  ].join(" ");
 
   const getAvatar = () => {
     if (src) {
@@ -44,7 +44,7 @@ const Avatar = ({
     if (name) {
       return (
         <div className={`avatar-name ${mediaClasses}`}>
-          <span>{isExact ? name : name.match(/\b\w/g).join('')}</span>
+          <span>{isExact ? name : name.match(/\b\w/g).join("")}</span>
         </div>
       );
     }
@@ -72,8 +72,8 @@ const Avatar = ({
 export const AvatarGroup = ({ children, dense, className }) => {
   return (
     <div
-      className={classNames(className, 'avatar-group', {
-        'avatar-group-dense': dense
+      className={classNames(className, "avatar-group", {
+        "avatar-group-dense": dense,
       })}
     >
       {children}
@@ -82,16 +82,16 @@ export const AvatarGroup = ({ children, dense, className }) => {
 };
 
 Avatar.defaultProps = {
-  size: 'xl',
-  rounded: 'circle',
-  emoji: '😊',
-  isExact: false
+  size: "xl",
+  rounded: "circle",
+  emoji: "😊",
+  isExact: false,
 };
 
 AvatarGroup.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
-  dense: PropTypes.bool
+  dense: PropTypes.bool,
 };
 
 export default Avatar;

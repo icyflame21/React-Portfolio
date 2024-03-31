@@ -5,6 +5,8 @@ import Lottie from "react-lottie";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import "../../CSS/GradientText.css";
+import { motion } from "framer-motion";
+import { zoomIn } from "helpers/motion";
 
 const PageNotFound = () => {
   const notFoundJSON = {
@@ -17,19 +19,21 @@ const PageNotFound = () => {
   };
   return (
     <Card className="shadow-none border-0 bg-transparent h-100 text-center p-0">
-      <Card.Header>
-        <Lottie options={notFoundJSON} />
-      </Card.Header>
-      <Card.Body>
-        <Button
-          as="a"
-          className="mb-4 fs-0 fw-semi-bold border-0 mt-3 shadow-none button px-4 py-2"
-          href="/"
-        >
-          <FontAwesomeIcon icon={faHome} className="me-2" />
-          Take me home
-        </Button>
-      </Card.Body>
+      <motion.div variants={zoomIn(0.5, 1)}>
+        <Card.Header>
+          <Lottie options={notFoundJSON} />
+        </Card.Header>
+        <Card.Body>
+          <Button
+            as="a"
+            className="mb-4 fs-0 fw-semi-bold border-0 mt-3 shadow-none button px-4 py-2 rounded"
+            href="/"
+          >
+            <FontAwesomeIcon icon={faHome} className="me-2" />
+            Take me home
+          </Button>
+        </Card.Body>
+      </motion.div>
     </Card>
   );
 };

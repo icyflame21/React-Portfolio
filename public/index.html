@@ -75,6 +75,17 @@
   <!-- End Google Tag Manager (noscript) -->
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <main class="main" id="main"></main>
-  </body>
+</body>
+<script>
+  let previousWidth = window.innerWidth;
 
+    window.addEventListener('resize', function () {
+      let currentWidth = window.innerWidth;
+      if (previousWidth < 768 && currentWidth >= 768) {
+        window.location.reload();
+      }
+      previousWidth = currentWidth;
+    });
+
+  </script>
 </html>
