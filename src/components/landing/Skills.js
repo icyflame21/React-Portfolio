@@ -13,6 +13,53 @@ const Skills = () => {
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("lg"));
 
+  const skills_table = () => (
+    <Table bordered responsive>
+      <colgroup>
+        <col className="bg-gradient bg-light" />
+        <col />
+        <col />
+      </colgroup>
+      <tbody>
+        {skills_data.map((ele, idx) => (
+          <tr key={idx} className="align-middle">
+            <td
+              className="text-black"
+              style={{
+                fontWeight: 500,
+                fontSize: isMatch ? "15px" : "20px",
+              }}
+            >
+              {ele.category}
+            </td>
+            <td className="gray2">
+              {ele.skills.split(", ").map((skill, i) => (
+                <span
+                  key={i}
+                  className=" mb-2 fs-0 fs-lg-1"
+                  style={{
+                    display: "flex",
+                  }}
+                >
+                  <LazyLoadImage
+                    effect="blur"
+                    src={ele.logo[i]}
+                    style={{
+                      width: "15px",
+                      height: "15px",
+                      objectFit: "contain",
+                    }}
+                    className="fluid me-2"
+                  />
+                  {skill}
+                </span>
+              ))}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </Table>
+  );
   return (
     <Section id="skills" bg="white">
       <Row
@@ -30,52 +77,8 @@ const Skills = () => {
 
           <Row className={`mt-3`}>
             <Col>
-              <motion.div variants={fadeIn("down", "spring", 0.3, 0.75)}>
-                <Table bordered responsive>
-                  <colgroup>
-                    <col className="bg-gradient bg-light" />
-                    <col />
-                    <col />
-                  </colgroup>
-                  <tbody>
-                    {skills_data.map((ele, idx) => (
-                      <tr key={idx} className="align-middle">
-                        <td
-                          className="text-black"
-                          style={{
-                            fontWeight: 500,
-                            fontSize: isMatch ? "15px" : "20px",
-                          }}
-                        >
-                          {ele.category}
-                        </td>
-                        <td className="gray2">
-                          {ele.skills.split(", ").map((skill, i) => (
-                            <span
-                              key={i}
-                              className=" mb-2 fs-0 fs-lg-1"
-                              style={{
-                                display: "flex",
-                              }}
-                            >
-                              <LazyLoadImage
-                                effect="blur"
-                                src={ele.logo[i]}
-                                style={{
-                                  width: "15px",
-                                  height: "15px",
-                                  objectFit: "contain",
-                                }}
-                                className="fluid me-2"
-                              />
-                              {skill}
-                            </span>
-                          ))}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </Table>
+              <motion.div variants={fadeIn("down", "spring", 0.3, 0.25)}>
+                {skills_table()}
               </motion.div>
             </Col>
           </Row>

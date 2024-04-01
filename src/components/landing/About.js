@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Button } from "react-bootstrap";
+import { Row, Col, Button, Table } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Section from "components/common/Section";
 import { settings } from "config";
@@ -10,10 +10,30 @@ import { useMediaQuery, useTheme } from "@mui/material";
 import { motion } from "framer-motion";
 import { fadeIn } from "helpers/motion";
 import ProfileCanvas from "components/common/Profile_Canvas";
+import { about_data } from "data/about";
+import DOMPurify from "dompurify";
 
 const About = () => {
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("lg"));
+
+  const sanitizedData = () => ({
+    __html: DOMPurify.sanitize(about_data),
+  });
+
+  const downloadResume = () => {
+    const fileID = settings.resumeID; // Replace this with your file ID
+    const downloadURL = `https://drive.google.com/uc?export=download&id=${fileID}`;
+    // Create a temporary anchor element
+    const tempAnchor = document.createElement("a");
+    tempAnchor.href = downloadURL;
+    tempAnchor.setAttribute("download", "Biswaranjan S. Resume.pdf");
+
+    // Trigger the download
+    document.body.appendChild(tempAnchor);
+    tempAnchor.click();
+    document.body.removeChild(tempAnchor);
+  };
 
   return (
     <Section bg="white" id="about">
@@ -24,7 +44,7 @@ const About = () => {
       >
         <Col lg={5} xl={5}>
           <motion.div
-            variants={fadeIn("right", "tween", 0.2, 1)}
+            variants={fadeIn(isMatch ? "up" : "right", "tween", 0.2, 1)}
             className={isMatch ? "h-100" : "h-75"}
           >
             <ProfileCanvas />
@@ -36,26 +56,15 @@ const About = () => {
             subtitle="Why hire me for your next project?"
             dropCap={isMatch ? true : false}
           />
-          <motion.p
+          <motion.div
             variants={fadeIn("", "", 0.1, 1)}
-            className="gray1 fs-1 mt-2"
-          >
-            Experienced full-stack software developer proficient in the MERN
-            stack and React-Native, with{" "}
-            <span className="fw-bold orange-text-gradient">2 years</span> of
-            hands-on experience.
-            <br />
-            <br />
-            Dedicated to continual learning, adept at complex problem-solving,
-            and thrive in collaborative environments focused on delivering
-            impactful solutions.
-          </motion.p>
+            className="gray1  mt-2"
+            style={{ fontSize: "18px" }}
+            dangerouslySetInnerHTML={sanitizedData()}
+          />
           <Button
-            as="a"
             className="mb-4 fs-0 fw-semi-bold border-0 mt-3 shadow-none button violet-gradient rounded px-4 py-2"
-            href={settings.resumelink}
-            target="_blank"
-            rel="noreferrer"
+            onClick={() => downloadResume()}
           >
             Download CV
             <FontAwesomeIcon

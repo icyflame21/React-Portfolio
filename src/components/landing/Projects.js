@@ -29,7 +29,14 @@ const Projects = () => {
           <Row className="g-4 mt-3">
             {projectData.map((service, index) => (
               <Col md={4} xxl={4} key={service.id + "-" + index}>
-                <motion.div variants={fadeIn("up", "tween", index * 0.5, 0.75)}>
+                <motion.div
+                  variants={fadeIn(
+                    isMatch ? "right" : "up",
+                    "tween",
+                    index * 0.15,
+                    0.25
+                  )}
+                >
                   <ProjectService {...service} />
                 </motion.div>
               </Col>

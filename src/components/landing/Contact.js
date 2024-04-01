@@ -69,7 +69,7 @@ const Contact = () => {
       {isMatch ? (
         <Card className="h-100 m-3">
           <Card.Body className="p-0">
-            <motion.div variants={fadeIn("up", "tween", 0.3, 0.75)}>
+            <motion.div variants={fadeIn("up", "tween", 0.2, 0.25)}>
               <Row className="g-0 h-100">
                 <Col xs={12}>
                   <LeafletMap
@@ -107,7 +107,7 @@ const Contact = () => {
       ) : (
         <Row className="mt-3">
           <Col lg={6} xl={6}>
-            <motion.div variants={fadeIn("right", "tween", 0.3, 0.75)}>
+            <motion.div variants={fadeIn("right", "tween", 0.2, 0.25)}>
               <LeafletMap
                 position={position}
                 data={data}
@@ -140,7 +140,7 @@ const Contact = () => {
               className={isMatch ? "mt-4" : ""}
               autoComplete="off"
             >
-              <motion.div variants={fadeIn("left", "tween", 0.3, 0.75)}>
+              <motion.div variants={fadeIn("left", "tween", 0.2, 0.25)}>
                 <Row className="g-3">
                   <Form.Group as={Col} lg={6} xl={6}>
                     <Form.Control
@@ -164,7 +164,7 @@ const Contact = () => {
                 </Row>
               </motion.div>
 
-              <motion.div variants={fadeIn("left", "tween", 0.5, 0.75)}>
+              <motion.div variants={fadeIn("left", "tween", 0.3, 0.25)}>
                 <Form.Group className="mb-3">
                   <Form.Control
                     className="shadow-none"

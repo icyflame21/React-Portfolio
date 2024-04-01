@@ -51,9 +51,9 @@ const Background = () => {
                     <motion.div
                       variants={fadeIn(
                         index % 2 === 0 ? "left" : "right",
-                        "spring",
-                        index * 0.5,
-                        1
+                        "tween",
+                        index * 0.15,
+                        0.25
                       )}
                       key={index}
                       className={classNames("timeline-item", {
