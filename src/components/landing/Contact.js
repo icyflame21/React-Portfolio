@@ -45,9 +45,12 @@ const Contact = () => {
       .then(() => {
         setLoading(false);
         e.target.reset();
-        toast.success("Email has been sent successfully", {
-          theme: "colored",
-        });
+        toast.success(
+          "Thank you for reaching out.\nYour message has been successfully sent.\nI'll get back to you as soon as possible.",
+          {
+            theme: "colored",
+          }
+        );
       })
       .catch(() => {
         setLoading(false);
@@ -80,7 +83,7 @@ const Contact = () => {
                     Connect with me{" "}
                   </h5>
                   <Flex className="gap-2">
-                    {socialShares.map(({ id, icon, href }) => (
+                    {socialShares.map(({ id, icon, href, ariaLabel }) => (
                       <Button
                         key={id}
                         as="a"
@@ -90,6 +93,7 @@ const Contact = () => {
                         type="button"
                         size="sm"
                         className="icon-item icon-item-lg fs-2 bg-white"
+                        aria-label={ariaLabel}
                       >
                         {icon}
                       </Button>
@@ -112,7 +116,7 @@ const Contact = () => {
             </motion.div>
             <h5 className="fs-0 mt-4 mb-2 text-black">Connect with me </h5>
             <Flex className="gap-2">
-              {socialShares.map(({ id, icon, href }) => (
+              {socialShares.map(({ id, icon, href, ariaLabel }) => (
                 <Button
                   key={id}
                   as="a"
@@ -122,6 +126,7 @@ const Contact = () => {
                   type="button"
                   size="sm"
                   className="icon-item icon-item-lg fs-2 bg-white"
+                  aria-label={ariaLabel}
                 >
                   {icon}
                 </Button>
@@ -178,7 +183,7 @@ const Contact = () => {
 
               <Button
                 disabled={loading}
-                className="fs-0 fw-semi-bold border-0 shadow-none violet-gradient px-4 py-2 rounded align-items-center"
+                className="fs-0 fw-semi-bold border-0 shadow-none button violet-gradient px-4 py-2 rounded align-items-center"
                 type="submit"
               >
                 {loading ? (

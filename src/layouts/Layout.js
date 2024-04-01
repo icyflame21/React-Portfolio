@@ -1,34 +1,23 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import ErrorLayout from "./ErrorLayout";
-import { toast, ToastContainer } from "react-toastify";
-import Landing from "components/landing/Landing";
 import PageNotFound from "components/errors/PageNotFound";
+import LoadingScreen from "components/landing/LoadingScreen";
 
-const Layout = ({isBelowLargeBreakpoint}) => {
+const Layout = () => {
+  const Landing = React.lazy(() => import("components/landing/Landing"));
+
   return (
-    <>
+    <Suspense fallback={<LoadingScreen />}>
       <Routes>
-        <Route path="/" element={<Landing isBelowLargeBreakpoint={isBelowLargeBreakpoint}/>} />
+        <Route path="/" element={<Landing />} />
         <Route element={<ErrorLayout />}>
           <Route path="errors/404" element={<PageNotFound />} />
         </Route>
 
         <Route path="*" element={<Navigate to="/errors/404" replace />} />
       </Routes>
-      <ToastContainer
-        position="top-center"
-        hideProgressBar={false}
-        rtl={false}
-        draggable
-        pauseOnFocusLoss
-        pauseOnHover
-        transition= 'Slide'
-        autoClose={3000}
-        newestOnTop={false}
-        theme="light"
-      />
-    </>
+    </Suspense>
   );
 };
 

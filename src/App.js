@@ -1,15 +1,14 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.min.css";
-import Layout from "./layouts/Layout";
 import ScrollToTop from "react-scroll-to-top";
 import { FaArrowUp } from "react-icons/fa";
 import "./App.css";
 import { useMediaQuery, useTheme } from "@mui/material";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from "@vercel/analytics/react";
+import Layout from "layouts/Layout";
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
   const customStyles = {
@@ -55,6 +54,17 @@ const App = () => {
         />
       )}
       <Layout />
+      <ToastContainer
+        position="top-center"
+        hideProgressBar={false}
+        rtl={false}
+        draggable
+        pauseOnFocusLoss
+        pauseOnHover
+        autoClose={3000}
+        newestOnTop={false}
+        theme="light"
+      />
     </Router>
   );
 };

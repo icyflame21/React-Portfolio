@@ -18,8 +18,8 @@ const Hero = () => {
       <StarsCanvas />
       <Row className={`justify-content-center align-items-center vh-100`}>
         <Col md={7} xxl={7} className="text-center" style={{ zIndex: 100 }}>
-          <p className="fs-2 text-white fw-semi-bold ">
-            Full Stack Software Developer
+          <p className="fs-2 orange-text-gradient fw-semi-bold ">
+            Frontend Developer
           </p>
           <h1 className="fw-bold text-white">
             Hey I'm <br />
@@ -31,7 +31,7 @@ const Hero = () => {
           <Flex alignItems="center" className="justify-content-center mt-2">
             <Button
               as="a"
-              className="mb-4 fs-0 fw-semi-bold border-0 mt-3 shadow-none violet-gradient px-4 py-2 rounded"
+              className="mb-4 fs-0 fw-semi-bold border-0 mt-3 shadow-none button violet-gradient px-4 py-2 rounded"
               href={settings.gmail}
               target="_blank"
               rel="noreferrer"
@@ -47,7 +47,7 @@ const Hero = () => {
             alignItems="center"
             className="gap-3 mt-2 justify-content-center"
           >
-            {bgWhiteIcons.map(({ id, icon, href }) => (
+            {bgWhiteIcons.map(({ id, icon, href, ariaLabel }) => (
               <Button
                 key={id}
                 as="a"
@@ -57,6 +57,7 @@ const Hero = () => {
                 type="button"
                 size="sm"
                 className="icon-item icon-item-lg fs-2 bg-white"
+                aria-label={ariaLabel}
               >
                 {icon}
               </Button>

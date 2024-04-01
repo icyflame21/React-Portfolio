@@ -15,7 +15,7 @@ const LoadingScreen = () => {
   };
 
   return (
-    <Row className="g-0 min-vw-100 min-vh-100 bg-white">
+    <Row className="g-0 vw-100 vh-100 bg-white">
       <Col xs={12} className="d-flex align-items-center justify-content-center">
         <Lottie options={loaderJSON} width="120px" height="120px" />
       </Col>

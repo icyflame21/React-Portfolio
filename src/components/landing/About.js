@@ -46,16 +46,13 @@ const About = () => {
             hands-on experience.
             <br />
             <br />
-            Successfully completed{" "}
-            <span className="fw-bold orange-text-gradient">4 months</span> of
-            freelance projects for clients in India. <br /> <br /> Dedicated to
-            continual learning, adept at complex problem-solving, and thrive in
-            collaborative environments focused on delivering impactful
-            solutions.
+            Dedicated to continual learning, adept at complex problem-solving,
+            and thrive in collaborative environments focused on delivering
+            impactful solutions.
           </motion.p>
           <Button
             as="a"
-            className="mb-4 fs-0 fw-semi-bold border-0 mt-3 shadow-none violet-gradient rounded px-5 py-2"
+            className="mb-4 fs-0 fw-semi-bold border-0 mt-3 shadow-none button violet-gradient rounded px-4 py-2"
             href={settings.resumelink}
             target="_blank"
             rel="noreferrer"

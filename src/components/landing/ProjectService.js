@@ -64,6 +64,7 @@ const ProjectService = ({
                 type="button"
                 size="sm"
                 className="icon-item icon-item-lg fs-2"
+                aria-label={"Url of " + title + "-" + liveUrl}
               >
                 <BsFillLaptopFill className="success" />
               </Button>
@@ -77,6 +78,7 @@ const ProjectService = ({
                 type="button"
                 size="sm"
                 className="icon-item icon-item-lg fs-2"
+                aria-label={"Url of " + title + "-" + githubUrl}
               >
                 <AiOutlineGithub className="text-github" />
               </Button>
@@ -90,6 +92,7 @@ const ProjectService = ({
                 type="button"
                 size="sm"
                 className="icon-item icon-item-lg fs-2"
+                aria-label={"Url of " + title + "-" + appstoreURL}
               >
                 <SiAppstore className="info" />
               </Button>
@@ -103,6 +106,7 @@ const ProjectService = ({
                 type="button"
                 size="sm"
                 className="icon-item icon-item-lg fs-2"
+                aria-label={"Url of " + title + "-" + playstoreURL}
               >
                 <BiLogoPlayStore className="success" />
               </Button>
