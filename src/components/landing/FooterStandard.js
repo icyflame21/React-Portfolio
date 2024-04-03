@@ -1,19 +1,22 @@
+import { fontSizes } from "helpers/fonts";
 import React from "react";
 import { Row, Col } from "react-bootstrap";
+import "../../CSS/GradientText.css";
 
 const FooterStandard = () => {
   return (
-    <section className=" bg-dark py-0 text-center fs-0 light">
-      <div className="container py-3">
+    <section className=" bg-200 py-3 text-center">
+      <div className="container">
         <Row className="justify-content-center">
           <Col xs={12} sm="auto">
-            <p className="mb-0 text-400 fs--1">
+            <p className="mb-0 gray1" style={{ fontSize: fontSizes.bodyText }}>
               &copy; {new Date().getFullYear()} All rights reserved.
-              <span className="mb-0 mt-2 d-block text-400 fs-0">
+              <span
+                className="mb-0 mt-2 d-block gray1"
+                style={{ fontSize: fontSizes.subSubheadings }}
+              >
                 Made with ❤️ by{" "}
-                <a className="text-white" href="#" rel="noopener noreferrer">
-                  Biswaranjan Subudhi
-                </a>
+                <span className="blue-text-gradient">Biswaranjan Subudhi</span>
               </span>
             </p>
           </Col>

@@ -1,6 +1,7 @@
 import { MdOutlineCastForEducation, MdOutlineModelTraining } from 'react-icons/md'
 import {GiSuitcase} from 'react-icons/gi'
 import '../CSS/GradientText.css'
+import React from "react";
 
 export const VerticalTimelineData = [
   {

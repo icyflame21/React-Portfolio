@@ -4,6 +4,7 @@ import { SiGmail } from "react-icons/si";
 import { FaLinkedin } from "react-icons/fa";
 import { AiFillGithub } from "react-icons/ai";
 import "../CSS/GradientText.css";
+import React from "react";
 
 export const bgWhiteIcons = [
   {

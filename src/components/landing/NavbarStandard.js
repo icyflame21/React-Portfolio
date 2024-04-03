@@ -18,6 +18,7 @@ import Logo from "assets/img/team/logo.webp";
 import "../../CSS/GradientText.css";
 import { Link } from "react-scroll";
 import sections from "data/nav";
+import { fontSizes } from "helpers/fonts";
 
 const NavbarStandard = () => {
   const [navbarToggle, setNavbarToggle] = useState(false);
@@ -52,7 +53,7 @@ const NavbarStandard = () => {
       expanded={navbarToggle}
       fixed="top"
       expand={topNavbarBreakpoint}
-      className={classNames("navbar-glass bg-white", {
+      className={classNames("navbar-glass bg-light", {
         "navbar-glass-shadow": showDropShadow,
       })}
     >
@@ -118,30 +119,20 @@ const NavbarStandard = () => {
                 backgroundColor: "#f5f5f5",
               }}
             >
-              <Table responsive bordered hover>
+              <Table responsive bordered striped className="bg-200">
                 <tbody className="">
                   {sections.map((ele, idx) => (
-                    <tr
-                      className={`${
-                        activeLink == ele.id
-                          ? "bg-info border-info"
-                          : "border-300"
-                      } align-middle border  rounded`}
-                      key={ele.id + "-" + idx}
-                    >
+                    <tr className={` align-middle`} key={ele.id + "-" + idx}>
                       <td>
                         <Link
-                          activeClass="text-white"
+                          activeClass="orange-text-gradient"
                           to={ele.id}
                           spy={true}
-                          as={Button}
                           smooth={true}
                           onSetActive={handleSetActive}
-                          duration={500}
-                          style={{ textAlign: "left" }}
-                          className="gray1 fs-0 fw-medium p-0 w-100 bg-transparent border-0 shadow-none cursor-pointer text-decoration-none"
+                          style={{ fontSize: fontSizes.navigationMenu }}
+                          className="gray2 cursor-pointer text-decoration-none"
                         >
-                          {ele.icon}
                           {ele.label}
                         </Link>
                       </td>
@@ -151,18 +142,17 @@ const NavbarStandard = () => {
               </Table>
             </Modal.Body>
           ) : isMatch ? null : (
-            <Nav className="ms-auto">
-              <Flex direction="row" alignItems="center">
+            <Nav className="ms-auto me-7">
+              <Flex direction="row" alignItems="center" className="gap-5">
                 {sections.map((ele, idx) => (
                   <Link
                     key={ele.id + "-" + idx}
-                    activeClass="button"
+                    activeClass="orange-text-gradient"
                     to={ele.id}
                     spy={true}
                     smooth={true}
-                    duration={500}
-                    style={{ fontSize: "16px", fontWeight: 500 }}
-                    className="title_text border-0 rounded shadow-none px-4 py-2 cursor-pointer text-decoration-none"
+                    style={{ fontSize: fontSizes.navigationMenu }}
+                    className="gray2 cursor-pointer text-decoration-none"
                   >
                     {ele.label}
                   </Link>

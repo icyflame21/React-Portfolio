@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Button, Table } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Section from "components/common/Section";
 import { settings } from "config";
@@ -12,6 +12,7 @@ import { fadeIn } from "helpers/motion";
 import ProfileCanvas from "components/common/Profile_Canvas";
 import { about_data } from "data/about";
 import DOMPurify from "dompurify";
+import { fontSizes } from "helpers/fonts";
 
 const About = () => {
   const theme = useTheme();
@@ -59,12 +60,13 @@ const About = () => {
           <motion.div
             variants={fadeIn("", "", 0.1, 1)}
             className="gray1  mt-2"
-            style={{ fontSize: "18px" }}
+            style={{ fontSize: fontSizes.bodyText }}
             dangerouslySetInnerHTML={sanitizedData()}
           />
           <Button
-            className="mb-4 fs-0 fw-semi-bold border-0 mt-3 shadow-none button violet-gradient rounded px-4 py-2"
+            className="mb-4 fw-semi-bold border-0 mt-3 shadow-none button violet-gradient rounded px-4 py-2"
             onClick={() => downloadResume()}
+            style={{ fontSize: fontSizes.buttonText }}
           >
             Download CV
             <FontAwesomeIcon

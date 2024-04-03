@@ -3,6 +3,7 @@ import { BsInfoSquareFill } from "react-icons/bs";
 import { BiSolidContact } from "react-icons/bi";
 import { MdCastForEducation } from "react-icons/md";
 import { AiFillProject } from "react-icons/ai";
+import React from "react";
 
 const sections = [
   {

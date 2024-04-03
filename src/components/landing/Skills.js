@@ -8,6 +8,7 @@ import { useMediaQuery, useTheme } from "@mui/material";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { fadeIn } from "helpers/motion";
 import { motion } from "framer-motion";
+import { fontSizes } from "helpers/fonts";
 
 const Skills = () => {
   const theme = useTheme();
@@ -27,7 +28,7 @@ const Skills = () => {
               className="text-black"
               style={{
                 fontWeight: 500,
-                fontSize: isMatch ? "15px" : "20px",
+                fontSize: fontSizes.bodyText,
               }}
             >
               {ele.category}
@@ -36,9 +37,10 @@ const Skills = () => {
               {ele.skills.split(", ").map((skill, i) => (
                 <span
                   key={i}
-                  className=" mb-2 fs-0 fs-lg-1"
+                  className=" mb-2"
                   style={{
                     display: "flex",
+                    fontSize: fontSizes.bodyText,
                   }}
                 >
                   <LazyLoadImage

@@ -1,12 +1,10 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Card } from "react-bootstrap";
 import Section from "components/common/Section";
 import SectionHeader from "./SectionHeader";
 import { useMediaQuery, useTheme } from "@mui/material";
 import { projectData } from "data/projects";
 import ProjectService from "./ProjectService";
-import { fadeIn, slideIn } from "helpers/motion";
-import { motion } from "framer-motion";
 
 const Projects = () => {
   const theme = useTheme();
@@ -26,22 +24,19 @@ const Projects = () => {
             dropCap
             className="justify-content-center text-center"
           />
-          <Row className="g-4 mt-3">
-            {projectData.map((service, index) => (
-              <Col md={4} xxl={4} key={service.id + "-" + index}>
-                <motion.div
-                  variants={fadeIn(
-                    isMatch ? "right" : "up",
-                    "tween",
-                    index * 0.15,
-                    0.25
-                  )}
-                >
-                  <ProjectService {...service} />
-                </motion.div>
-              </Col>
-            ))}
-          </Row>
+          <Card>
+            <Card.Body className="p-0 overflow-hidden">
+              <Row className="mt-3">
+                {projectData.map((service, index) => (
+                  <ProjectService
+                    service={service}
+                    key={service.id + "-" + index}
+                    index={index}
+                  />
+                ))}
+              </Row>
+            </Card.Body>
+          </Card>
         </Col>
       </Row>
     </Section>

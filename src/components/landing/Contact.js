@@ -13,6 +13,7 @@ import { motion } from "framer-motion";
 import { fadeIn } from "helpers/motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { fontSizes } from "helpers/fonts";
 
 const Contact = () => {
   const theme = useTheme();
@@ -79,7 +80,10 @@ const Contact = () => {
                   />
                 </Col>
                 <Col xs={12} className="p-x1 flex-1">
-                  <h5 className="fs-0 mt-3 mb-2 text-black">
+                  <h5
+                    className="mt-3 mb-2 text-black"
+                    style={{ fontSize: fontSizes.bodyText }}
+                  >
                     Connect with me{" "}
                   </h5>
                   <Flex className="gap-2">
@@ -114,7 +118,12 @@ const Contact = () => {
                 className="min-vh-50 w-100"
               />
             </motion.div>
-            <h5 className="fs-0 mt-4 mb-2 text-black">Connect with me </h5>
+            <h5
+              className="mt-4 mb-2 text-black"
+              style={{ fontSize: fontSizes.bodyText }}
+            >
+              Connect with me{" "}
+            </h5>
             <Flex className="gap-2">
               {socialShares.map(({ id, icon, href, ariaLabel }) => (
                 <Button
@@ -144,6 +153,7 @@ const Contact = () => {
                 <Row className="g-3">
                   <Form.Group as={Col} lg={6} xl={6}>
                     <Form.Control
+                      style={{ fontSize: fontSizes.formInput }}
                       disabled={loading}
                       required
                       className="shadow-none"
@@ -154,6 +164,7 @@ const Contact = () => {
                   <Form.Group className="mb-3" as={Col} lg={6} xl={6}>
                     <Form.Control
                       disabled={loading}
+                      style={{ fontSize: fontSizes.formInput }}
                       className="shadow-none"
                       type="email"
                       required
@@ -176,6 +187,7 @@ const Contact = () => {
                     name="clientMessage"
                     style={{
                       resize: "none",
+                      fontSize: fontSizes.formInput,
                     }}
                   />
                 </Form.Group>
@@ -183,7 +195,8 @@ const Contact = () => {
 
               <Button
                 disabled={loading}
-                className="fs-0 fw-semi-bold border-0 shadow-none button violet-gradient px-4 py-2 rounded align-items-center"
+                className="fw-semi-bold border-0 shadow-none button violet-gradient px-4 py-2 rounded align-items-center"
+                style={{ fontSize: fontSizes.buttonText }}
                 type="submit"
               >
                 {loading ? (

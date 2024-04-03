@@ -7,7 +7,7 @@ import "./App.css";
 import { useMediaQuery, useTheme } from "@mui/material";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from "@vercel/analytics/react";
-import Layout from "layouts/Layout";
+import Layout from "./layouts/Layout";
 import { ToastContainer } from "react-toastify";
 
 const App = () => {
@@ -35,7 +35,7 @@ const App = () => {
       (link) => link.remove()
     );
     const link = document.createElement("link");
-    link.href = `${process.env.PUBLIC_URL}/css/theme.min.css`;
+    link.href = `/css/theme.min.css`;
     link.type = "text/css";
     link.rel = "stylesheet";
     link.className = "theme-stylesheet";

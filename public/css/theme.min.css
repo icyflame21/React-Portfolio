@@ -27678,7 +27678,6 @@ div[data-collapse] + .kanban-item {
 }
 .timeline-vertical .timeline-item-content {
   position: relative;
-  border: 1px solid var(--falcon-gray-300);
   border-radius: 0.375rem;
   margin-left: 1.25rem;
   z-index: 1;
@@ -27696,20 +27695,7 @@ div[data-collapse] + .kanban-item {
     background-color: var(--falcon-gray-100) !important;
   }
 }
-@media (min-width: 992px) {
-  .timeline-vertical .timeline-item-content:before {
-    content: '';
-    position: absolute;
-    width: 0.8rem;
-    height: 0.8rem;
-    background: var(--falcon-gray-100);
-    top: 0.9rem;
-    transform: rotate(45deg);
-    border: 1px solid var(--falcon-gray-300);
-    border-radius: 0.125rem;
-    z-index: -1;
-  }
-}
+
 .timeline-vertical .timeline-item-time {
   margin-top: 0.25rem;
   padding-left: 2.25rem;

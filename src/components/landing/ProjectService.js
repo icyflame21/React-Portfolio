@@ -1,6 +1,5 @@
-import SoftBadge from "components/common/SoftBadge";
 import React from "react";
-import { Button, Card } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 import { BsFillLaptopFill } from "react-icons/bs";
 import { BiLogoPlayStore } from "react-icons/bi";
 import { SiAppstore } from "react-icons/si";
@@ -8,113 +7,117 @@ import { AiOutlineGithub } from "react-icons/ai";
 import Flex from "components/common/Flex";
 import "../../CSS/GradientText.css";
 import { Tilt } from "react-tilt";
-import { motion } from "framer-motion";
+import ProjectSingleImage from "./ProjectSingleImage";
+import classNames from "classnames";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import { useMediaQuery, useTheme } from "@mui/material";
+import SoftBadge from "components/common/SoftBadge";
+import { fontSizes } from "helpers/fonts";
+import DOMPurify from "dompurify";
 
-const ProjectService = ({
-  subTitle,
-  title,
-  liveUrl,
-  githubUrl,
-  thumbnail,
-  techStack,
-  appstoreURL,
-  playstoreURL,
-  ongoing,
-}) => {
+const ProjectService = ({ service, index }) => {
+  const theme = useTheme();
+  const isMatch = useMediaQuery(theme.breakpoints.down("lg"));
+
+  const sanitizedData = (data) => ({
+    __html: DOMPurify.sanitize(data),
+  });
+
+  const {
+    subTitle,
+    title,
+    liveUrl,
+    githubUrl,
+    thumbnail,
+    skills,
+    logo,
+    appstoreURL,
+    playstoreURL,
+    ongoing,
+  } = service;
   return (
-    <Card>
-      <Card.Img src={thumbnail} alt={title} variant="top" />
-      <Card.Body>
-        <div className="mb-3 ">
-          {techStack.map((ele, idx) => (
-            <SoftBadge
-              key={ele.id + "-" + idx}
-              pill
-              bg="info"
-              className="me-2 text-wrap text-start"
+    <Col
+      xs={12}
+      className={classNames("p-card", {
+        "bg-100": index % 2 !== 0,
+      })}
+    >
+      <Row className="p-3">
+        <Col sm={5} md={4}>
+          <ProjectSingleImage
+            name={title}
+            ongoing={ongoing}
+            imageSrcPath={thumbnail}
+          />
+        </Col>
+        <Col sm={7} md={8}>
+          <Row className="h-100">
+            <Col lg={8}>
+              <h5
+                className="mt-3 mt-sm-0 text-dark"
+                style={{ fontSize: fontSizes.subSubheadings }}
+              >
+                {title}
+              </h5>
+              <p
+                className="mb-2 mb-md-3 text-600"
+                style={{ fontSize: fontSizes.quoteCaption }}
+                dangerouslySetInnerHTML={sanitizedData(subTitle)}
+              />
+            </Col>
+            <Col
+              lg={4}
+              as={Flex}
+              justifyContent={isMatch ? "" : "end"}
+              direction={isMatch ? "" : "column"}
+              className={isMatch ? "flex-wrap gap-2 mt-3" : ""}
             >
-              {ele.title}
-            </SoftBadge>
-          ))}
-        </div>
-        <Card.Title
-          className="text-black justify-content-between"
-          style={{ fontSize: "20px" }}
-        >
-          {title}
-          <SoftBadge
-            pill
-            bg={ongoing ? "primary" : "success"}
-            className="fs--2 ms-2 text-wrap text-start"
-          >
-            {ongoing ? "In progress" : "Closed"}
-          </SoftBadge>
-        </Card.Title>
-        <Card.Text style={{ fontSize: "15px" }} className="gray1 mt-2">
-          {subTitle}
-        </Card.Text>
-        <div className="mt-2">
-          <Flex className="gap-3 align-items-center">
-            {liveUrl && (
-              <Button
-                as="a"
-                target="_blank"
-                href={liveUrl}
-                variant="falcon-default"
-                type="button"
-                size="sm"
-                className="icon-item icon-item-lg fs-2"
-                aria-label={"Url of " + title + "-" + liveUrl}
-              >
-                <BsFillLaptopFill className="success" />
-              </Button>
-            )}
-            {githubUrl && (
-              <Button
-                as="a"
-                target="_blank"
-                href={githubUrl}
-                variant="falcon-default"
-                type="button"
-                size="sm"
-                className="icon-item icon-item-lg fs-2"
-                aria-label={"Url of " + title + "-" + githubUrl}
-              >
-                <AiOutlineGithub className="text-github" />
-              </Button>
-            )}
-            {appstoreURL && (
-              <Button
-                as="a"
-                target="_blank"
-                href={appstoreURL}
-                variant="falcon-default"
-                type="button"
-                size="sm"
-                className="icon-item icon-item-lg fs-2"
-                aria-label={"Url of " + title + "-" + appstoreURL}
-              >
-                <SiAppstore className="info" />
-              </Button>
-            )}
-            {playstoreURL && (
-              <Button
-                as="a"
-                target="_blank"
-                href={playstoreURL}
-                variant="falcon-default"
-                type="button"
-                size="sm"
-                className="icon-item icon-item-lg fs-2"
-                aria-label={"Url of " + title + "-" + playstoreURL}
-              >
-                <BiLogoPlayStore className="success" />
-              </Button>
-            )}
-          </Flex>
-        </div>
-      </Card.Body>
-    </Card>
+              {skills.split(", ").map((skill, i) =>
+                isMatch ? (
+                  <SoftBadge
+                    key={i}
+                    pill
+                    bg="info"
+                    className="text-600"
+                    style={{ fontSize: fontSizes.quoteCaption }}
+                  >
+                    <LazyLoadImage
+                      effect="blur"
+                      src={logo[i]}
+                      style={{
+                        width: "10px",
+                        height: "10px",
+                        objectFit: "contain",
+                      }}
+                      className="fluid me-2"
+                    />
+                    {skill}
+                  </SoftBadge>
+                ) : (
+                  <span
+                    key={i}
+                    className={"mb-1 text-600"}
+                    style={{ fontSize: fontSizes.quoteCaption }}
+                  >
+                    <LazyLoadImage
+                      effect="blur"
+                      src={logo[i]}
+                      style={{
+                        width: "10px",
+                        height: "10px",
+                        objectFit: "contain",
+                      }}
+                      className="fluid me-2"
+                    />
+                    {skill}
+                  </span>
+                )
+              )}
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+    </Col>
   );
 };
 

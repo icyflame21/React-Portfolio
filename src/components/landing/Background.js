@@ -8,6 +8,7 @@ import classNames from "classnames";
 import { useMediaQuery, useTheme } from "@mui/material";
 import { motion } from "framer-motion";
 import { fadeIn } from "helpers/motion";
+import { fontSizes } from "helpers/fonts";
 
 const Background = () => {
   const handleItalic = (text) => {
@@ -15,16 +16,33 @@ const Background = () => {
     const modifiedText =
       parts.length === 2 ? (
         <>
-          {parts[0]}@<span className="fs-1 pink-text-gradient">{parts[1]}</span>
+          {parts[0]}@
+          <span
+            className="pink-text-gradient"
+            style={{ fontSize: fontSizes.bodyText }}
+          >
+            {parts[1]}
+          </span>
         </>
       ) : (
         text
       );
-    return <h5 className="mb-2 text-black fs-1">{modifiedText}</h5>;
+    return (
+      <h5 className="mb-2 text-black" style={{ fontSize: fontSizes.bodyText }}>
+        {modifiedText}
+      </h5>
+    );
   };
 
   const handleColorPresentYr = (year) => {
-    return <p className="fs-0 mb-0 fw-semi-bold text-black">{year}</p>;
+    return (
+      <p
+        className="mb-0 fw-semi-bold text-black"
+        style={{ fontSize: fontSizes.bodyText }}
+      >
+        {year}
+      </p>
+    );
   };
 
   const theme = useTheme();
@@ -72,7 +90,12 @@ const Background = () => {
                         <Col lg={6} className="timeline-item-time">
                           <div>
                             {handleColorPresentYr(year)}
-                            <p className="fs--1 gray1">{date}</p>
+                            <p
+                              className="gray1"
+                              style={{ fontSize: fontSizes.quoteCaption }}
+                            >
+                              {date}
+                            </p>
                           </div>
                         </Col>
                         <Col lg={6}>

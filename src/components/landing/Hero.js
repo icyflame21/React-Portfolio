@@ -9,30 +9,41 @@ import "../../CSS/GradientText.css";
 import { motion } from "framer-motion";
 import { AnimateText } from "./AnimateText";
 import StarsCanvas from "./Stars";
+import { fontSizes } from "helpers/fonts";
 
 const Hero = () => {
   const animatedText =
     "Am a dedicated software artisan from India with a passion for crafting and extensive experience in constructing web applications.";
   return (
-    <Section bg="dark">
+    <Section className="bg-light">
       <StarsCanvas />
       <Row className={`justify-content-center align-items-center vh-100`}>
         <Col md={7} xxl={7} className="text-center" style={{ zIndex: 100 }}>
-          <p className="fs-2 orange-text-gradient fw-semi-bold ">
+          <p
+            className="orange-text-gradient fw-semi-bold "
+            style={{ fontSize: fontSizes.subheadings }}
+          >
             Frontend Developer
           </p>
-          <h1 className="fw-bold text-white">
+          <h1
+            className="fw-bold gray1"
+            style={{ fontSize: fontSizes.mainTitle }}
+          >
             Hey I'm <br />
             <span className="blue-text-gradient">Biswaranjan Subudhi</span>
           </h1>
-          <p className=" mt-5 text-white" style={{ fontSize: "20px" }}>
+          <p
+            className=" mt-5 gray1"
+            style={{ fontSize: fontSizes.subSubheadings }}
+          >
             <AnimateText animatedText={animatedText} />
           </p>
           <Flex alignItems="center" className="justify-content-center mt-2">
             <Button
               as="a"
-              className="mb-4 fs-0 fw-semi-bold border-0 mt-3 shadow-none button violet-gradient px-4 py-2 rounded"
+              className="mb-4 fw-semi-bold border-0 mt-3 shadow-none button violet-gradient px-4 py-2 rounded"
               href={settings.gmail}
+              style={{ fontSize: fontSizes.buttonText }}
               target="_blank"
               rel="noreferrer"
             >
