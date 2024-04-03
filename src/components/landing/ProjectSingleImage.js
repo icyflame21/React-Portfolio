@@ -26,7 +26,7 @@ const SingleImage = ({ image, name }) => {
         className="w-100 h-100 top-0 left-0 position-absolute "
         style={{
           backgroundImage: `url(${image})`,
-          filter: "blur(5px)",
+          filter: "blur(8px)",
           zIndex: -100,
         }}
       ></div>

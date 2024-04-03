@@ -1,8 +1,8 @@
-import ezSCM from "assets/img/projects/ezSCM Web.webp";
+import ezSCM from "assets/img/projects/ezSCM Web.jpg";
 import ezSCMmobile from "assets/img/projects/ezSCM Mobile.webp";
 import omnifood from "assets/img/projects/Omnifood.webp";
 import Swiggy from "assets/img/projects/Swiggy.webp";
-import Krushal from "assets/img/projects/krushal.png";
+import Krushal from "assets/img/projects/krushal.jpg";
 
 import react from "assets/img/skills/react.svg";
 import azure from "assets/img/skills/azure.svg";
@@ -36,7 +36,7 @@ export const projectData = [
     thumbnail: ezSCM,
     ongoing: true,
     skills:
-      "React, Bootstrap 5, Material UI, Localization, Google Maps Module, Stripe, SASS, Webpack, Azure TFS",
+      "React, Bootstrap 5, Material UI, Localization, Google Maps, Stripe, SASS, Webpack, Azure TFS",
     logo: [
       react,
       bootstrap,
@@ -64,7 +64,7 @@ export const projectData = [
     thumbnail: ezSCMmobile,
     ongoing: true,
     skills:
-      "React Native, React Native Paper, React Native Elements, Redux toolkit, Google Maps Module, Azure TFS",
+      "React Native, React Native Paper, React Native Elements, Redux toolkit, Google Maps, Azure TFS",
     logo: [react_native, rnpaper, rnelements, redux, googleMaps, azure],
   },
   {
@@ -82,7 +82,7 @@ export const projectData = [
     thumbnail: Krushal,
     ongoing: false,
     skills:
-      "React Native, React Native Paper, React Native Elements, Redux toolkit, Google Maps Module",
+      "React Native, React Native Paper, React Native Elements, Redux toolkit, Google Maps",
     logo: [react_native, rnpaper, rnelements, redux, googleMaps],
   },
   {
