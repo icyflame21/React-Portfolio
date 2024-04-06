@@ -1,16 +1,11 @@
 import React from "react";
-import { Button, Col, Row } from "react-bootstrap";
-import { BsFillLaptopFill } from "react-icons/bs";
-import { BiLogoPlayStore } from "react-icons/bi";
-import { SiAppstore } from "react-icons/si";
-import { AiOutlineGithub } from "react-icons/ai";
+import { Col, Row } from "react-bootstrap";
 import Flex from "components/common/Flex";
-import "../../CSS/GradientText.css";
-import { Tilt } from "react-tilt";
 import ProjectSingleImage from "./ProjectSingleImage";
 import classNames from "classnames";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { useMediaQuery, useTheme } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import SoftBadge from "components/common/SoftBadge";
 import { fontSizes } from "helpers/fonts";
 import DOMPurify from "dompurify";
@@ -23,18 +18,7 @@ const ProjectService = ({ service, index }) => {
     __html: DOMPurify.sanitize(data),
   });
 
-  const {
-    subTitle,
-    title,
-    liveUrl,
-    githubUrl,
-    thumbnail,
-    skills,
-    logo,
-    appstoreURL,
-    playstoreURL,
-    ongoing,
-  } = service;
+  const { subTitle, title, thumbnail, skills, logo, ongoing } = service;
   return (
     <Col
       xs={12}

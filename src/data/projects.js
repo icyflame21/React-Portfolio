@@ -1,8 +1,8 @@
-import ezSCM from "assets/img/projects/ezSCM Web.jpg";
-import ezSCMmobile from "assets/img/projects/ezSCM Mobile.webp";
+import ezSCM from "assets/img/projects/ezSCM-Web.webp";
+import ezSCMmobile from "assets/img/projects/ezSCM-Mobile.webp";
 import omnifood from "assets/img/projects/Omnifood.webp";
 import Swiggy from "assets/img/projects/Swiggy.webp";
-import Krushal from "assets/img/projects/krushal.jpg";
+import Krushal from "assets/img/projects/krushal.webp";
 
 import react from "assets/img/skills/react.svg";
 import azure from "assets/img/skills/azure.svg";

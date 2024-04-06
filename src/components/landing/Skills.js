@@ -1,10 +1,10 @@
 import React from "react";
 import { Row, Col, Table } from "react-bootstrap";
 import Section from "components/common/Section";
-import "../../CSS/GradientText.css";
 import SectionHeader from "./SectionHeader";
 import { skills_data } from "data/skills";
-import { useMediaQuery, useTheme } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { fadeIn } from "helpers/motion";
 import { motion } from "framer-motion";

@@ -1,7 +1,6 @@
 import React from "react";
 import L from "leaflet";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "../../CSS/GradientText.css";
 import mapMarkerIcon from "../../assets/img/designs/map-marker.png";
 
 const LeafletMap = ({ data, position, ...rest }) => {

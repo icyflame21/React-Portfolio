@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import {
-  Button,
   CloseButton,
   Container,
   Image,
@@ -12,10 +11,10 @@ import {
 import { topNavbarBreakpoint } from "config";
 import Flex from "components/common/Flex";
 import classNames from "classnames";
-import { useMediaQuery, useTheme } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import Logo from "assets/img/team/logo.webp";
-import "../../CSS/GradientText.css";
 import { Link } from "react-scroll";
 import sections from "data/nav";
 import { fontSizes } from "helpers/fonts";
@@ -23,11 +22,6 @@ import { fontSizes } from "helpers/fonts";
 const NavbarStandard = () => {
   const [navbarToggle, setNavbarToggle] = useState(false);
   const [showDropShadow, setShowDropShadow] = useState(false);
-  const [activeLink, setActiveLink] = useState("");
-
-  const handleSetActive = (to) => {
-    setActiveLink(to);
-  };
 
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
@@ -128,8 +122,9 @@ const NavbarStandard = () => {
                           activeClass="orange-text-gradient"
                           to={ele.id}
                           spy={true}
-                          smooth={true}
-                          onSetActive={handleSetActive}
+                          isDynamic={true}
+                          ignoreCancelEvents={true}
+                          smooth="easeInOutCubic"
                           style={{ fontSize: fontSizes.navigationMenu }}
                           className="gray2 cursor-pointer text-decoration-none"
                         >
@@ -150,7 +145,9 @@ const NavbarStandard = () => {
                     activeClass="orange-text-gradient"
                     to={ele.id}
                     spy={true}
-                    smooth={true}
+                    isDynamic={true}
+                    ignoreCancelEvents={true}
+                    smooth="easeInOutCubic"
                     style={{ fontSize: fontSizes.navigationMenu }}
                     className="gray2 cursor-pointer text-decoration-none"
                   >

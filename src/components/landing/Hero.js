@@ -5,11 +5,10 @@ import Section from "components/common/Section";
 import { bgWhiteIcons } from "data/socialIcons";
 import { settings } from "config";
 import Flex from "components/common/Flex";
-import "../../CSS/GradientText.css";
-import { motion } from "framer-motion";
 import { AnimateText } from "./AnimateText";
 import StarsCanvas from "./Stars";
 import { fontSizes } from "helpers/fonts";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
 const Hero = () => {
   const animatedText =
@@ -49,7 +48,7 @@ const Hero = () => {
             >
               Hire Me
               <FontAwesomeIcon
-                icon="play"
+                icon={faPlay}
                 transform="shrink-4 down-1 right-5"
               />
             </Button>

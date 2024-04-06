@@ -2,7 +2,8 @@ import React from "react";
 import { Row, Col, Card } from "react-bootstrap";
 import Section from "components/common/Section";
 import SectionHeader from "./SectionHeader";
-import { useMediaQuery, useTheme } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import { projectData } from "data/projects";
 import ProjectService from "./ProjectService";
 

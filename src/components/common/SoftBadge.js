@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import "../../CSS/GradientText.css";
 
 const SoftBadge = ({ bg = "primary", pill, children, className }) => {
   return (

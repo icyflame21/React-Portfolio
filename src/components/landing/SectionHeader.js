@@ -1,6 +1,5 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
-import "../../CSS/GradientText.css";
 import { textVariant } from "helpers/motion";
 import { motion } from "framer-motion";
 import { fontSizes } from "helpers/fonts";

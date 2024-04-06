@@ -1,6 +1,9 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin"); // Added for CSS minification
+const TerserWebpackPlugin = require("terser-webpack-plugin"); // Added for JS minification
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "development", // Set to 'production' for build mode
@@ -35,12 +38,12 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /\.(sass|scss)$/,
         use: [
-          "style-loader",
+          MiniCssExtractPlugin.loader,
           "css-loader",
           "postcss-loader",
           {
@@ -52,26 +55,48 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpe?g|gif|webp|svg)$/, // Rule for asset files
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              outputPath: "images",
-            },
-          },
-        ],
+        test: /\.(png|jpe?g|gif|webp|svg|ico|eot|otf|ttf|woff|woff2)$/,
+        type: "asset/resource",
+        generator: {
+          filename: "assets/[name][ext][query]",
+        },
       },
     ],
   },
   plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "public"),
+          to: path.resolve(__dirname, "build"),
+          globOptions: {
+            ignore: ["**/index.html"],
+          },
+        },
+      ],
+    }),
     new MiniCssExtractPlugin({
-      filename: "bundle.css",
+      filename: "[name].min.css",
     }),
     new HtmlWebpackPlugin({
       template: path.resolve("./public/index.html"),
+      inject: "body",
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
     }),
   ],
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new CssMinimizerPlugin(),
+      new TerserWebpackPlugin({
+        parallel: true, // Enable parallel minification for faster builds
+      }),
+    ],
+  },
   devServer: {
     static: { directory: path.join(__dirname, "public"), watch: true },
     compress: true,

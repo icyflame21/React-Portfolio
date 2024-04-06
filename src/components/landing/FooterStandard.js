@@ -1,7 +1,6 @@
 import { fontSizes } from "helpers/fonts";
 import React from "react";
 import { Row, Col } from "react-bootstrap";
-import "../../CSS/GradientText.css";
 
 const FooterStandard = () => {
   return (

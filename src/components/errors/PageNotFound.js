@@ -4,7 +4,6 @@ import PageNotFoundJSON from "../../assets/img/animated-icons/Page_Not_Found.jso
 import Lottie from "react-lottie";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
-import "../../CSS/GradientText.css";
 import { motion } from "framer-motion";
 import { zoomIn } from "helpers/motion";
 

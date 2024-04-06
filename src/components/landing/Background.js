@@ -1,11 +1,11 @@
 import React from "react";
 import { Row, Col, Card } from "react-bootstrap";
 import Section from "components/common/Section";
-import "../../CSS/GradientText.css";
 import SectionHeader from "./SectionHeader";
 import { VerticalTimelineData } from "data/timeline";
 import classNames from "classnames";
-import { useMediaQuery, useTheme } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import { motion } from "framer-motion";
 import { fadeIn } from "helpers/motion";
 import { fontSizes } from "helpers/fonts";

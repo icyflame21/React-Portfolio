@@ -1,7 +1,8 @@
 import React, { useRef, useState } from "react";
 import { Row, Col, Form, Spinner, Card, Button } from "react-bootstrap";
 import Section from "components/common/Section";
-import { useMediaQuery, useTheme } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import SectionHeader from "./SectionHeader";
 import { socialShares } from "data/socialIcons";
 import Flex from "components/common/Flex";

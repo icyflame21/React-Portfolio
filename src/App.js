@@ -4,11 +4,13 @@ import "react-toastify/dist/ReactToastify.min.css";
 import ScrollToTop from "react-scroll-to-top";
 import { FaArrowUp } from "react-icons/fa";
 import "./App.css";
-import { useMediaQuery, useTheme } from "@mui/material";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from "@vercel/analytics/react";
 import Layout from "./layouts/Layout";
 import { ToastContainer } from "react-toastify";
+import "./CSS/GradientText.css";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const App = () => {
   const customStyles = {
