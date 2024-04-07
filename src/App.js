@@ -4,13 +4,12 @@ import "react-toastify/dist/ReactToastify.min.css";
 import ScrollToTop from "react-scroll-to-top";
 import { FaArrowUp } from "react-icons/fa";
 import "./App.css";
-import { SpeedInsights } from "@vercel/speed-insights/react";
-import { Analytics } from "@vercel/analytics/react";
 import Layout from "./layouts/Layout";
 import { ToastContainer } from "react-toastify";
 import "./CSS/GradientText.css";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { LazyLoadComponent } from "react-lazy-load-image-component";
 
 const App = () => {
   const customStyles = {
@@ -31,6 +30,7 @@ const App = () => {
 
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
+  const previousWidth = window.innerWidth;
 
   useEffect(() => {
     Array.from(document.getElementsByClassName("theme-stylesheet")).forEach(
@@ -42,12 +42,18 @@ const App = () => {
     link.rel = "stylesheet";
     link.className = "theme-stylesheet";
     document.getElementsByTagName("head")[0].appendChild(link);
+
+    window.addEventListener("resize", () => {
+      const currentWidth = window.innerWidth;
+      if (previousWidth < 768 && currentWidth >= 768) {
+        window.location.reload();
+      }
+      previousWidth = currentWidth;
+    });
   }, []);
 
   return (
     <Router>
-      <SpeedInsights />
-      <Analytics />
       {isMatch ? null : (
         <ScrollToTop
           smooth
@@ -55,7 +61,9 @@ const App = () => {
           style={customStyles}
         />
       )}
-      <Layout />
+      <LazyLoadComponent>
+        <Layout />
+      </LazyLoadComponent>
       <ToastContainer
         position="top-center"
         hideProgressBar={false}

@@ -7,7 +7,7 @@ import React from "react";
 const Stars = (props) => {
   const ref = useRef();
   const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(5000), { radius: 1.2 })
+    random.inSphere(new Float32Array(5001), { radius: 1.2 })
   );
 
   useFrame((_, delta) => {

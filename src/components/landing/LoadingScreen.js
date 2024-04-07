@@ -1,4 +1,3 @@
-// LoadingScreen.js
 import React from "react";
 import LoaderJSON from "../../assets/img/animated-icons/loader.json";
 import Lottie from "react-lottie";

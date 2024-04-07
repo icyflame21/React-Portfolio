@@ -7,8 +7,6 @@ import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
 import SectionHeader from "./SectionHeader";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { motion } from "framer-motion";
-import { fadeIn } from "helpers/motion";
 import ProfileCanvas from "components/common/Profile_Canvas";
 import { about_data } from "data/about";
 import DOMPurify from "dompurify";
@@ -23,14 +21,12 @@ const About = () => {
   });
 
   const downloadResume = () => {
-    const fileID = settings.resumeID; // Replace this with your file ID
+    const fileID = settings.resumeID;
     const downloadURL = `https://drive.google.com/uc?export=download&id=${fileID}`;
-    // Create a temporary anchor element
     const tempAnchor = document.createElement("a");
     tempAnchor.href = downloadURL;
     tempAnchor.setAttribute("download", "Biswaranjan S. Resume.pdf");
 
-    // Trigger the download
     document.body.appendChild(tempAnchor);
     tempAnchor.click();
     document.body.removeChild(tempAnchor);
@@ -44,12 +40,9 @@ const About = () => {
         }`}
       >
         <Col lg={5} xl={5}>
-          <motion.div
-            variants={fadeIn(isMatch ? "up" : "right", "tween", 0.2, 1)}
-            className={isMatch ? "h-100" : "h-75"}
-          >
+          <div className={isMatch ? "h-100" : "h-75"}>
             <ProfileCanvas />
-          </motion.div>
+          </div>
         </Col>
         <Col lg={7} xl={7}>
           <SectionHeader
@@ -57,8 +50,7 @@ const About = () => {
             subtitle="Why hire me for your next project?"
             dropCap={isMatch ? true : false}
           />
-          <motion.div
-            variants={fadeIn("", "", 0.1, 1)}
+          <div
             className="gray1  mt-2"
             style={{ fontSize: fontSizes.bodyText }}
             dangerouslySetInnerHTML={sanitizedData()}

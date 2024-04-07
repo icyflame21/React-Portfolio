@@ -6,8 +6,6 @@ import { skills_data } from "data/skills";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { fadeIn } from "helpers/motion";
-import { motion } from "framer-motion";
 import { fontSizes } from "helpers/fonts";
 
 const Skills = () => {
@@ -78,11 +76,7 @@ const Skills = () => {
           />
 
           <Row className={`mt-3`}>
-            <Col>
-              <motion.div variants={fadeIn("down", "spring", 0.3, 0.25)}>
-                {skills_table()}
-              </motion.div>
-            </Col>
+            <Col>{skills_table()}</Col>
           </Row>
         </Col>
       </Row>

@@ -6,8 +6,6 @@ import { VerticalTimelineData } from "data/timeline";
 import classNames from "classnames";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { motion } from "framer-motion";
-import { fadeIn } from "helpers/motion";
 import { fontSizes } from "helpers/fonts";
 
 const Background = () => {
@@ -66,13 +64,7 @@ const Background = () => {
                 {VerticalTimelineData.map((item, index) => {
                   const { year, date, title, description, icon } = item;
                   return (
-                    <motion.div
-                      variants={fadeIn(
-                        index % 2 === 0 ? "left" : "right",
-                        "tween",
-                        index * 0.15,
-                        0.25
-                      )}
+                    <div
                       key={index}
                       className={classNames("timeline-item", {
                         "timeline-item-start": index % 2 === 0,
@@ -107,7 +99,7 @@ const Background = () => {
                           </div>
                         </Col>
                       </Row>
-                    </motion.div>
+                    </div>
                   );
                 })}
               </div>
