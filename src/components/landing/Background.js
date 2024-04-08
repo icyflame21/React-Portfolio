@@ -7,6 +7,7 @@ import classNames from "classnames";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { fontSizes } from "helpers/fonts";
+import DOMPurify from "dompurify";
 
 const Background = () => {
   const handleItalic = (text) => {
@@ -14,22 +15,12 @@ const Background = () => {
     const modifiedText =
       parts.length === 2 ? (
         <>
-          {parts[0]}@
-          <span
-            className="pink-text-gradient"
-            style={{ fontSize: fontSizes.bodyText }}
-          >
-            {parts[1]}
-          </span>
+          {parts[0]}@<span className="pink-text-gradient">{parts[1]}</span>
         </>
       ) : (
         text
       );
-    return (
-      <h5 className="mb-2 text-black" style={{ fontSize: fontSizes.bodyText }}>
-        {modifiedText}
-      </h5>
-    );
+    return <h5 className="mb-2 text-black">{modifiedText}</h5>;
   };
 
   const handleColorPresentYr = (year) => {
@@ -43,8 +34,12 @@ const Background = () => {
     );
   };
 
-  const theme = useTheme();
-  const isMatch = useMediaQuery(theme.breakpoints.down("lg"));
+  let theme = useTheme();
+  let isMatch = useMediaQuery(theme.breakpoints.down("lg"));
+
+  const sanitizedData = (data) => ({
+    __html: DOMPurify.sanitize(data),
+  });
 
   return (
     <Section id="background" bg="white">
@@ -94,7 +89,12 @@ const Background = () => {
                           <div className="timeline-item-content">
                             <div className="timeline-item-card">
                               {handleItalic(title)}
-                              <p className="fs-0 mb-0 gray1">{description}</p>
+                              <p
+                                className="fs-0 mb-0 gray1"
+                                dangerouslySetInnerHTML={sanitizedData(
+                                  description
+                                )}
+                              />
                             </div>
                           </div>
                         </Col>

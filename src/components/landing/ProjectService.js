@@ -11,8 +11,8 @@ import { fontSizes } from "helpers/fonts";
 import DOMPurify from "dompurify";
 
 const ProjectService = ({ service, index }) => {
-  const theme = useTheme();
-  const isMatch = useMediaQuery(theme.breakpoints.down("lg"));
+  let theme = useTheme();
+  let isMatch = useMediaQuery(theme.breakpoints.down("lg"));
 
   const sanitizedData = (data) => ({
     __html: DOMPurify.sanitize(data),

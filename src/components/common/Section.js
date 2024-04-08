@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 import { Container } from "react-bootstrap";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { staggerContainer } from "helpers/motion";
 
 const Section = ({
@@ -20,18 +20,16 @@ const Section = ({
   bgClassName && (bgProps.className = bgClassName);
 
   return (
-    <AnimatePresence mode="wait" presenceAffectsLayout>
-      <motion.section
-        variants={staggerContainer()}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.25 }}
-        className={classNames({ [`bg-${bg}`]: bg }, className)}
-        {...rest}
-      >
-        <Container fluid={fluid}>{children}</Container>
-      </motion.section>
-    </AnimatePresence>
+    <motion.section
+      variants={staggerContainer()}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      className={classNames({ [`bg-${bg}`]: bg }, className)}
+      {...rest}
+    >
+      <Container fluid={fluid}>{children}</Container>
+    </motion.section>
   );
 };
 

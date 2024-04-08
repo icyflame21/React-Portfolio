@@ -14,6 +14,7 @@ const LeafletMap = ({ data, position, ...rest }) => {
       minZoom={11}
       center={position}
       radius={200}
+      fadeAnimation
       scrollWheelZoom={false}
       {...rest}
     >

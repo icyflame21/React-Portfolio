@@ -23,8 +23,8 @@ const NavbarStandard = () => {
   const [navbarToggle, setNavbarToggle] = useState(false);
   const [showDropShadow, setShowDropShadow] = useState(false);
 
-  const theme = useTheme();
-  const isMatch = useMediaQuery(theme.breakpoints.down("md"));
+  let theme = useTheme();
+  let isMatch = useMediaQuery(theme.breakpoints.down("md"));
   const setDropShadow = () => {
     const el = document.documentElement;
     if (el.scrollTop > 0) {

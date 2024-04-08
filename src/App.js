@@ -9,7 +9,6 @@ import { ToastContainer } from "react-toastify";
 import "./CSS/GradientText.css";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { LazyLoadComponent } from "react-lazy-load-image-component";
 
 const App = () => {
   const customStyles = {
@@ -28,9 +27,9 @@ const App = () => {
     },
   };
 
-  const theme = useTheme();
-  const isMatch = useMediaQuery(theme.breakpoints.down("md"));
-  const previousWidth = window.innerWidth;
+  let theme = useTheme();
+  let isMatch = useMediaQuery(theme.breakpoints.down("md"));
+  let previousWidth = window.innerWidth;
 
   useEffect(() => {
     Array.from(document.getElementsByClassName("theme-stylesheet")).forEach(
@@ -44,7 +43,7 @@ const App = () => {
     document.getElementsByTagName("head")[0].appendChild(link);
 
     window.addEventListener("resize", () => {
-      const currentWidth = window.innerWidth;
+      let currentWidth = window.innerWidth;
       if (previousWidth < 768 && currentWidth >= 768) {
         window.location.reload();
       }
@@ -61,9 +60,7 @@ const App = () => {
           style={customStyles}
         />
       )}
-      <LazyLoadComponent>
-        <Layout />
-      </LazyLoadComponent>
+      <Layout />
       <ToastContainer
         position="top-center"
         hideProgressBar={false}

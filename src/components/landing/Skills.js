@@ -7,10 +7,11 @@ import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { fontSizes } from "helpers/fonts";
+import { LazyLoadComponent } from "react-lazy-load-image-component";
 
 const Skills = () => {
-  const theme = useTheme();
-  const isMatch = useMediaQuery(theme.breakpoints.down("lg"));
+  let theme = useTheme();
+  let isMatch = useMediaQuery(theme.breakpoints.down("lg"));
 
   const skills_table = () => (
     <Table bordered responsive>
@@ -61,26 +62,28 @@ const Skills = () => {
     </Table>
   );
   return (
-    <Section id="skills" bg="white">
-      <Row
-        className={`justify-content-center align-items-center pt-4 ${
-          isMatch ? "px-3" : "px-0"
-        }`}
-      >
-        <Col>
-          <SectionHeader
-            title="My Skills Progress so far"
-            subtitle="My Skills"
-            dropCap
-            className="justify-content-center text-center"
-          />
+    <LazyLoadComponent>
+      <Section id="skills" bg="white">
+        <Row
+          className={`justify-content-center align-items-center pt-4 ${
+            isMatch ? "px-3" : "px-0"
+          }`}
+        >
+          <Col>
+            <SectionHeader
+              title="My Skills Progress so far"
+              subtitle="My Skills"
+              dropCap
+              className="justify-content-center text-center"
+            />
 
-          <Row className={`mt-3`}>
-            <Col>{skills_table()}</Col>
-          </Row>
-        </Col>
-      </Row>
-    </Section>
+            <Row className={`mt-3`}>
+              <Col>{skills_table()}</Col>
+            </Row>
+          </Col>
+        </Row>
+      </Section>
+    </LazyLoadComponent>
   );
 };
 
