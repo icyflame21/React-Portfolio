@@ -12,7 +12,6 @@
 /build
 
 # misc
-.env
 .DS_Store
 .env.local
 .env.development.local
@@ -28,4 +27,3 @@ yarn-error.log*
 # Custom files #
 ################
 .vercel
-/src/config.js
